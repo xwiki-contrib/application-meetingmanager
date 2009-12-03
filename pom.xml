@@ -8,7 +8,7 @@
   <description>Application that allows to organize Meetings and create meeting reports</description>
   <scm>
     <connection>scm:svn:http://svn.xwiki.org/svnroot/xwiki/contrib/projects/xwiki-application-meetingmanager/trunk/</connection>
-    <developerConnection>scm:svn:https://svn.xwiki.org/svnroot/xwiki/contrib/projects/xwiki-application-meentingmanager/trunk/</developerConnection>
+    <developerConnection>scm:svn:https://svn.xwiki.org/svnroot/xwiki/contrib/projects/xwiki-application-meetingmanager/trunk/</developerConnection>
     <url>http://svn.xwiki.org/svnroot/xwiki/contrib/projects/xwiki-application-meetingmanager/trunk/</url>
   </scm>
   <build>
