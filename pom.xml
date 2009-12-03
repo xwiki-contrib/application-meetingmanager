@@ -4,12 +4,12 @@
   <artifactId>xwiki-application-meetingmanager</artifactId>
   <packaging>xar</packaging>
   <name>XWiki Platform - Applications - MeetingManager</name>
-  <version>1.1</version>
+  <version>1.1-SNAPSHOT</version>
   <description>Application that allows to organize Meetings and create meeting reports</description>
   <scm>
-    <connection>scm:svn:http://svn.xwiki.org/svnroot/xwiki/contrib/projects/xwiki-application-meetingmanager/tags/xwiki-application-meetingmanager-1.1</connection>
-    <developerConnection>scm:svn:https://svn.xwiki.org/svnroot/xwiki/contrib/projects/xwiki-application-meentingmanager/tags/xwiki-application-meetingmanager-1.1</developerConnection>
-    <url>http://svn.xwiki.org/svnroot/xwiki/contrib/projects/xwiki-application-meetingmanager/tags/xwiki-application-meetingmanager-1.1</url>
+    <connection>scm:svn:http://svn.xwiki.org/svnroot/xwiki/contrib/projects/xwiki-application-meetingmanager/trunk/</connection>
+    <developerConnection>scm:svn:https://svn.xwiki.org/svnroot/xwiki/contrib/projects/xwiki-application-meentingmanager/trunk/</developerConnection>
+    <url>http://svn.xwiki.org/svnroot/xwiki/contrib/projects/xwiki-application-meetingmanager/trunk/</url>
   </scm>
   <build>
     <extensions>
