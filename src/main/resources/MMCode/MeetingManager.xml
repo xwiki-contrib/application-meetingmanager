@@ -1427,7 +1427,6 @@ h2.meetinggridtitle {
 position: relative;
 border-bottom: 10px solid #ddd;
 margin-top: 1em;
-margin-bottom: -14px;
 }
 h2.meetinggridtitle span{
 display: inline;
