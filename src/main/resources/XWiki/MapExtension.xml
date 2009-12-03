@@ -1,0 +1,462 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xwikidoc>
+<web>XWiki</web>
+<name>MapExtension</name>
+<language></language>
+<defaultLanguage></defaultLanguage>
+<translation>0</translation>
+<parent></parent>
+<creator>XWiki.JeromeVelociter</creator>
+<author>XWiki.Admin</author>
+<customClass></customClass>
+<contentAuthor>XWiki.Admin</contentAuthor>
+<creationDate>1239275174000</creationDate>
+<date>1255883026000</date>
+<contentUpdateDate>1255883026000</contentUpdateDate>
+<version>2.1</version>
+<title></title>
+<template></template>
+<defaultTemplate></defaultTemplate>
+<validationScript></validationScript>
+<comment></comment>
+<minorEdit>false</minorEdit>
+<syntaxId>xwiki/1.0</syntaxId>
+<hidden>false</hidden>
+<object>
+<class>
+<name>XWiki.JavaScriptExtension</name>
+<customClass></customClass>
+<customMapping></customMapping>
+<defaultViewSheet></defaultViewSheet>
+<defaultEditSheet></defaultEditSheet>
+<defaultWeb></defaultWeb>
+<nameField></nameField>
+<validationScript></validationScript>
+<cache>
+<cache>0</cache>
+<displayType>select</displayType>
+<multiSelect>0</multiSelect>
+<name>cache</name>
+<number>5</number>
+<prettyName>Caching policy</prettyName>
+<relationalStorage>0</relationalStorage>
+<separator> </separator>
+<separators> ,|</separators>
+<size>1</size>
+<unmodifiable>0</unmodifiable>
+<values>long|short|default|forbid</values>
+<classType>com.xpn.xwiki.objects.classes.StaticListClass</classType>
+</cache>
+<code>
+<name>code</name>
+<number>2</number>
+<prettyName>Code</prettyName>
+<rows>20</rows>
+<size>50</size>
+<unmodifiable>0</unmodifiable>
+<classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
+</code>
+<name>
+<name>name</name>
+<number>1</number>
+<prettyName>Name</prettyName>
+<size>30</size>
+<unmodifiable>0</unmodifiable>
+<classType>com.xpn.xwiki.objects.classes.StringClass</classType>
+</name>
+<parse>
+<displayFormType>select</displayFormType>
+<displayType>yesno</displayType>
+<name>parse</name>
+<number>4</number>
+<prettyName>Parse content</prettyName>
+<unmodifiable>0</unmodifiable>
+<classType>com.xpn.xwiki.objects.classes.BooleanClass</classType>
+</parse>
+<use>
+<cache>0</cache>
+<displayType>select</displayType>
+<multiSelect>0</multiSelect>
+<name>use</name>
+<number>3</number>
+<prettyName>Use this extension</prettyName>
+<relationalStorage>0</relationalStorage>
+<separator> </separator>
+<separators> ,|</separators>
+<size>1</size>
+<unmodifiable>0</unmodifiable>
+<values>onDemand=On demand|always=Always</values>
+<classType>com.xpn.xwiki.objects.classes.StaticListClass</classType>
+</use>
+</class>
+<name>XWiki.MapExtension</name>
+<number>0</number>
+<className>XWiki.JavaScriptExtension</className>
+<guid>8ff0e531-a383-4447-86b1-2eed111993d0</guid>
+<property>
+<cache>default</cache>
+</property>
+<property>
+<code>(function(){
+
+    // TODO
+    // - Attach an onUnload event to the window in the frame to allow providers to clean. ???
+    // - Handle all errors.
+    // - Handle a size parameter "small" / "big" /"medium"
+    // - Move zoom to a "close" / "medium" / "far" zoom
+    // - Close the stream if failed loading
+    // - Replace Event.observe with document.observe in XE
+	
+	var errormessages = {
+		noapikeyprovided: "$msg.get('xmaps.noapikeyprovided')",
+		failedtoloadapi:  "$msg.get('xmaps.failedtoloadapi')"
+	}
+	
+	// Duck-typed objects that can provide maps. 
+	// See the google &amp; yahoo providers below as examples.
+    var providers = {}; 
+    					
+	// let ourselves and the outside world register new map providers
+    registerProvider = window.registerXMapProvider = function(name, object){
+        if (!providers[name] &amp;&amp; isValidProvider(object)) {
+            providers[name] = object;
+			return true;
+        }
+		return false;
+    }
+    
+	// The default provider to use when not precised.
+    var defaultprovider = "google"; // "$xwiki.getXWikiPreference('default_map_provider', 'google')"
+    
+	// Verify an object is a valid provider checking it has all the methods
+	// susceptible to be called.
+    function isValidProvider(object){
+        if (typeof object == "object") {
+			// TODO add needsKey here
+            if (object.getUrl &amp;&amp; typeof object.getUrl == "function" &amp;&amp;
+            object.isReady &amp;&amp;
+            typeof object.isReady == "function" &amp;&amp;
+            object.canDraw &amp;&amp;
+            typeof object.canDraw == "function" &amp;&amp;
+            object.drawMap &amp;&amp;
+            typeof object.drawMap == "function") {
+                return true;
+            }
+        }
+        return false;
+    }
+    
+	// return the provider with such name with fallback on default.
+    function getProvider(name){
+		
+        if (providers[name]) {
+            // if we effectively have a provider with such name, check it has everything we expect from it.
+            return providers[name];
+        }
+		
+        if (providers[defaultprovider]) {
+            return providers[defaultprovider];
+        }
+		
+        // if we are there it means the default provider itself is not valid, 
+        // let us do a final fallback on google maps.
+	    console.log("The default provider is not valid. Fallback on google Maps");
+        return providers["google"];
+    }
+    
+	// Provider object for google maps.
+	// All other providers should implement similar methods to be valid.
+    var gmapsProvider = {
+		
+		// Does the provider needs an API key to be provided ?
+		needsKey: true,
+		
+		// The key to give to the provider to get its services
+        key: "$xwiki.getXWikiPreference('google_maps_apikey', '')",
+		
+		// Return the url of the provider library.
+		// it will be used as the source of a script tag in an iframe.
+        getUrl: function(){
+            return "http://maps.google.com/maps?file=api&amp;v=2&amp;key=" + this.key;
+        },
+		
+		// Evaluated in the context of the iframe window, this method should return true
+		// if the library estimate it has everything needed for the methods canDraw and
+		// drawMap to run properly.
+        isReady: function(){
+            if (this.GBrowserIsCompatible &amp;&amp; this.GMap2) {
+                return true;
+            }
+            return false;
+        },
+		
+		// Should return true if the library accepts the environment (browser for example).
+        canDraw: function(){
+            if (this.GBrowserIsCompatible()) {
+                return true;
+            }
+            return false;
+        },
+		
+		// Actually draw the map of passed location, using the passed element as container.
+		// message and zoom arguments should be optional.
+        drawMap: function(element, location, message, zoom) {
+            var map = new this.GMap2(element);
+            var client = new this.GClientGeocoder();
+            client.getLatLng(location, function(transport) {
+                map.setCenter(transport, zoom );
+				
+				// display the basics zoom and map type controlers
+				 map.addControl(new this.GSmallMapControl());
+				 map.addControl(new this.GMapTypeControl());
+				
+				// if there is a message, we display it in an info window.
+                if (message != "") {
+                    map.openInfoWindow(map.getCenter(), document.createTextNode(message));
+                }
+            }.bind(this));
+        },
+
+        unload: function() {
+           this.GUnload();
+        }
+    };
+	
+    var yahooProvider = {
+		needsKey: true,
+		key: "$xwiki.getXWikiPreference('yahoo_maps_apikey', '')",
+        getUrl: function(key){
+			key = "iqaPfurV34GfscBaZDgW6CXlN31yP7GzllX7ruUNk.lE1S74NWci8flkoMI5hS8h2Is-";
+        	return "http://api.maps.yahoo.com/ajaxymap?v=3.8&amp;appid=" + key;
+        },
+        isReady: function(){
+        	if (this.YMap) {
+				return true;
+			}
+			return false;
+        },
+        canDraw: function(){
+			// like Chuck Norris, Y! can draw anywhere
+        	return true;
+        },
+        drawMap: function(element, location, message, zoom){
+        	// Create a map object  
+     		var map = new this.YMap(element);  
+     
+     		map.addTypeControl();     
+     		map.setMapType(this.YAHOO_MAP_REG);  
+   
+     		// Display the map centered on a geocoded location  
+     		map.drawZoomAndCenter(location, 3);  
+        }
+    };
+    
+	// register our two providers
+    registerProvider("google", gmapsProvider);
+	registerProvider("yahoo", yahooProvider);
+    
+	
+	window.XMap = function(element, location, options){
+        // jquery-like entry point to the library (jquery.com)
+        return new XMap.f.load(element, location, options);
+    }
+	
+    XMap.f = XMap.prototype = {
+    
+        // Load a map centered on the given location
+        // using the given element as a container for the iframe the map will be loaded in
+        // and possibly displaying the given message.
+        load: function(element, location, options){
+        
+            if (typeof element == "string") {
+                element = $(element);
+            }
+            if (!options || !typeof options == "Object") {
+                options = {};
+            }
+            this.provider = getProvider(options.service ? options.service : defaultprovider);
+            this.frameContainer = element;
+            this.location = location;
+            this.message = options.message ? options.message : "";
+            this.zoom = options.zoom ? options.zoom : 14;
+            
+            this.initApiLoading(function(){
+                // initialize the loading of the API used to display the map
+                // on call back, set a global timeout to surrender loading the api after 10 sec
+                // plus an interval to check every 0.1 sec the api has been loaded.
+                this.apiTimeout = setTimeout(function(){
+					this.fail.call(this)
+				}.bind(this) , 15000);
+                this.checkApiInterval = setInterval(this.checkApiLoading.bind(this), 500);
+            });
+        },
+        
+        unload: function() {
+            if(typeof this.provider.unload != "undefined") {
+                this.provider.unload.apply(this.frameWindow);
+            }
+            delete this.mapFrame();
+            this.frameContainer.innerHTML = "";
+        },
+        
+        fail: function(){
+            clearInterval(this.checkApiInterval);
+			this.mapFrame.doc.close(); // close iframe document streaming.
+            alert("Fail loading !");
+        },
+        
+        isApiLoading: false,
+        
+        // Create an iframe to defer the loading of the target API in, and inject the API script tag in it.
+        // This way, the loading of the API is not blocking for the rest of the page, and if the Internet is
+        // not accessible or the API is slow to get retrieved, the page will be less affected.
+        // The callback method is called on loading of the initial script tag. (But this does not necessarly
+        // mean the API is fully loaded yet, since most of them will inject other script tags in the document).
+        initApiLoading: function(callback){
+            if (!this.isApiLoading) {
+                // Create the frame
+                this.mapFrame = new IFrame(this.frameContainer);
+                // copy over the width and height of the element containing the frame.
+                this.mapFrame.style.width = this.frameContainer.style.width;
+                this.mapFrame.style.height = this.frameContainer.style.height;
+                
+                // create and inject the library script tag an bind the callback on laoding
+                var script = this.mapFrame.doc.createElement('script');
+                script.src = this.provider.getUrl();
+                script.onload = callback.apply(this);
+                this.mapFrame.doc.body.appendChild(script);
+		
+		// keep a reference on the frame window
+		// TODO can it be made nicer ?
+		// using the global window "frames" array does not seem to work strangely
+		if (script.document) {
+			this.frameWindow = script.document.parentWindow;     // IE
+			this.mapFrame.doc.body.style.margin = "0px";         // + remove the ugly scroll
+			  													 // TODO move this in the IFrame.
+		}
+		else {
+			this.frameWindow = this.mapFrame.doc.defaultView;    // Others. TODO test Opera/Safari
+		}
+
+                // set the laoding flag
+                this.isApiLoading = true;
+            }
+        },
+        
+        checkApiLoading: function(){
+            if (this.isApiLoading) {
+                if (this.provider.isReady.call(this.frameWindow)) {
+                    // If the provider tells us it's now ok, it means it consider its api loaded.
+                    // We can clean our interval + timeout, close the frame stream,
+                    // and finally ask the provider to draw our map.
+                    
+                    clearTimeout(this.apiTimeout);
+                    clearInterval(this.checkApiInterval);
+                    this.mapContainer = this.mapFrame.doc.createElement("div");
+                    //this.mapContainer.style.width = this.mapFrame.style.width;
+                    this.mapContainer.style.width = 480;
+                    //this.mapContainer.style.height = this.mapFrame.style.height;
+                    // TODO 
+                    this.mapContainer.style.height = 280;
+                    this.mapFrame.doc.body.appendChild(this.mapContainer);
+
+                    this.mapFrame.doc.close(); // end the streaming of the frame
+                    this.provider.drawMap.apply(this.frameWindow, [this.mapContainer, this.location, this.message, this.zoom]);
+                }
+            }
+        }
+        
+    }
+    
+    XMap.f.load.prototype = XMap.f;
+    
+    function IFrame(parentElement){
+        // Create the iframe which will be returned
+        var iframe = document.createElement("iframe");
+        
+        // If no parent element is specified then use body as the parent element
+        if (parentElement == null) 
+            parentElement = document.body;
+        
+        // This is necessary in order to initialize the document inside the iframe
+        parentElement.appendChild(iframe);
+        
+        // Initiate the iframe's document to null
+        iframe.doc = null;
+        
+        // Depending on browser platform get the iframe's document, this is only
+        // available if the iframe has already been appended to an element which
+        // has been added to the document
+        if (iframe.contentDocument) {
+			// Firefox, Opera
+			iframe.doc = iframe.contentDocument;
+		}
+		else {
+			if (iframe.contentWindow) {
+				// Internet Explorer
+				iframe.doc = iframe.contentWindow.document;
+				iframe.frameborder = "no"; // works
+				//iframe.scrolling = "no"; // does not
+			}
+			else 
+				if (iframe.document) 
+					// Others?
+					iframe.doc = iframe.document;
+        }
+        // If we did not succeed in finding the document then throw an exception
+        if (iframe.doc == null) 
+            throw "Document not found, append the parent element to the DOM before creating the IFrame";
+        
+        iframe.doc.open();
+        iframe.doc.write("&lt;body&gt;&lt;/body&gt;");
+        
+        return iframe;
+    }
+    
+})();
+</code></property><property><name>map</name>
+</property>
+<property>
+<parse>1</parse>
+</property>
+<property>
+<use>onDemand</use>
+</property>
+</object>
+<object>
+<class>
+<name>XWiki.TagClass</name>
+<customClass></customClass>
+<customMapping></customMapping>
+<defaultViewSheet></defaultViewSheet>
+<defaultEditSheet></defaultEditSheet>
+<defaultWeb></defaultWeb>
+<nameField></nameField>
+<validationScript></validationScript>
+<tags>
+<cache>0</cache>
+<displayType>checkbox</displayType>
+<multiSelect>1</multiSelect>
+<name>tags</name>
+<number>1</number>
+<prettyName>Tags</prettyName>
+<relationalStorage>1</relationalStorage>
+<separator> </separator>
+<separators> ,|</separators>
+<size>30</size>
+<unmodifiable>0</unmodifiable>
+<values></values>
+<classType>com.xpn.xwiki.objects.classes.StaticListClass</classType>
+</tags>
+</class>
+<name>XWiki.MapExtension</name>
+<number>0</number>
+<className>XWiki.TagClass</className>
+<guid>de0ea079-cbde-4774-b7fa-18ad92dc2ca7</guid>
+<property>
+<tags/>
+</property>
+</object>
+<content>
+</content></xwikidoc>

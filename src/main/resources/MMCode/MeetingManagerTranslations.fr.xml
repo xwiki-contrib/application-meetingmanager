@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xwikidoc>
+<web>MMCode</web>
+<name>MeetingManagerTranslations</name>
+<language>fr</language>
+<defaultLanguage>en</defaultLanguage>
+<translation>1</translation>
+<parent></parent>
+<creator>xwiki:XWiki.LudovicDubost</creator>
+<author>XWiki.Admin</author>
+<customClass></customClass>
+<contentAuthor>xwiki:XWiki.LudovicDubost</contentAuthor>
+<creationDate>1254089072000</creationDate>
+<date>1254092465000</date>
+<contentUpdateDate>1254092465000</contentUpdateDate>
+<version>1.1</version>
+<title></title>
+<template></template>
+<defaultTemplate></defaultTemplate>
+<validationScript></validationScript>
+<comment></comment>
+<minorEdit>false</minorEdit>
+<syntaxId>xwiki/1.0</syntaxId>
+<hidden>false</hidden>
+<object>
+<class>
+<name>XWiki.TagClass</name>
+<customClass></customClass>
+<customMapping></customMapping>
+<defaultViewSheet></defaultViewSheet>
+<defaultEditSheet></defaultEditSheet>
+<defaultWeb></defaultWeb>
+<nameField></nameField>
+<validationScript></validationScript>
+<tags>
+<cache>0</cache>
+<displayType>checkbox</displayType>
+<multiSelect>1</multiSelect>
+<name>tags</name>
+<number>1</number>
+<prettyName>Tags</prettyName>
+<relationalStorage>1</relationalStorage>
+<separator> </separator>
+<separators> ,|</separators>
+<size>30</size>
+<unmodifiable>0</unmodifiable>
+<values></values>
+<classType>com.xpn.xwiki.objects.classes.StaticListClass</classType>
+</tags>
+</class>
+<name>MMCode.MeetingManagerTranslations</name>
+<number>0</number>
+<className>XWiki.TagClass</className>
+<guid>31c92fa7-4a36-46e8-8847-eb76c52db8aa</guid>
+<property>
+<tags/>
+</property>
+</object>
+<content>## Override ApplicationResource_fr.properties to be have consistent use of Tags instead of Balises in the french version
+tags=Tags
+core.tagedit.title=Tags :
+changes.tag.tags=Tags
+
+MMCode.MeetingClass_status_none=A venir
+MMCode.MeetingClass_status_prepared=Préparée
+MMCode.MeetingClass_status_started=Démarrée
+MMCode.MeetingClass_status_finished=Terminée
+MMCode.MeetingClass_status_voteopen=Vote en cours
+MMCode.MeetingClass_status_voteclosed=Vote terminée
+
+MMCode.MeetingClass_privacy_private=Privée
+MMCode.MeetingClass_privacy_public=Publique
+
+MMCode.MeetingParticipantClass_participation_undecided=Non confirmé
+MMCode.MeetingParticipantClass_participation_declined=Absent
+MMCode.MeetingParticipantClass_participation_confirmed=Présent
+
+MMCode.MeetingCycleClass_frequency_weekly=Toutes les semaines
+MMCode.MeetingCycleClass_frequency_bimonthly=Toutes les deux semaines
+MMCode.MeetingCycleClass_frequency_monthly=Tous les mois
+MMCode.MeetingCycleClass_frequency_quarterly=Tous les trimestres
+MMCode.MeetingCycleClass_frequency_yearly=Tous les ans
+
+xe.loading=Chargement
+
+meetings.dashboard.youcanalso=Vous pouvez aussi
+meetings.dashboard.or=ou bien
+meetings.dashboard.createnewmeeting=organiser une réunion
+meetings.dashboard.pagename=Nom de la page
+meetings.dashboard.urlwillbe=La réunion crée sera consultable à l'adresse:
+meetings.dashboard.createmeeting=Créer la réunion
+meetings.dashboard.pickpagenamehelp=Le nom de la page permet de créer l'adresse Internet (URL) a partir de laquelle la réunion sera consultable. Vous pourrez donner un titre plus précis pour la réunion lors de l'étape suivante.
+meetings.dashboard.gotocycles=Voir les cycles de réunion
+
+meetings.dashboard.grid.date=Date
+meetings.dashboard.grid.location=Lieu
+meetings.dashboard.grid.status=Status
+meetings.dashboard.grid.emptyvalue=-
+meetings.dashboard.grid.doc.title=Titre
+meetings.dashboard.grid.doc.creator=Organisateur
+meetings.dashboard.grid.doc.creationDate=Crée le
+meetings.dashboard.grid.title=Titre
+
+meetings.cycle.meetingsinthiscycle=Réunions du cycle:
+meetings.cycle.createnextmeeting=Créer la prochaine réunion du cycle
+meetings.cycle.frequency=Frequence:
+meetings.cycle.description=Description:
+meetings.cycle.weekly.fromlast=Une semaine après la dernière réunion
+meetings.cycle.bimonthly.fromlast=Deux semaines après la dernière réunion
+meetings.cycle.quarterly.fromlast=Trois mois après la dernière réunion
+meetings.cycle.yearly.fromlast=Un an après la dernière réunion
+meetings.cycle.nextmeeting=Prochaine réunion:
+meetings.cycle.nextdate=Date de la reunion:
+meetings.cycle.submitcreate=Créer la prochaine réunion du cycle
+meetings.cycle.nextname=Nom de la page:
+meetings.cycle.lastmeeting=Rappel - précédente réunion du cycle
+meetings.cycle.lastname=Titre:
+meetings.cycle.lastdate=Date:
+meetings.cycle.laststatus=status:
+meetings.cycle.alreadyexists=La page que vous souhaitez créer existe déjà
+meetings.cycle.addingmeetingtocycle=Transformation de la réunion en cycle
+meetings.cycles.listofcycles=Cycles de réunion:
+meetings.cycles.editcycle=Éditer
+meetings.cycles.deletecycle=Supprimer
+
+meetings.meeting.docalreadyexists=Un document avec ce nom existe déjà
+meetings.meeting.manager=Organisateur
+meetings.meeting.makecycle=Créer un cycle à partir ce cette réunion
+meetings.meeting.sheettitle=Fiche réunion
+meetings.meeting.tags=Tags :
+meetings.meeting.status=Status
+meetings.meeting.startmeeting=Démarrer la réunion
+meetings.meeting.endmeeting=Terminer la réunion
+meetings.meeting.startmeeting.help=En cliquant sur le bouton ci-dessous, vous allez démarrer la réunion. Vous ne pourrez alors plus modifier ni l'ordre du jour, ni la date. Une nouvelle zone de saisie vous permettra de saisir le compte rendu.
+meetings.meeting.endmeeting.help=En cliquant sur le bouton ci-dessous, vous allez terminer la réunion. Vous pourrez toujours éditer le compte rendu, en revanche vous ne pourrez plus ajouter de nouveaux participants.
+meetings.meeting.startmeeting.started=La réunion est maintenant démarée. Vous pouvez saisir le compte rende dans la zone d'édition ci-dessous.
+meetings.meeting.startmeeting.warning=Une fois la réunion démarée vous ne pourrez plus en éditer les caractéristiques.
+meetings.meeting.typist=Rapporteur
+meetings.meeting.choosetypist.noparticipant=Il n'y a pas encore de participant associé à cette réunion. Vous pourrez choisir un rapporteur lorsque la liste des participants sera définie.
+meetings.meeting.dostart=Démarrer
+meetings.meeting.doend=Terminer
+meetings.meeting.domakecycle=Créer le cycle
+meetings.meeting.cycleurlwillbe=Le cycle crée sera consultable à l'adresse:
+meetings.meeting.minutes=Compte rendu
+meetings.meeting.minutes.edit=Editer le compte rendu
+meetings.meeting.minutes.saved=Le compte rendu a été sauvé avec succes.
+meetings.meeting.tasks=Tâches
+meetings.meeting.tasks.edit=Editer les tâches
+meetings.meeting.tasks.saved=Les tâches ont été sauvé avec succes.
+meetings.meeting.youarethetypist=Vous êtes le rapporteur de cette réunion. La zone ci-dessous vous permet de prendre les notes. Pensez à sauver régulièrement, ainsi les autres participants pourront voir le compte rendu se mettre à jour progressivement.
+meetings.meeting.meetingnow=La réunion est en cours. Vous pouvez suivre en direct la prise de note dans la section "Compte rendu"
+meetings.meeting.dontforgettoclose=Penser à clore la réunion lorsque celle-ci prend fin
+
+meetings.meeting.startmeeting.info=Vous êtes sur le point de démarrer la réunion
+meetings.meeting.notypistselected=Vous n'avez pas encore choisi de rapporteur. Veuillez le sélectionner dans la liste des participants. Il rédigera le compte rendu.
+meetings.meeting.typistwillbe=*{0}* sera le rapporteur de cette réunion. 
+meetings.meeting.minutes.empty=Le compte rendu de la réunion n'a pas encore été commencé. Cliquez sur le bouton "éditer le compte rendu" pour le commencer.
+meetings.meeting.tasks.empty=Les tâches associées à la réunion n'ont pas encore été éditées. Cliquez sur le bouton "éditer les tâches" pour commencer.
+
+meetings.meeting.privacy=Droits d'accès:
+
+meetings.no_meeting=Aucune réunion n'est associée à ce document
+meetings.meeting.youarethemanager=Vous êtes l'organisateur de cette réunion
+meetings.meeting.title=Titre
+meetings.meeting.description=Ordre du jour
+meetings.meeting.cyclicmeeting=Cette réunion fait partie du cycle {0}
+meetings.meeting.meetingmanager=Organisateur
+meetings.meeting.infos.edit=Editer les caractéristiques
+meetings.meeting.infos.save=Sauver
+meetings.meeting.infos.saved=Caractéristiques sauvegardées
+meetings.meeting.infos.noparticipantyet=Il n'y a pas encore de participant associe a cette reunion. Vous pourrez choisir un rapporteur lorsque la liste des participants sera definie.
+meetings.meeting.infos.comments={0} commentaire(s)
+meetings.meeting.infos.attachments={0} pièce(s)-jointe(s)
+
+meetings.meeting.saveminutes=Sauvegarder
+meetings.meeting.saveminutesandclose=Sauvegarder et fermer
+meetings.meeting.savetasks=Sauvegarder
+meetings.meeting.savetasksandclose=Sauvegarder et fermer
+
+
+meetings.meeting.participants=Participants
+meetings.meeting.participants.noparticipant=Il n'y a pour le moment aucun participant associé à cette réunion
+meetings.meeting.participants.addparticipant=Ajouter des participants
+meetings.meeting.participants.searchparticipant=Rechercher un participant
+meetings.meeting.participants.add=Ajouter
+meetings.meeting.participants.create=Créer fiche ...
+meetings.meeting.participants.sendemail=Notification email
+meetings.meeting.participants.confirmremove=Vous etes sur le point de retirer {0} de la liste des participants. Etes-vous sûr de vouloir continuer ?
+
+meetings.meeting.myparticipation.select=Vous serez :
+meetings.meeting.myparticipation.message=Court message :
+meetings.meeting.myparticipation.save=OK
+meetings.meeting.myparticipation.modify=Changer ma présence
+
+meetings.meeting.date.edit=Editer les préparatifs
+meetings.meeting.date=Préparatifs: date et lieu
+meetings.meeting.date.start=Heure de début &lt;em&gt;(Optionnel - format: HH:MM)&lt;/em&gt;
+meetings.meeting.date.end=Heure de fin &lt;em&gt;(Optionnel - format: HH:MM)&lt;/em&gt;
+meetings.meeting.date.date=Date :
+meetings.meeting.date.validate=Valider
+meetings.meeting.date.choosetype=Déterminer la date : choisissez un procédé
+meetings.meeting.date.fixed=Fixer une date
+meetings.meeting.date.vote=Faire voter les participants, et choisir en fonction du résultat
+meetings.meeting.date.location=Lieu &lt;em&gt;(Optionnel)&lt;/em&gt;
+meetings.meeting.date.displaymap=Afficher une carte
+meetings.meeting.date.from=De
+meetings.meeting.date.to=à
+meetings.meeting.date.noinformation=Pour le moment, il n'y a pas d'information disponible concernant la date et le lieu
+
+meetings.meeting.vote.finish=Terminer le vote
+meetings.meeting.vote.finishvotehelp=Vous êtes sur le point de terminer la phase de vote. Vous allez desormais pouvoir fixer la date que vous avez retenu pour la réunion. Vous aurez a disposition un recapitulatif des résultats du vote lorsque vous choisirez cette date.
+meetings.meeting.vote=Préparatifs: vote sur la date et le lieu
+meetings.meeting.vote.newoption=Ajouter une option date/lieu:
+meetings.meeting.vote.newoption.button=Ajouter une option
+meetings.meeting.vote.addoption=Ajouter
+meetings.meeting.vote.sendmail=Notifier par email
+meetings.meeting.vote.sendmailhelp=Utilisez la notification email pour inviter les participants à voter sur la date et le lieu de la réunion. Vous pouvez par exemple envoyer une notification une premiere fois, puis a chaque fois qu'un nouvelle option est proposée.
+meetings.meeting.vote.location=Lieu
+meetings.meeting.vote.time=Jour et heure
+meetings.meeting.vote.noproposal=Il n'y a pas encore de proposition de lieu/date pour cette réunion
+meetings.meeting.vote.you=Vous
+meetings.meeting.vote.noparticipant=Il n'y a pas encore de participant associé à cette réunion. Lorsque des participants seront définis et lorsqu'ils auront voté, vous verrez ici un tableau récapitulatif de leurs disponibilités pour chacune des options. Vous pourrez alors choisir une date en fonction de ces informations.
+meetings.meeting.vote.options=Options
+meetings.meeting.vote.save=Sauver
+meetings.meeting.vote.update=Modifier
+meetings.meeting.vote.result=Rappel des votes des participants:
+
+meetings.meeting.comments=Discussion
+meetings.meeting.addparticipantserror=Une erreur est survenue lors de l'ajout d'utilisateurs. Veuillez contacter l'administrateur du site.
+
+meetings.mail.personalnote=Note personnelle de {0}:
+meetings.mail.notification=Notification par email
+meetings.mail.to=A:
+meetings.mail.subject=Objet:
+meetings.mail.body=Corps du message:
+meetings.mail.personalnote=Note personnelle
+meetings.mail.personalnoteextra=(Laisser vide pour ne pas ajouter de note personnelle)
+meetings.mail.cancel=Annuler
+meetings.mail.send=Envoyer le(s) mail(s) et continuer
+meetings.mail.skip=Continuer sans envoyer de mail
+meetings.mail.missingemails=Certains emails ne sont pas renseignés dans les fiches utilisateurs. Vouz pouvez les ajouter manuellement.
+meetings.mail.missingallemails=Aucun emails n'est renseigné dans les fiches utilisateurs. Veuillez les indiquer manuellement.
+
+meetings.spacehome.title=Espace Gestion des Réunions
+meetings.spacehome.mynextmeetings=Mes prochaines réunions
+meetings.spacehome.seeallmeetings=Toutes les réunions
+meetings.spacehome.allmeetings=Voir toutes les réunions
+meetings.spacehome.seemynextmeetings=Voir seulement mes prochaines réunions</content>
+</xwikidoc>

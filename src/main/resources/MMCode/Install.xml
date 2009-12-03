@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xwikidoc>
+<web>MMCode</web>
+<name>Install</name>
+<language></language>
+<defaultLanguage>en</defaultLanguage>
+<translation>0</translation>
+<parent></parent>
+<creator>XWiki.Admin</creator>
+<author>XWiki.Admin</author>
+<customClass></customClass>
+<contentAuthor>XWiki.Admin</contentAuthor>
+<creationDate>1253997475000</creationDate>
+<date>1255883026000</date>
+<contentUpdateDate>1255883026000</contentUpdateDate>
+<version>2.1</version>
+<title></title>
+<template></template>
+<defaultTemplate></defaultTemplate>
+<validationScript></validationScript>
+<comment></comment>
+<minorEdit>false</minorEdit>
+<syntaxId>xwiki/2.0</syntaxId>
+<hidden>false</hidden>
+<object>
+<class>
+<name>XWiki.TagClass</name>
+<customClass></customClass>
+<customMapping></customMapping>
+<defaultViewSheet></defaultViewSheet>
+<defaultEditSheet></defaultEditSheet>
+<defaultWeb></defaultWeb>
+<nameField></nameField>
+<validationScript></validationScript>
+<tags>
+<cache>0</cache>
+<displayType>checkbox</displayType>
+<multiSelect>1</multiSelect>
+<name>tags</name>
+<number>1</number>
+<prettyName>Tags</prettyName>
+<relationalStorage>1</relationalStorage>
+<separator> </separator>
+<separators> ,|</separators>
+<size>30</size>
+<unmodifiable>0</unmodifiable>
+<values></values>
+<classType>com.xpn.xwiki.objects.classes.StaticListClass</classType>
+</tags>
+</class>
+<name>MMCode.Install</name>
+<number>0</number>
+<className>XWiki.TagClass</className>
+<guid>27ad97d3-e483-4ad2-8c8a-37368bb7cd7a</guid>
+<property>
+<tags/>
+</property>
+</object>
+<content>= Meeting Manager Code Install =
+
+{{velocity}}
+#if(!$xwiki.hasAdminRights())
+{{error}}
+You are running this script as a non admin. It will have no effect. Login as admin.
+{{/error}}
+#else
+This script automatically set the owner of the pages in MMCode. This will allow the priviledged scripts included in them to work.
+#end
+
+#if(!$xwiki.exists("XWiki.MapExtension"))
+{{warning}}The Map Extension component is not installed properly. You will need to download the Map Extension component from http://code.xwiki.org and install it{{/warning}}
+#end
+#if(!$xwiki.exists("XWiki.LiveValidation"))
+{{warning}}The Live Validation Extension component is not installed properly. You will need to download the LiveValidation Extension component from http://code.xwiki.org and install it{{/warning}}
+#end
+#if(!$xwiki.exists("XWiki.DatePickerExtension"))
+{{warning}}The DatePicker Extension component is not installed properly. You will need to download the DatePicker Extension component from http://code.xwiki.org and install it{{/warning}}
+#end
+#if(!$xwiki.exists("XWiki.ModalBox"))
+{{warning}}The ModalBox Extension component is not installed properly. You will need to download the ModalBox Extension component from http://code.xwiki.org and install it{{/warning}}
+#end
+
+#if($request.confirm=="1")
+Assigning programming rights to the following pages:
+#else
+[[Confirm assigning programming rights to the following pages:&gt;&gt;$doc.fullName?confirm=1]]
+#end
+
+#foreach($item in $xwiki.searchDocuments("where doc.web='MMCode' or doc.fullName like 'XWiki.Meeting%' or doc.fullName in ('XWiki.ModalBox', 'XWiki.MapExtension', 'XWiki.LiveValidation', 'XWiki.DatePickerExtension')"))
+* $item #if($request.confirm=="1") $xwiki.getDocument($item).save() #end
+
+#end
+
+#set($transdoc = $xwiki.getDocument("XWiki.XWikiPreferences"))
+#set($ok = $transdoc.use("XWiki.XWikiPreferences"))
+#set($transprefs = $transdoc.getValue("documentBundles"))
+#if($transprefs.indexOf("MMCode.MeetingManagerTranslations")==-1)
+#if($request.confirm=="1")
+#set($transprefs = "${transprefs},MMCode.MeetingManagerTranslations")
+#set($ok = $transdoc.set("documentBundles", $transprefs))
+#set($ok = $transdoc.save())
+#end
+* Added translation bundle to XWiki Preferences
+#end
+
+## fixing the meeting template to have no date set
+## otherwise we can't use the date selection
+#set($templatedoc = $xwiki.getDocument("MMCode.MeetingClassTemplate"))
+#set($ok = $templatedoc.use("MMCode.MeetingClass"))
+#if($templatedoc.display("date")!="01/01/2000")
+* Fixing template default date
+#if($request.confirm=="1")
+#set($ok = $templatedoc.set("date", "01/01/2000"))
+#set($ok = $templatedoc.set("starttime", "00:00"))
+#set($ok = $templatedoc.set("endtime", "00:00"))
+#set($ok = $templatedoc.save())
+#end
+#end
+{{/velocity}}</content>
+</xwikidoc>

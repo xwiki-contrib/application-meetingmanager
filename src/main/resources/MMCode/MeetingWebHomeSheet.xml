@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xwikidoc>
+<web>MMCode</web>
+<name>MeetingWebHomeSheet</name>
+<language></language>
+<defaultLanguage>en</defaultLanguage>
+<translation>0</translation>
+<parent></parent>
+<creator>XWiki.Admin</creator>
+<author>XWiki.Admin</author>
+<customClass></customClass>
+<contentAuthor>XWiki.Admin</contentAuthor>
+<creationDate>1254007911000</creationDate>
+<date>1255883026000</date>
+<contentUpdateDate>1255883026000</contentUpdateDate>
+<version>2.1</version>
+<title></title>
+<template></template>
+<defaultTemplate></defaultTemplate>
+<validationScript></validationScript>
+<comment></comment>
+<minorEdit>false</minorEdit>
+<syntaxId>xwiki/1.0</syntaxId>
+<hidden>false</hidden>
+<object>
+<class>
+<name>XWiki.TagClass</name>
+<customClass></customClass>
+<customMapping></customMapping>
+<defaultViewSheet></defaultViewSheet>
+<defaultEditSheet></defaultEditSheet>
+<defaultWeb></defaultWeb>
+<nameField></nameField>
+<validationScript></validationScript>
+<tags>
+<cache>0</cache>
+<displayType>checkbox</displayType>
+<multiSelect>1</multiSelect>
+<name>tags</name>
+<number>1</number>
+<prettyName>Tags</prettyName>
+<relationalStorage>1</relationalStorage>
+<separator> </separator>
+<separators> ,|</separators>
+<size>30</size>
+<unmodifiable>0</unmodifiable>
+<values></values>
+<classType>com.xpn.xwiki.objects.classes.StaticListClass</classType>
+</tags>
+</class>
+<name>MMCode.MeetingWebHomeSheet</name>
+<number>0</number>
+<className>XWiki.TagClass</className>
+<guid>52cea4ef-24f9-46b6-98c6-930c630c9ffa</guid>
+<property>
+<tags/>
+</property>
+</object>
+<content>##
+## Macro includes.
+##
+
+#includeMacros("MMCode.MeetingManagerMacros")
+#includeMacros("XWiki.GridExtensionMacros")
+#macro(help $text)&lt;div class="helpmessage"&gt;$text&lt;/div&gt;#end
+
+##
+## SX includes.
+##
+
+#set($ok = $xwiki.ssx.use("MMCode.MeetingManager"))
+#set($ok = $xwiki.jsx.use("MMCode.MeetingManager"))
+#set($ok = $xwiki.jsx.use("XWiki.ModalBox"))
+#set($ok = $xwiki.ssx.use("XWiki.ModalBox"))
+#set($ok = $xwiki.jsfx.use("js/xwiki/lightbox/lightbox.js"))
+
+
+##
+## Global vars.
+##
+#set($meetingSpace=$doc.space)
+&lt;div class="inlinebutton-container"&gt;
+$msg.get('meetings.dashboard.youcanalso'):
+#if($hasedit)
+ ##
+ ## Meeting creation form.
+ ##
+&lt;div id="newmeetingform" class="hidden"&gt;
+&lt;form action="" id="newdoc" method="post"&gt;
+  &lt;div&gt;
+    &lt;input type="hidden" name="parent" value="${meetingSpace}.WebHome" /&gt;
+    &lt;input type="hidden" name="template" value="MMCode.MeetingClassTemplate" /&gt;
+    &lt;input type="hidden" name="sheet" value="1" /&gt;
+    &lt;input type="hidden" name="name" class="clean" value=""/&gt;
+    &lt;div&gt;
+      &lt;div&gt;
+##if($showallspaces)
+##    $msg.get('meetings.dashboard.spacename') &lt;select name="webname"&gt;
+##foreach($space in $xwiki.spaces)
+##    &lt;option value="${space}"&gt;$space&lt;/option&gt;
+##end
+##    &lt;/select&gt;
+##else
+    &lt;input type="hidden" name="webname" value="$meetingSpace"/&gt;
+##end
+        $msg.get('meetings.dashboard.pagename')
+        &lt;input type="text" autocomplete="off" class="title" name="title" size="45"/&gt;
+        &lt;div style="align:center;"&gt;
+          &lt;input type="button"  value="$msg.get('meetings.dashboard.createmeeting')" onclick='if (updateName(this.form.title,this.form.name)) { action="../../save/" + this.form.webname.value + "/" + this.form.name.value; this.form.submit(); }' /&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div style="color:grey;padding:5px;margin-top:15px;"&gt;
+        &lt;div&gt;$msg.get('meetings.dashboard.urlwillbe')&lt;/div&gt;
+        {pre}
+        &lt;div&gt;&lt;span class="url"&gt;$doc.getExternalURL('view')&lt;span&gt;&lt;/div&gt;
+        #help("$msg.get('meetings.dashboard.pickpagenamehelp')")
+        {/pre}
+      &lt;/div&gt;
+      &lt;div class="clearfloats"&gt;&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/form&gt;
+&lt;/div&gt;
+&lt;div class="inlinebutton"&gt;
+  &lt;span class="buttonwrapper"&gt;
+    &lt;button id="createnewmeeting" title="$msg.get('meetings.dashboard.createnewmeeting')" /&gt;
+    $msg.get('meetings.dashboard.createnewmeeting')
+    &lt;/button&gt;
+  &lt;/span&gt;
+&lt;/div&gt; 
+$msg.get('meetings.dashboard.or') 
+#end
+#if(!$meetingcyclespage)
+#set($meetingcyclespage = "${doc.space}.MeetingCycles")
+#end
+&lt;a href="$xwiki.getURL($meetingcyclespage)" 
+         title="$msg.get('meetings.dashboard.gotocycles')" /&gt;
+  $msg.get('meetings.dashboard.gotocycles')&lt;/a&gt;
+&lt;/div&gt;
+
+
+##
+## Meeting grid.
+##
+
+#set($collist = [ "doc.creationDate", "doc.title", "doc.creator", "date", "location", "status" ])
+#set($colprops = {"doc.creationDate" : {"type":"date", "link" : "view"} ,
+                  "doc.title" : {"type":"text", "size" : "10", "link" : "view"} ,
+                  "doc.creator" : {"type":"text", "size" : "10", "link" : ""} ,
+                  "location" : {"type" : "text", "size" : "10", "link": ""},
+                  "date" : {"type" : "text", "size" : "10", "link": "", "filterable":false},
+                  "status" : {"type" : "list", "size" : "1", "link": ""}
+                 })
+## id of the div, list of columns, columns properties, default column to sort for, class name
+#if("$request.my"=="1")
+
+&lt;h2 class="meetinggridtitle"&gt; $msg.get('meetings.spacehome.mynextmeetings') &lt;span class="meetingviewswap"&gt;[$msg.get('meetings.spacehome.seeallmeetings')&gt;$doc.fullName]&lt;/span&gt;&lt;/h2&gt;
+  #set($className="MMCode.MeetingClass")
+  #set($collist2 = "")
+  #set($classparams = "")
+  #foreach($colname in $collist)
+    #if("$!selectedColumn" == "" &amp;&amp; !$colname.startsWith("_"))
+      #set($selectedColumn = $colname)
+    #end
+    #if($colname != "_actions")
+      #set($collist2 = "${collist2},${colname}")
+      #set($propClassName = "")
+      #set($propClassName = $colprops.get($colname).get("class"))
+      #if($propClassName!="")
+        #set($classparams = "${classparams}&amp;${colname}_class=${propClassName}")
+      #end
+    #end
+  #end
+  #set($collist2 = $collist2.substring(1))
+  #set($dataurl = $xwiki.getURL("MMCode.MeetingMyResults","view","xpage=plain&amp;outputSyntax=plain&amp;space=${meetingSpace}&amp;transprefix=meetings.dashboard.grid.&amp;classname=$!{className}&amp;collist=${collist2}${classparams}"))
+#livetable("meetingsgrid" $collist $colprops {
+    "selectedColumn":"date",
+    "defaultOrder":"asc",
+    "translationPrefix":"meetings.dashboard.grid.",
+    "url": $dataurl,
+    "rowCount": 10,
+    "tagCloud": true
+})
+#else
+&lt;h2 class="meetinggridtitle"&gt; $msg.get('meetings.spacehome.seeallmeetings') &lt;span class="meetingviewswap"&gt;&lt;a href="$doc.getURL('view', 'my=1')"&gt;$msg.get('meetings.spacehome.seemynextmeetings')&lt;/a&gt;&lt;/span&gt;&lt;/h2&gt;
+#if($showallspaces)
+#livetable("meetingsgrid" $collist $colprops {
+    "selectedColumn":"doc.creationDate",
+    "defaultOrder":"desc",
+    "translationPrefix":"meetings.dashboard.grid.",
+    "className":"MMCode.MeetingClass",
+    "rowCount": 10,
+    "tagCloud": true
+})
+#else
+  #set($className="MMCode.MeetingClass")
+  #set($collist2 = "")
+  #set($classparams = "")
+  #foreach($colname in $collist)
+    #if("$!selectedColumn" == "" &amp;&amp; !$colname.startsWith("_"))
+      #set($selectedColumn = $colname)
+    #end
+    #if($colname != "_actions")
+      #set($collist2 = "${collist2},${colname}")
+      #set($propClassName = "")
+      #set($propClassName = $colprops.get($colname).get("class"))
+      #if($propClassName!="")
+        #set($classparams = "${classparams}&amp;${colname}_class=${propClassName}")
+      #end
+    #end
+  #end
+  #set($collist2 = $collist2.substring(1))
+ #set($dataurl = $xwiki.getURL("XWiki.LiveTableResults","view","xpage=plain&amp;outputSyntax=plain&amp;space=${meetingSpace}&amp;transprefix=meetings.dashboard.grid.&amp;classname=$!{className}&amp;collist=${collist2}${classparams}"))
+#livetable("meetingsgrid" $collist $colprops {
+    "selectedColumn":"doc.creationDate",
+    "defaultOrder":"desc",
+    "translationPrefix":"meetings.dashboard.grid.",
+    "className":"MMCode.MeetingClass",
+    "url": $dataurl,
+    "rowCount": 10,
+    "tagCloud": true
+})
+#end
+#end</content>
+</xwikidoc>

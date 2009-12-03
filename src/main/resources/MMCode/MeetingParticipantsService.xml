@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xwikidoc>
+<web>MMCode</web>
+<name>MeetingParticipantsService</name>
+<language></language>
+<defaultLanguage>fr</defaultLanguage>
+<translation>0</translation>
+<parent></parent>
+<creator>xwiki:XWiki.LudovicDubost</creator>
+<author>XWiki.Admin</author>
+<customClass></customClass>
+<contentAuthor>XWiki.Admin</contentAuthor>
+<creationDate>1254063085000</creationDate>
+<date>1255883026000</date>
+<contentUpdateDate>1255883026000</contentUpdateDate>
+<version>2.1</version>
+<title></title>
+<template></template>
+<defaultTemplate></defaultTemplate>
+<validationScript></validationScript>
+<comment></comment>
+<minorEdit>false</minorEdit>
+<syntaxId>xwiki/2.0</syntaxId>
+<hidden>false</hidden>
+<object>
+<class>
+<name>XWiki.TagClass</name>
+<customClass></customClass>
+<customMapping></customMapping>
+<defaultViewSheet></defaultViewSheet>
+<defaultEditSheet></defaultEditSheet>
+<defaultWeb></defaultWeb>
+<nameField></nameField>
+<validationScript></validationScript>
+<tags>
+<cache>0</cache>
+<displayType>checkbox</displayType>
+<multiSelect>1</multiSelect>
+<name>tags</name>
+<number>1</number>
+<prettyName>Tags</prettyName>
+<relationalStorage>1</relationalStorage>
+<separator> </separator>
+<separators> ,|</separators>
+<size>30</size>
+<unmodifiable>0</unmodifiable>
+<values></values>
+<classType>com.xpn.xwiki.objects.classes.StaticListClass</classType>
+</tags>
+</class>
+<name>MMCode.MeetingParticipantsService</name>
+<number>0</number>
+<className>XWiki.TagClass</className>
+<guid>9081346f-7bf9-47fe-8fa5-62128c6aafcb</guid>
+<property>
+<tags/>
+</property>
+</object>
+<content>{{include document="MMCode.MeetingManagerMacros" /}}
+{{velocity}} 
+{{html}}
+#set($meetingDoc = $xwiki.getDocument($request.meeting))
+#set($ok = $meetingDoc.use("MMCode.MeetingClass"))
+#set($status = $!meetingDoc.getValue('status'))
+#set($isManager = false)
+#isManager($meetingDoc, $isManager)
+#set($participants = $meetingDoc.getObjects("MMCode.MeetingParticipantClass"))
+#if(!$participants || $participants.size() == 0)
+  &lt;div id="noparticipant"&gt;#warning("$msg.get('meetings.meeting.participants.noparticipant')")&lt;/div&gt;
+ #end
+ &lt;ul class="xlist participants left" id="participantsleft"&gt;
+ #if($participants &amp;&amp; $participants.size() &gt; 0)
+  #foreach($p in $participants)
+   #participantitem($p $isManager $status)
+   #if($velocityCount == $mathtool.round($mathtool.div($participants.size(),2))|| $participants.size() &lt;= 1)
+    &lt;/ul&gt;
+    &lt;ul class="xlist participants right" id="participantsright"&gt;
+   #end
+  #end
+ #else
+ &lt;/ul&gt;
+ &lt;ul class="xlist participants right" id="participantsright"&gt;
+ #end
+ &lt;/ul&gt;
+ &lt;div class="clearfloat"&gt;&lt;/div&gt;
+{{/html}}
+{{/velocity}} </content>
+</xwikidoc>

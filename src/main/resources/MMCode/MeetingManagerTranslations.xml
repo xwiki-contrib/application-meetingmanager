@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xwikidoc>
+<web>MMCode</web>
+<name>MeetingManagerTranslations</name>
+<language></language>
+<defaultLanguage>en</defaultLanguage>
+<translation>0</translation>
+<parent></parent>
+<creator>XWiki.JeromeVelociter</creator>
+<author>XWiki.Admin</author>
+<customClass></customClass>
+<contentAuthor>XWiki.Admin</contentAuthor>
+<creationDate>1238400903000</creationDate>
+<date>1255883026000</date>
+<contentUpdateDate>1255883026000</contentUpdateDate>
+<version>2.1</version>
+<title>MeetingManagerTranslations</title>
+<template></template>
+<defaultTemplate></defaultTemplate>
+<validationScript></validationScript>
+<comment></comment>
+<minorEdit>false</minorEdit>
+<syntaxId>xwiki/1.0</syntaxId>
+<hidden>false</hidden>
+<object>
+<class>
+<name>XWiki.TagClass</name>
+<customClass></customClass>
+<customMapping></customMapping>
+<defaultViewSheet></defaultViewSheet>
+<defaultEditSheet></defaultEditSheet>
+<defaultWeb></defaultWeb>
+<nameField></nameField>
+<validationScript></validationScript>
+<tags>
+<cache>0</cache>
+<displayType>checkbox</displayType>
+<multiSelect>1</multiSelect>
+<name>tags</name>
+<number>1</number>
+<prettyName>Tags</prettyName>
+<relationalStorage>1</relationalStorage>
+<separator> </separator>
+<separators> ,|</separators>
+<size>30</size>
+<unmodifiable>0</unmodifiable>
+<values></values>
+<classType>com.xpn.xwiki.objects.classes.StaticListClass</classType>
+</tags>
+</class>
+<name>MMCode.MeetingManagerTranslations</name>
+<number>0</number>
+<className>XWiki.TagClass</className>
+<guid>31c92fa7-4a36-46e8-8847-eb76c52db8aa</guid>
+<property>
+<tags/>
+</property>
+</object>
+<content>## Override ApplicationResource_fr.properties to be have consistent use of Tags instead of Balises in the french version
+tags=Tags
+core.tagedit.title=Tags :
+changes.tag.tags=Tags
+
+MMCode.MeetingClass_status_none=Futur meeting
+MMCode.MeetingClass_status_prepared=Prepared
+MMCode.MeetingClass_status_started=Started
+MMCode.MeetingClass_status_finished=Finished
+MMCode.MeetingClass_status_voteopen=Vote in process
+MMCode.MeetingClass_status_voteclosed=Vote finished
+MMCode.MeetingClass_privacy_private=Private
+MMCode.MeetingClass_privacy_public=Public
+
+MMCode.MeetingParticipantClass_participation_undecided=Unconfirmed
+MMCode.MeetingParticipantClass_participation_declined=Absent
+MMCode.MeetingParticipantClass_participation_confirmed=Confirmed
+
+MMCode.MeetingCycleClass_frequency_weekly=Every week
+MMCode.MeetingCycleClass_frequency_bimonthly=Every two weeks
+MMCode.MeetingCycleClass_frequency_monthly=Every month
+MMCode.MeetingCycleClass_frequency_quarterly=Every trimester
+MMCode.MeetingCycleClass_frequency_yearly=Every year
+xe.loading=Loading
+
+meetings.dashboard.youcanalso=You can also
+meetings.dashboard.or=or
+meetings.dashboard.createnewmeeting=Organize a meeting
+meetings.dashboard.pagename=Meeting page name
+meetings.dashboard.urlwillbe=The meeting can be accessed at the following URL:
+meetings.dashboard.createmeeting=Create the meeting
+meetings.dashboard.pickpagenamehelp=The name of the page is used to create the URL where you can access the meeting information. You will be able to give a more precise title for your meeting on the next page..
+meetings.dashboard.gotocycles=View Meeting Cycles
+
+meetings.dashboard.grid.date=Date
+meetings.dashboard.grid.location=Location
+meetings.dashboard.grid.status=Status
+meetings.dashboard.grid.emptyvalue=-
+meetings.dashboard.grid.doc.title=Title
+meetings.dashboard.grid.doc.creator=Organizer
+meetings.dashboard.grid.doc.creationDate=Create on
+meetings.dashboard.grid.title=Title
+
+meetings.cycle.meetingsinthiscycle=Meetings in this cycle:
+meetings.cycle.createnextmeeting=Create the next meeting in this cycle
+meetings.cycle.frequency=Frequency:
+meetings.cycle.description=Description:
+meetings.cycle.weekly.fromlast=One week after the last meeting
+meetings.cycle.bimonthly.fromlast=Two weeks after the last meeting
+meetings.cycle.quarterly.fromlast=Three month after the last meeting
+meetings.cycle.yearly.fromlast=One Year after the last meeting
+meetings.cycle.nextmeeting=Next meeting:
+meetings.cycle.nextdate=Meeting date:
+meetings.cycle.submitcreate=Create the next meeting
+meetings.cycle.nextname=Meeting page Name:
+meetings.cycle.lastmeeting=Reminder - previous meeting in this cycle
+meetings.cycle.lastname=Title:
+meetings.cycle.lastdate=Date:
+meetings.cycle.laststatus=status:
+meetings.cycle.alreadyexists=This page already exists
+meetings.cycle.addingmeetingtocycle=Transformation of Cycle meeting
+meetings.cycles.listofcycles=Meeting Cycles:
+meetings.cycles.editcycle=Edit
+meetings.cycles.deletecycle=Delete
+
+meetings.meeting.docalreadyexists=This page already exists
+meetings.meeting.manager=Organizer
+meetings.meeting.makecycle=Create a cycle from this meeting
+meetings.meeting.sheettitle=Meeting Information
+meetings.meeting.tags=Tags :
+meetings.meeting.status=Status
+meetings.meeting.startmeeting=Start the meeting
+meetings.meeting.endmeeting=Finished the meeting
+meetings.meeting.startmeeting.help=By clicking on the button, you will start the meeting. You won't be able to edit anymore the meeting information. A new edit zone will be provided for your meeting report.
+meetings.meeting.endmeeting.help=By clicking on the button, you will end the meeting. You will still be able to edit the meeting report, but you won't be able to add participants.
+meetings.meeting.startmeeting.started=The meeting is now started. You can fill in the meeting report in the following edit area.
+meetings.meeting.startmeeting.warning=Once the meeting is started, you cannot edit the meeting information anymore.
+meetings.meeting.typist=Typist
+meetings.meeting.choosetypist.noparticipant=There is currently no participant in this meeting. You will be able to choose a typist once you have participants in the meeting.
+meetings.meeting.dostart=Start
+meetings.meeting.doend=End
+meetings.meeting.domakecycle=Create the cycle
+meetings.meeting.cycleurlwillbe=The cycle will be accessible at the following URL:
+meetings.meeting.minutes=Meeting Notes
+meetings.meeting.minutes.edit=Edit the report
+meetings.meeting.minutes.saved=The report has been successfully saved.
+meetings.meeting.tasks=Tasks
+meetings.meeting.tasks.edit=Edit the tasks
+meetings.meeting.tasks.saved=Les tasks have been successfully saved.
+meetings.meeting.youarethetypist=You are the meeting typist. The following edit area allows you to type your notes. You should save your notes regularly so that other participants can see the meeting report being filled in progressively.
+meetings.meeting.meetingnow=The meeting has started. You can check the meeting notes.
+meetings.meeting.dontforgettoclose=You should "end" the meeting once the report is written
+
+meetings.meeting.startmeeting.info=You are ready to start the meeting
+meetings.meeting.notypistselected=You have not chosen the meeting typist. Please select him from the participants. 
+meetings.meeting.typistwillbe=*{0}* will be the typist for this meeting. 
+meetings.meeting.minutes.empty=The meeting notes have not yet been started. Click on "edit" to start taking notes.
+meetings.meeting.tasks.empty=The meeting tasks have not yet been started. Click on "edit" to start editing the tasks.
+
+meetings.meeting.privacy=Access Rights:
+
+meetings.no_meeting=No meeting is associated with this document
+meetings.meeting.youarethemanager=You are the meeting organizer
+meetings.meeting.title=Title
+meetings.meeting.description=Agenda
+meetings.meeting.cyclicmeeting=This meeting is part of the following cycle: {0}
+meetings.meeting.meetingmanager=Organizer
+meetings.meeting.infos.edit=Edit the Meeting Details
+meetings.meeting.infos.save=Save
+meetings.meeting.infos.saved=Meeting details saved.
+meetings.meeting.infos.noparticipantyet=There are currently no participant in this meeting. You will be able to choose a typist once you have finalized the participant list.
+meetings.meeting.infos.comments={0} Comments(s)
+meetings.meeting.infos.attachments={0} Attached Files
+
+meetings.meeting.saveminutes=Save
+meetings.meeting.saveminutesandclose=Save and Close
+meetings.meeting.savetasks=Save
+meetings.meeting.savetasksandclose=Save and Close
+
+
+meetings.meeting.participants=Participants
+meetings.meeting.participants.noparticipant=There is currently no participant in this meeting
+meetings.meeting.participants.addparticipant=Add participants
+meetings.meeting.participants.searchparticipant=Participant lookup
+meetings.meeting.participants.add=Add
+meetings.meeting.participants.create=Create details ...
+meetings.meeting.participants.sendemail=eMail Notifications
+meetings.meeting.participants.confirmremove=You are ready to remove {0} from the participants. Are you sure you want to continue ?
+
+meetings.meeting.myparticipation.select=You will :
+meetings.meeting.myparticipation.message=Short message :
+meetings.meeting.myparticipation.save=OK
+meetings.meeting.myparticipation.modify=Change my availability
+
+meetings.meeting.date.edit=Edit the meeting date and location
+meetings.meeting.date=Preparing: date and location
+meetings.meeting.date.start=Start time &lt;em&gt;(Optional - format: HH:MM)&lt;/em&gt;
+meetings.meeting.date.end=End time &lt;em&gt;(Optional - format: HH:MM)&lt;/em&gt;
+meetings.meeting.date.date=Date :
+meetings.meeting.date.validate=Validate
+meetings.meeting.date.choosetype=Choose the date: choose your process
+meetings.meeting.date.fixed=Choose a fixed date
+meetings.meeting.date.vote=Let participants vote, and choose based on the results
+meetings.meeting.date.location=Location &lt;em&gt;(Optional)&lt;/em&gt;
+meetings.meeting.date.displaymap=Show a map
+meetings.meeting.date.from=From
+meetings.meeting.date.to=to
+meetings.meeting.date.noinformation=There is currently no date and location information
+
+meetings.meeting.vote.finish=End the vote
+meetings.meeting.vote.finishvotehelp=You are ready to close the vote. You will be able to choose the final date for this meeting. You will be able to see the summary of the vote before chosing your meeting date.
+meetings.meeting.vote=Prepare: vote on the date and location
+meetings.meeting.vote.newoption=Add an option date/location:
+meetings.meeting.vote.newoption.button=Add an option
+meetings.meeting.vote.addoption=Add
+meetings.meeting.vote.sendmail=Mail Notification
+meetings.meeting.vote.sendmailhelp=Use the mail notification to invite participants to vote to choose the date and location of the meeting. 
+meetings.meeting.vote.location=Location
+meetings.meeting.vote.time=Date and time
+meetings.meeting.vote.noproposal=There is currently no proposals for the vote
+meetings.meeting.vote.you=Vous
+meetings.meeting.vote.noparticipant=There is currently no participant in this meeting. When participants are invited you will see a summary table which each participant's availability.
+meetings.meeting.vote.options=Options
+meetings.meeting.vote.save=Save
+meetings.meeting.vote.update=Modify
+meetings.meeting.vote.result=Reminder of users votes:
+
+meetings.meeting.comments=Discussion
+meetings.meeting.addparticipantserror=An error occured when adding users. Please contact the site administrator.
+
+meetings.mail.personalnote=Personal Message {0}:
+meetings.mail.notification=Email notification
+meetings.mail.to=To:
+meetings.mail.subject=Subject:
+meetings.mail.body=Message:
+meetings.mail.personalnote=Personal Note
+meetings.mail.personalnoteextra=(Leave empty to not add a personal message)
+meetings.mail.cancel=Cqncel
+meetings.mail.send=Send the email(s) and continue
+meetings.mail.skip=Continue without saving the emails
+meetings.mail.missingemails=Somme emails are not listed in the Users profile. You can enter them manually.
+meetings.mail.missingallemails=Most emails are accessible.
+
+meetings.spacehome.title=Meeting Notes Space
+meetings.spacehome.mynextmeetings=My next meetings
+meetings.spacehome.seeallmeetings=All meeting
+meetings.spacehome.allmeetings=View all meetings
+meetings.spacehome.seemynextmeetings=View only my next meetings</content>
+</xwikidoc>

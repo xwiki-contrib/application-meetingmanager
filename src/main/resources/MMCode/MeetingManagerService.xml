@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xwikidoc>
+<web>MMCode</web>
+<name>MeetingManagerService</name>
+<language></language>
+<defaultLanguage>fr</defaultLanguage>
+<translation>0</translation>
+<parent></parent>
+<creator>XWiki.JeromeVelociter</creator>
+<author>XWiki.Admin</author>
+<customClass></customClass>
+<contentAuthor>XWiki.Admin</contentAuthor>
+<creationDate>1239093676000</creationDate>
+<date>1255883026000</date>
+<contentUpdateDate>1255883026000</contentUpdateDate>
+<version>2.1</version>
+<title></title>
+<template></template>
+<defaultTemplate></defaultTemplate>
+<validationScript></validationScript>
+<comment></comment>
+<minorEdit>false</minorEdit>
+<syntaxId>xwiki/1.0</syntaxId>
+<hidden>false</hidden>
+<object>
+<class>
+<name>MMCode.MeetingParticipantClass</name>
+<customClass></customClass>
+<customMapping></customMapping>
+<defaultViewSheet></defaultViewSheet>
+<defaultEditSheet></defaultEditSheet>
+<defaultWeb></defaultWeb>
+<nameField></nameField>
+<validationScript></validationScript>
+<available>
+<name>available</name>
+<number>5</number>
+<prettyName>available</prettyName>
+<size>30</size>
+<unmodifiable>0</unmodifiable>
+<classType>com.xpn.xwiki.objects.classes.StringClass</classType>
+</available>
+<message>
+<contenttype>FullyRenderedText</contenttype>
+<customDisplay></customDisplay>
+<editor>---</editor>
+<name>message</name>
+<number>4</number>
+<picker>0</picker>
+<prettyName>message</prettyName>
+<rows>2</rows>
+<size>30</size>
+<tooltip></tooltip>
+<unmodifiable>0</unmodifiable>
+<validationMessage></validationMessage>
+<validationRegExp></validationRegExp>
+<classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
+</message>
+<participation>
+<cache>1</cache>
+<customDisplay></customDisplay>
+<displayType>select</displayType>
+<multiSelect>0</multiSelect>
+<name>participation</name>
+<number>2</number>
+<picker>0</picker>
+<prettyName>participation</prettyName>
+<relationalStorage>0</relationalStorage>
+<separator> </separator>
+<separators> ,|</separators>
+<size>1</size>
+<sort>none</sort>
+<tooltip></tooltip>
+<unmodifiable>0</unmodifiable>
+<validationMessage></validationMessage>
+<validationRegExp></validationRegExp>
+<values>undecided|confirmed|declined</values>
+<classType>com.xpn.xwiki.objects.classes.StaticListClass</classType>
+</participation>
+<presence>
+<cache>0</cache>
+<customDisplay></customDisplay>
+<displayType>select</displayType>
+<multiSelect>0</multiSelect>
+<name>presence</name>
+<number>3</number>
+<picker>0</picker>
+<prettyName>presence</prettyName>
+<relationalStorage>0</relationalStorage>
+<separator> </separator>
+<separators> ,|</separators>
+<size>1</size>
+<sort>none</sort>
+<tooltip></tooltip>
+<unmodifiable>0</unmodifiable>
+<validationMessage></validationMessage>
+<validationRegExp></validationRegExp>
+<values>present|absent|late</values>
+<classType>com.xpn.xwiki.objects.classes.StaticListClass</classType>
+</presence>
+<unavailable>
+<name>unavailable</name>
+<number>6</number>
+<prettyName>unavailable</prettyName>
+<size>30</size>
+<unmodifiable>0</unmodifiable>
+<classType>com.xpn.xwiki.objects.classes.StringClass</classType>
+</unavailable>
+<username>
+<customDisplay></customDisplay>
+<name>username</name>
+<number>1</number>
+<picker>0</picker>
+<prettyName>username</prettyName>
+<size>30</size>
+<tooltip></tooltip>
+<unmodifiable>0</unmodifiable>
+<validationMessage></validationMessage>
+<validationRegExp></validationRegExp>
+<classType>com.xpn.xwiki.objects.classes.StringClass</classType>
+</username>
+</class>
+<name>MMCode.MeetingManagerService</name>
+<number>0</number>
+<className>MMCode.MeetingParticipantClass</className>
+<guid>1a82e5a7-8545-4280-b99d-4bfe4a65f9c0</guid>
+<property>
+<username>XWiki.JeromeVelociter</username>
+</property>
+</object>
+<object>
+<class>
+<name>XWiki.TagClass</name>
+<customClass></customClass>
+<customMapping></customMapping>
+<defaultViewSheet></defaultViewSheet>
+<defaultEditSheet></defaultEditSheet>
+<defaultWeb></defaultWeb>
+<nameField></nameField>
+<validationScript></validationScript>
+<tags>
+<cache>0</cache>
+<displayType>checkbox</displayType>
+<multiSelect>1</multiSelect>
+<name>tags</name>
+<number>1</number>
+<prettyName>Tags</prettyName>
+<relationalStorage>1</relationalStorage>
+<separator> </separator>
+<separators> ,|</separators>
+<size>30</size>
+<unmodifiable>0</unmodifiable>
+<values></values>
+<classType>com.xpn.xwiki.objects.classes.StaticListClass</classType>
+</tags>
+</class>
+<name>MMCode.MeetingManagerService</name>
+<number>0</number>
+<className>XWiki.TagClass</className>
+<guid>e17cbd23-3626-4759-a93e-4522c831203f</guid>
+<property>
+<tags/>
+</property>
+</object>
+<content>#if("$!request.xpage" != "plain")
+ #info("This is a service document for the meeting manager application")
+#else
+ #if("$request.service" == "useravatar")
+  #includeMacros("MMCode.MeetingManagerMacros")
+  #avatar("$!request.username")
+ #elseif("$request.service" == "startmeeting")
+  #info("$msg.get('meetings.meeting.startmeeting.help')")
+  #set($meetingDoc = $xwiki.getDocument("$request.meeting"))
+  #set($meeting = $meetingDoc.getObject('MMCode.MeetingClass'))
+  #set($actionURL = $meetingDoc.getURL('save',"xredirect=$doc.getURL('view','started=1')"))
+  &lt;form action="$actionURL"&gt;
+  &lt;div&gt;
+  &lt;input type="hidden" name="MMCode.MeetingClass_0_status" value="started" /&gt;
+  &lt;div style="margin-top:15px;" align="center"&gt;
+    &lt;span class="buttonwrapper"&gt;
+      &lt;input type="submit" id="dostartmeeting" value="$msg.get('meetings.meeting.dostart')" /&gt;
+    &lt;/span&gt;
+  &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;/form&gt;
+ #elseif("$request.service" == "endmeeting")
+  #info("$msg.get('meetings.meeting.endmeeting.help')")
+  #set($meetingDoc = $xwiki.getDocument("$request.meeting"))
+  #set($meeting = $meetingDoc.getObject('MMCode.MeetingClass'))
+  #set($actionURL = $meetingDoc.getURL('save',"xredirect=$doc.getURL('view','closed=1')"))
+  &lt;form action="$actionURL"&gt;
+  &lt;div&gt;
+  &lt;input type="hidden" name="MMCode.MeetingClass_0_status" value="finished" /&gt;
+  &lt;div style="margin-top:15px;" align="center"&gt;
+    &lt;span class="buttonwrapper"&gt;
+      &lt;input type="submit" id="doendmeeting" value="$msg.get('meetings.meeting.doend')" /&gt;
+    &lt;/span&gt;
+  &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;/form&gt;
+ #elseif("$!request.service" == "makecycle")
+  #set($meetingDoc = $xwiki.getDocument("$request.meeting"))
+  #set($meeting = $meetingDoc.getObject('MMCode.MeetingClass'))
+  &lt;div id="domakecycleform"&gt;
+  &lt;div&gt;
+  &lt;div&gt;
+    Nom de la page du cycle: &lt;input type="text" autocomplete="off" class="title" name="cyclename" id="cycletitle" size="50"/&gt; 
+    &lt;input type="hidden" name="name" id="cyclepagename" class="clean" value="" /&gt;
+     &lt;div style="color:grey;padding:5px;"&gt;
+       &lt;div&gt;$msg.get('meetings.meeting.cycleurlwillbe')&lt;/div&gt;
+       {pre}&lt;div&gt;&lt;span class="url"&gt;$xwiki.getDocument("${meetingDoc.web}.WebHome").getExternalURL('view')&lt;span&gt;&lt;/div&gt;{/pre}
+     &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div style="margin-top:15px;" align="center"&gt;
+    &lt;span class="buttonwrapper"&gt;
+      &lt;button id="domakecycle"&gt;
+      $msg.get('meetings.meeting.domakecycle')
+      &lt;/button&gt;
+    &lt;/span&gt;
+    &lt;span class="loading hidden" id="makecycleloading"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt;
+  &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;/div&gt;
+  #set($createURLBase = $xwiki.getDocument('MMCode.MeetingManagerService').getURL('view',"xpage=plain&amp;service=domakecycle&amp;meeting=$meetingDoc.fullName"))
+  &lt;script type="text/javascript"&gt;
+   #set($url = $xwiki.getDocument("${meetingDoc.web}.WebHome").getExternalURL('view'))
+   var p = new PageCreator($('domakecycleform'), "${url}");
+   Event.observe($('domakecycle'), "click", function(){
+     if($('cyclepagename').value.strip() == "") {
+        alert("Le nom du cycle ne peut etre vide");
+        return;
+     }
+     else {
+       $('makecycleloading').removeClassName
+       new Ajax.Request("$createURLBase" + "&amp;pagename=${meetingDoc.web}." + $F('cyclepagename') + "&amp;cyclename=" + $F('cycletitle'), 
+       {
+         onComplete: function(transport){
+           $('makecycleloading').addClassName('hidden');
+           if (!transport.responseText.match(/^http:.*/)) {
+             alert(transport.responseText);
+           }
+           else {
+             window.location = transport.responseText;
+           }
+         }
+       });
+     }
+   });
+  &lt;/script&gt;
+ #elseif("$request.service"=="domakecycle")
+{pre}
+   #set($meeting=$xwiki.getDocument($request.meeting))
+   #set($cycleName = $request.cyclename)
+   #set($pageName = $request.pagename)
+   #set($cycle = $xwiki.getDocument($pageName))
+   #if(!$cycle.isNew())
+$msg.get('meetings.cycle.alreadyexists')
+   #else
+     #set($cobj = $cycle.getObject('MMCode.MeetingCycleClass', true))
+     #set($ok = $cobj.set('name',"$cycleName"))
+     #set($ok = $cycle.setContent($xwiki.getDocument('MMCode.MeetingCycleClassTemplate').content))
+     #set($ok = $cycle.save())
+     #set($cycleItem = $meeting.getObject('MMCode.MeetingCycleItemClass', true))
+     #set($ok = $cycleItem.set("cycle", $cycle.fullName))
+     #set($ok = $meeting.setMinorEdit(true))
+     #set($ok = $meeting.setComment("$msg.get('meetings.cycle.addingmeetingtocycle')"))
+     #set($ok = $meeting.save())
+$cycle.getExternalURL('inline')
+   #end
+{/pre}
+ #elseif("$request.service"=="nextmeeting")
+{pre}
+   #set($template=$request.template)
+   #set($date=$request.date)
+   #set($title=$request.title)
+   #set($name=$request.name)
+   #if($xwiki.exists($name))
+$msg.get('meetings.meeting.docalreadyexists')
+   #else
+     #set($ok = $xwiki.copyDocument($template, $name))
+     #set($newdoc=$xwiki.getDocument($name))
+     #set($meeting=$newdoc.getObject("MMCode.MeetingClass"))
+     ## set date
+     #set($ok = $meeting.set("date", $date))
+     #set($ok = $meeting.set("description", ""))
+     #set($ok = $meeting.set("minutes", ""))
+     #set($ok = $meeting.set("status", "prepared"))
+     #set($ok = $newdoc.save())
+     #foreach($p in $newdoc.getObjects("MMCode.MeetingParticipantClass"))
+       #set($ok = $p.set("participation","undecided"))
+       #set($ok = $p.set("message",""))
+     #end
+     #set($ok = $newdoc.setTitle($title))
+     #set($ok = $newdoc.save())
+$newdoc.getExternalURL('view')
+{/pre}
+   #end
+ #else
+ERROR: service not found.
+ #end
+#end
+</content></xwikidoc>

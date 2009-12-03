@@ -1,0 +1,370 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xwikidoc>
+<web>MMCode</web>
+<name>MeetingCycleClassSheet</name>
+<language></language>
+<defaultLanguage>en</defaultLanguage>
+<translation>0</translation>
+<parent></parent>
+<creator>XWiki.Admin</creator>
+<author>XWiki.Admin</author>
+<customClass></customClass>
+<contentAuthor>XWiki.Admin</contentAuthor>
+<creationDate>1243260834000</creationDate>
+<date>1255883026000</date>
+<contentUpdateDate>1255883026000</contentUpdateDate>
+<version>2.1</version>
+<title>Meeting Cycle Class Sheet</title>
+<template></template>
+<defaultTemplate></defaultTemplate>
+<validationScript></validationScript>
+<comment></comment>
+<minorEdit>false</minorEdit>
+<syntaxId>xwiki/2.0</syntaxId>
+<hidden>false</hidden>
+<object>
+<class>
+<name>MMCode.MeetingParticipantClass</name>
+<customClass></customClass>
+<customMapping></customMapping>
+<defaultViewSheet></defaultViewSheet>
+<defaultEditSheet></defaultEditSheet>
+<defaultWeb></defaultWeb>
+<nameField></nameField>
+<validationScript></validationScript>
+<available>
+<name>available</name>
+<number>5</number>
+<prettyName>available</prettyName>
+<size>30</size>
+<unmodifiable>0</unmodifiable>
+<classType>com.xpn.xwiki.objects.classes.StringClass</classType>
+</available>
+<message>
+<contenttype>FullyRenderedText</contenttype>
+<customDisplay></customDisplay>
+<editor>---</editor>
+<name>message</name>
+<number>4</number>
+<picker>0</picker>
+<prettyName>message</prettyName>
+<rows>2</rows>
+<size>30</size>
+<tooltip></tooltip>
+<unmodifiable>0</unmodifiable>
+<validationMessage></validationMessage>
+<validationRegExp></validationRegExp>
+<classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
+</message>
+<participation>
+<cache>1</cache>
+<customDisplay></customDisplay>
+<displayType>select</displayType>
+<multiSelect>0</multiSelect>
+<name>participation</name>
+<number>2</number>
+<picker>0</picker>
+<prettyName>participation</prettyName>
+<relationalStorage>0</relationalStorage>
+<separator> </separator>
+<separators> ,|</separators>
+<size>1</size>
+<sort>none</sort>
+<tooltip></tooltip>
+<unmodifiable>0</unmodifiable>
+<validationMessage></validationMessage>
+<validationRegExp></validationRegExp>
+<values>undecided|confirmed|declined</values>
+<classType>com.xpn.xwiki.objects.classes.StaticListClass</classType>
+</participation>
+<presence>
+<cache>0</cache>
+<customDisplay></customDisplay>
+<displayType>select</displayType>
+<multiSelect>0</multiSelect>
+<name>presence</name>
+<number>3</number>
+<picker>0</picker>
+<prettyName>presence</prettyName>
+<relationalStorage>0</relationalStorage>
+<separator> </separator>
+<separators> ,|</separators>
+<size>1</size>
+<sort>none</sort>
+<tooltip></tooltip>
+<unmodifiable>0</unmodifiable>
+<validationMessage></validationMessage>
+<validationRegExp></validationRegExp>
+<values>present|absent|late</values>
+<classType>com.xpn.xwiki.objects.classes.StaticListClass</classType>
+</presence>
+<unavailable>
+<name>unavailable</name>
+<number>6</number>
+<prettyName>unavailable</prettyName>
+<size>30</size>
+<unmodifiable>0</unmodifiable>
+<classType>com.xpn.xwiki.objects.classes.StringClass</classType>
+</unavailable>
+<username>
+<customDisplay></customDisplay>
+<name>username</name>
+<number>1</number>
+<picker>0</picker>
+<prettyName>username</prettyName>
+<size>30</size>
+<tooltip></tooltip>
+<unmodifiable>0</unmodifiable>
+<validationMessage></validationMessage>
+<validationRegExp></validationRegExp>
+<classType>com.xpn.xwiki.objects.classes.StringClass</classType>
+</username>
+</class>
+<name>MMCode.MeetingCycleClassSheet</name>
+<number>0</number>
+<className>MMCode.MeetingParticipantClass</className>
+<guid>c7175c8e-10af-4c1b-9b4b-2e8695227a23</guid>
+<property>
+<username>XWiki.Admin</username>
+</property>
+</object>
+<object>
+<class>
+<name>XWiki.TagClass</name>
+<customClass></customClass>
+<customMapping></customMapping>
+<defaultViewSheet></defaultViewSheet>
+<defaultEditSheet></defaultEditSheet>
+<defaultWeb></defaultWeb>
+<nameField></nameField>
+<validationScript></validationScript>
+<tags>
+<cache>0</cache>
+<displayType>checkbox</displayType>
+<multiSelect>1</multiSelect>
+<name>tags</name>
+<number>1</number>
+<prettyName>Tags</prettyName>
+<relationalStorage>1</relationalStorage>
+<separator> </separator>
+<separators> ,|</separators>
+<size>30</size>
+<unmodifiable>0</unmodifiable>
+<values></values>
+<classType>com.xpn.xwiki.objects.classes.StaticListClass</classType>
+</tags>
+</class>
+<name>MMCode.MeetingCycleClassSheet</name>
+<number>0</number>
+<className>XWiki.TagClass</className>
+<guid>3371fed0-2180-448c-b48a-8206a3419ac2</guid>
+<property>
+<tags/>
+</property>
+</object>
+<content>{{velocity clean="false"}}
+
+{{html wiki="true" clean="false"}}
+
+{{include document="MMCode.MeetingManagerMacros"/}}
+
+#set($meetingSpace="${doc.web}") ##TODO take this out at to the including sheet.
+#set($cycle = $doc.getObject("MMCode.MeetingCycleClass"))
+#if(!$cycle)
+  #warning("This document must be applied to meeting cycles pages.")
+#else
+ #set($ok = $xwiki.ssx.use("MMCode.MeetingManager"))
+ #set($ok = $xwiki.jsx.use("MMCode.MeetingManager"))
+ #set($ok = $xwiki.jsx.use("XWiki.ModalBox"))
+ #set($ok = $xwiki.ssx.use("XWiki.ModalBox"))
+ #set($showattachments = "no")
+ #set($showcomments = "no")
+ #set($showhistory = "no")
+ #set($showinformation = "no")
+ #set($ok = $xwiki.jsx.use("XWiki.DatePickerExtension"))
+ #set($ok = $xwiki.ssx.use("XWiki.DatePickerExtension"))
+
+= Cycle &lt;em&gt;$cycle.get('name')&lt;/em&gt; =
+
+#if($context.action=="inline")&lt;div id="meetingcycleedit"&gt;#end
+&lt;div class="cycleinfos"&gt;&lt;div class="cyclefreq"&gt;
+**$msg.get('meetings.cycle.frequency')** &lt;p&gt; $cycle.get('frequency')&lt;/p&gt;&lt;/div&gt;
+
+&lt;div class="cycledesc"&gt;
+**$msg.get('meetings.cycle.description')** $cycle.get('description')&lt;/div&gt;
+#if($context.action=="inline")&lt;/div&gt;#end
+
+#if($context.action == "view")
+  #if($hasEdit)
+  &lt;div id="newmeetingform" class="hidden"&gt;
+##    &lt;form action="" id="newdoc" method="post"&gt;
+    &lt;div&gt;
+      &lt;input type="hidden" name="parent" value="${doc.web}.WebHome" /&gt;
+      #set($lm = $xwiki.searchDocuments(", BaseObject as meeting, BaseObject cycleitem, StringProperty as cycle, DateProperty as date where meeting.name=doc.fullName and meeting.className='MMCode.MeetingClass' and cycleitem.className='MMCode.MeetingCycleItemClass' and cycleitem.name=doc.fullName and cycle.id.id=cycleitem.id and cycle.id.name='cycle' and cycle.value='$doc.fullName' and date.id.id=meeting.id and date.id.name='date' order by date.value desc", 1, 0))
+      ##set($count = $xwiki.countDocuments(", BaseObject as meeting, BaseObject cycleitem, StringProperty as cycle, DateProperty as date where meeting.name=doc.fullName and meeting.className='MMCode.MeetingClass' and cycleitem.className='MMCode.MeetingCycleItemClass' and cycleitem.name=doc.fullName and cycle.id.id=cycleitem.id and cycle.id.name='cycle' and cycle.value='$doc.fullName' and date.id.id=meeting.id and date.id.name='date'"))
+      #if($lm.size() &gt; 0)
+        #set($lastmeeting = $listtool.get($lm, 0))
+        #set($lastmeetingobj = $xwiki.getDocument($lastmeeting).getObject("MMCode.MeetingClass"))
+        #set($lastdate = $lastmeetingobj.getProperty('date').value)
+        &lt;div id="lastmeeting" class="infomessage"&gt;
+        $msg.get('meetings.cycle.lastmeeting')
+         &lt;div style="margin-top:15px;"&gt;
+           &lt;em&gt;$msg.get('meetings.cycle.lastname') &lt;/em&gt;
+             $xwiki.getDocument($lastmeeting).displayTitle
+         &lt;/div&gt;
+         &lt;div&gt;
+           &lt;em&gt;$msg.get('meetings.cycle.lastdate') &lt;/em&gt;
+             **$datetool.format("dd/MM/yyyy", $lastdate)** 
+             ($msg.get('meetings.cycle.laststatus') **$lastmeetingobj.display('status','view')**)&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;input type="hidden" name="template" class="template" value="$lastmeeting" /&gt;
+        #set($frequency = $cycle.getProperty('frequency').value)
+        #if("$!frequency" == "") #set($frequency = "weekly") #end
+        #set($mdt = $xwiki.jodatime.getMutableDateTime($mathtool.add(1900, $lastdate.year), $mathtool.add($lastdate.month, 1), $lastdate.date, $lastdate.hours, $lastdate.minutes, $lastdate.seconds, 0))
+        #if($frequency=="bimonthly") #set($ok = $mdt.addDays(14))
+        #elseif($frequency=="monthly") #set($ok = $mdt.addMonths(1))
+        #elseif($frequency=="quarterly") #set($ok = $mdt.addMonths(3))
+        #elseif($frequency=="yearly") #set($ok = $mdt.addYears(1))
+        #else ##weekly
+         #set($ok = $mdt.addDays(7))
+        #end 
+        #set($sdate = $xwiki.jodatime.getDateTimeFormatterForPattern("yyyy/MM/dd").print($mdt))
+        &lt;div id="nextmeeting" class="infomessage"&gt;
+          &lt;div style="margin-bottom:20px;"&gt;**$msg.get('meetings.cycle.nextmeeting')** &lt;/div&gt;
+          &lt;div&gt;
+          $msg.get('meetings.cycle.nextname')
+           &lt;input type="text" autocomplete="off" value="$cycle.get('name') ${sdate}" id="nextmeetingname" name="nextmeetingdate" class="title" size="50"/&gt;
+          &lt;input type="hidden" name="name" class="clean" value="$util.clearName($cycle.get('name'))${sdate}"/&gt;
+        &lt;/div&gt;
+        &lt;div style="color:grey;padding:5px;"&gt;
+          &lt;div&gt;$msg.get('meetings.dashboard.urlwillbe')&lt;/div&gt;
+           &lt;div&gt;&lt;span class="url"&gt;$doc.getExternalURL('view')&lt;span&gt;&lt;/div&gt;
+           #help("$msg.get('meetings.dashboard.pickpagenamehelp')")
+        &lt;/div&gt;
+        &lt;div style="margin-top:10px;"&gt;
+           $msg.get('meetings.cycle.nextdate')
+          &lt;input type="text" value="$datetool.format("dd/MM/yyyy", $mdt.toDate())" id="nextmeetingdate" class="date"/&gt;
+          &lt;img src="$xwiki.getDocument('MMCode.MeetingManager').getAttachmentURL('calendar.gif')" /&gt;
+          ($msg.get("meetings.cycle.${frequency}.fromlast"))
+        &lt;/div&gt;
+        &lt;div style="margin-top:20px;"&gt;
+          &lt;span class="buttonwrapper"&gt;&lt;button id="docreatenextmeeting"&gt;$msg.get('meetings.cycle.submitcreate')&lt;/button&gt;&lt;/span&gt;
+        &lt;/div&gt;
+        &lt;/div&gt;
+      #else
+        No last meeting found
+      #end
+    &lt;/div&gt;
+##    &lt;/form&gt;
+  &lt;/div&gt;
+
+  #if("$!cycle.get('frequency')" != "")
+  &lt;div align="right"&gt;
+  &lt;span class="buttonwrapper"&gt;
+    &lt;button id="createnextmeeting" title="$msg.get('meetings.dashboard.createnewmeeting')" /&gt;
+      $msg.get('meetings.cycle.createnextmeeting')
+    &lt;/button&gt;
+  &lt;/span&gt;
+  &lt;/div&gt;
+  #end
+&lt;/div&gt;
+
+  {{html wiki="false"}}
+  &lt;script type="text/javascript"&gt;
+
+function createNextMeeting(){
+  var title = $('MB_content').down(".title").value;
+  var name = $('MB_content').down(".clean").value;
+  var date = $('MB_content').down(".date").value;
+  var template = $('MB_content').down(".template").value;
+  if(name.strip() == "") {
+    alert("Le nom de la prochaine reunion ne peut etre vide");
+    return;
+  }
+  else {
+    var url = "$xwiki.getDocument('MMCode.MeetingManagerService').getURL('view','xpage=plain&amp;service=nextmeeting')";
+    url += ("&amp;title=" + title + "&amp;name=$meetingSpace." + name + "&amp;date=" + date + "&amp;template=" + template);
+    var ajx = new Ajax.Request(url, {
+      onComplete: function(transport) {
+          window.location = transport.responseText;
+/*
+        if(!transport.responseText.match(/^http:.*$/)) {
+          alert(transport.responseText);
+        }
+        else {
+          window.location = transport.responseText;
+        }
+*/
+      }
+    });
+  }
+}
+Event.observe($('createnextmeeting'), "click", function(){
+    Modalbox.show($('newmeetingform').down("div"), {
+      autoFocusing: false,
+      title: this.title,
+      overlayClose: false,
+      width:800,
+      afterLoad: function() {
+        var p = new PageCreator($('MB_content'), "$xwiki.getDocument("${doc.web}.WebHome").getExternalURL('view')");
+        p.updateURL();
+        new DatePicker({
+          relative:$('MB_frame').down("input.date"),
+          language:"$context.language",
+          zindex:10000,
+          enableCloseOnBlur:true
+        });
+        $('MB_content').down("button").observe("click", createNextMeeting);
+      }
+    });
+  });
+  &lt;/script&gt;
+  {{/html}}
+  #end
+#end
+#end
+{{/html}}
+{{/velocity}}
+
+{{velocity clean="false"}}
+#if("$!context.action" == "view")
+#set($collist = [ "doc.title", "date", "doc.creator", "location", "status" ])
+#set($colprops = {"doc.title" : {"type" : "text", "size" : "20", "link": "view"},
+                  "doc.creator" : {"type":"text", "size" : "10"} ,
+                  "location" : {"type" : "text", "size" : "10"},
+                  "date" : {"type" : "text", "size" : "10", "link": "view"},
+                  "status" : {"type" : "list", "size" : "1"}
+                 })
+## id of the div, list of columns, columns properties, default column to sort for, class name
+#set($className = "MMCode.MeetingClass")
+#set($transprefix="meetings.cycle.table.")
+#set($dataurl = $xwiki.getURL('MMCode.MeetingCycleResults','view',"xpage=plain&amp;outputSyntax=plain&amp;cycle=$doc.fullName"))
+#set($collist2 = "")
+#set($classparams = "")
+#foreach($colname in $collist)
+#set($collist2 = "${collist2},${colname}")
+#set($propClassName = "")
+#set($propClassName = $colprops.get($colname).get("class"))
+#if($propClassName!="")
+#set($classparams = "${classparams}&amp;${colname}_class=${propClassName}")
+#end
+#end
+#set($collist2 = $collist2.substring(1))
+#set($dataurl = "${dataurl}&amp;transprefix=meetings.dashboard.grid.&amp;classname=${className}&amp;collist=${collist2}${classparams}")
+
+{{html wiki=true clean=false}}
+#livetable("meetingsgrid" $collist $colprops {
+    "selectedColumn":"doc.creationDate",
+    "defaultOrder":"desc",
+    "translationPrefix":"meetings.dashboard.grid.",
+    "className":"MMCode.MeetingClass",
+    "rowCount": 10,
+    "tagCloud": true,
+    "url":"$dataurl"
+})
+{{/html}}
+#end
+
+{{/velocity}}</content>
+</xwikidoc>

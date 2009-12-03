@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xwikidoc>
+<web>MMCode</web>
+<name>MeetingDateSelection</name>
+<language></language>
+<defaultLanguage>fr</defaultLanguage>
+<translation>0</translation>
+<parent></parent>
+<creator>XWiki.JeromeVelociter</creator>
+<author>XWiki.Admin</author>
+<customClass></customClass>
+<contentAuthor>XWiki.Admin</contentAuthor>
+<creationDate>1239096674000</creationDate>
+<date>1255883026000</date>
+<contentUpdateDate>1255883026000</contentUpdateDate>
+<version>2.1</version>
+<title>MeetingDateSelection</title>
+<template></template>
+<defaultTemplate></defaultTemplate>
+<validationScript></validationScript>
+<comment></comment>
+<minorEdit>false</minorEdit>
+<syntaxId>xwiki/2.0</syntaxId>
+<hidden>false</hidden>
+<object>
+<class>
+<name>XWiki.TagClass</name>
+<customClass></customClass>
+<customMapping></customMapping>
+<defaultViewSheet></defaultViewSheet>
+<defaultEditSheet></defaultEditSheet>
+<defaultWeb></defaultWeb>
+<nameField></nameField>
+<validationScript></validationScript>
+<tags>
+<cache>0</cache>
+<displayType>checkbox</displayType>
+<multiSelect>1</multiSelect>
+<name>tags</name>
+<number>1</number>
+<prettyName>Tags</prettyName>
+<relationalStorage>1</relationalStorage>
+<separator> </separator>
+<separators> ,|</separators>
+<size>30</size>
+<unmodifiable>0</unmodifiable>
+<values></values>
+<classType>com.xpn.xwiki.objects.classes.StaticListClass</classType>
+</tags>
+</class>
+<name>MMCode.MeetingDateSelection</name>
+<number>0</number>
+<className>XWiki.TagClass</className>
+<guid>ea8ea81f-d498-40b2-a396-5a62bf169fa7</guid>
+<property>
+<tags/>
+</property>
+</object>
+<content>{{velocity filter="none"}}
+{{html clean="false" wiki="true"}}
+#if("$!request.xpage" != "plain")
+  &lt;h2 class="meetingh2"&gt;
+    $msg.get("meetings.meeting.date")
+  &lt;/h2&gt;
+  &lt;div id="meetingdateview"&gt;
+  #if($isManager &amp;&amp; $isDateDefined)
+      &lt;span id="editmeetingdate"&gt;$msg.get('meetings.meeting.date.edit')&lt;/span&gt;
+    #end
+  #if($isManager)
+    #set($ok = $xwiki.jsx.use("XWiki.DatePickerExtension"))
+    #set($ok = $xwiki.ssx.use("XWiki.DatePickerExtension"))
+    &lt;div class="ismanager#if($isDateDefined) hidden#end" id="dateselection"&gt;
+    #if($attempts.size() &gt; 0 &amp;&amp; $participants.size()&gt;0)
+      &lt;div id="meetingvoteresult"&gt;
+      $msg.get('meetings.meeting.vote.result')
+      #attempttable($attempts $participants true)
+      &lt;/div&gt;
+    #end
+      &lt;form action="$doc.getURL('saveandcontinue')"&gt;
+       &lt;div&gt;
+         $msg.get('meetings.meeting.date.date')
+         $meeting.display('date', 'edit')
+         &lt;img src="$xwiki.getDocument('MMCode.MeetingManager').getAttachmentURL('calendar.gif')" /&gt;
+         &lt;div&gt;
+           $msg.get('meetings.meeting.date.start')
+         $meeting.display('starttime','edit')
+         &lt;/div&gt;
+&lt;script&gt;
+   var startValid = new LiveValidation( $('MMCode.MeetingClass_0_starttime'), { validMessage: "OK.", wait: 1500} );
+   startValid.add( Validate.Format, { pattern: /\d\d:\d\d/, failureMessage: "Mauvais format" } );
+&lt;/script&gt;
+         &lt;div&gt;
+           $msg.get('meetings.meeting.date.end')
+           $meeting.display('endtime','edit')
+         &lt;/div&gt;
+&lt;script&gt;
+   var startValid = new LiveValidation( $('MMCode.MeetingClass_0_endtime'), { validMessage: "OK.", wait: 1500} );
+   startValid.add( Validate.Format, { pattern: /\d\d:\d\d/, failureMessage: "Mauvais format" } );
+&lt;/script&gt;
+         &lt;input type="hidden" name="MMCode.MeetingClass_0_status" value="prepared" /&gt;
+       &lt;/div&gt;
+       &lt;div&gt;
+         $msg.get('meetings.meeting.date.location') $meeting.display('location', 'edit')
+         $msg.get('meetings.meeting.date.displaymap') $meeting.display('displaymap', 'edit')
+       &lt;/div&gt;
+       &lt;div&gt;
+         &lt;span class="buttonwrapper"&gt;
+           &lt;input type="submit" id="validatedate" value="$msg.get('meetings.meeting.date.validate')" /&gt;
+         &lt;/span&gt;
+       &lt;/div&gt;
+    &lt;/form&gt;
+  &lt;/div&gt;
+  #end
+#end
+#if("$!request.xpage" == "plain")
+  #set($meetingDoc = $xwiki.getDocument("$!request.meeting"))
+  #set($meeting = $meetingDoc.getObject("MMCode.MeetingClass"))
+  #set($isDateDefined = false)
+  #isDateDefined($meetingDoc, $isDateDefined)
+  #if(!$isDateDefined)ERROR: Meeting date not defined.#end
+#else
+  #set($ok = $xwiki.jsx.use("XWiki.MapExtension"))
+#end
+&lt;div id="meetingdatedisplay"&gt;
+#if($isDateDefined)
+  &lt;div id="meetingdate"&gt;
+   &lt;div class="date"&gt;&lt;span&gt;Date : &lt;/span&gt;$meeting.display('date', 'view')&lt;/div&gt;
+  #if("$meeting.display('starttime', 'view')" != "" &amp;&amp; "$meeting.display('endtime', 'view')" != "")
+    &lt;div class="time"&gt;&lt;span&gt;Heure : &lt;/span&gt;$msg.get('meetings.meeting.date.from') 
+    $meeting.display('starttime', 'view') 
+    $msg.get('meetings.meeting.date.to')
+    $meeting.display('endtime', 'view') &lt;/div&gt;
+    &lt;div class="address"&gt;&lt;span&gt;Adresse : &lt;/span&gt;$meeting.display('location', 'view')&lt;/div&gt;
+  #end
+  &lt;/div&gt;
+  #if($meeting.getProperty('displaymap').value == "1")
+    &lt;div id="map_canvas" style="width: 500px; height: 300px"&gt;&lt;/div&gt;
+    &lt;script type="text/javascript"&gt;
+    Event.observe(window, "load", function(){
+      XMap("map_canvas", "$meeting.display('location','view')", {
+        message: "$meeting.display('location', 'view')",
+        zoom: 16
+      });
+    });
+    &lt;/script&gt;
+  #end
+#end
+&lt;/div&gt;
+#if("$request.xpage" != "plain")
+&lt;/div&gt;
+#end
+{{/html}}
+{{/velocity}}</content>
+</xwikidoc>

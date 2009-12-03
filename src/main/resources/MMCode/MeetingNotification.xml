@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xwikidoc>
+<web>MMCode</web>
+<name>MeetingNotification</name>
+<language></language>
+<defaultLanguage>en</defaultLanguage>
+<translation>0</translation>
+<parent></parent>
+<creator>XWiki.Admin</creator>
+<author>XWiki.Admin</author>
+<customClass></customClass>
+<contentAuthor>XWiki.Admin</contentAuthor>
+<creationDate>1243942017000</creationDate>
+<date>1255883026000</date>
+<contentUpdateDate>1255883026000</contentUpdateDate>
+<version>2.1</version>
+<title></title>
+<template></template>
+<defaultTemplate></defaultTemplate>
+<validationScript></validationScript>
+<comment></comment>
+<minorEdit>false</minorEdit>
+<syntaxId>xwiki/1.0</syntaxId>
+<hidden>false</hidden>
+<object>
+<class>
+<name>MMCode.MeetingParticipantClass</name>
+<customClass></customClass>
+<customMapping></customMapping>
+<defaultViewSheet></defaultViewSheet>
+<defaultEditSheet></defaultEditSheet>
+<defaultWeb></defaultWeb>
+<nameField></nameField>
+<validationScript></validationScript>
+<available>
+<name>available</name>
+<number>5</number>
+<prettyName>available</prettyName>
+<size>30</size>
+<unmodifiable>0</unmodifiable>
+<classType>com.xpn.xwiki.objects.classes.StringClass</classType>
+</available>
+<message>
+<contenttype>FullyRenderedText</contenttype>
+<customDisplay></customDisplay>
+<editor>---</editor>
+<name>message</name>
+<number>4</number>
+<picker>0</picker>
+<prettyName>message</prettyName>
+<rows>2</rows>
+<size>30</size>
+<tooltip></tooltip>
+<unmodifiable>0</unmodifiable>
+<validationMessage></validationMessage>
+<validationRegExp></validationRegExp>
+<classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
+</message>
+<participation>
+<cache>1</cache>
+<customDisplay></customDisplay>
+<displayType>select</displayType>
+<multiSelect>0</multiSelect>
+<name>participation</name>
+<number>2</number>
+<picker>0</picker>
+<prettyName>participation</prettyName>
+<relationalStorage>0</relationalStorage>
+<separator> </separator>
+<separators> ,|</separators>
+<size>1</size>
+<sort>none</sort>
+<tooltip></tooltip>
+<unmodifiable>0</unmodifiable>
+<validationMessage></validationMessage>
+<validationRegExp></validationRegExp>
+<values>undecided|confirmed|declined</values>
+<classType>com.xpn.xwiki.objects.classes.StaticListClass</classType>
+</participation>
+<presence>
+<cache>0</cache>
+<customDisplay></customDisplay>
+<displayType>select</displayType>
+<multiSelect>0</multiSelect>
+<name>presence</name>
+<number>3</number>
+<picker>0</picker>
+<prettyName>presence</prettyName>
+<relationalStorage>0</relationalStorage>
+<separator> </separator>
+<separators> ,|</separators>
+<size>1</size>
+<sort>none</sort>
+<tooltip></tooltip>
+<unmodifiable>0</unmodifiable>
+<validationMessage></validationMessage>
+<validationRegExp></validationRegExp>
+<values>present|absent|late</values>
+<classType>com.xpn.xwiki.objects.classes.StaticListClass</classType>
+</presence>
+<unavailable>
+<name>unavailable</name>
+<number>6</number>
+<prettyName>unavailable</prettyName>
+<size>30</size>
+<unmodifiable>0</unmodifiable>
+<classType>com.xpn.xwiki.objects.classes.StringClass</classType>
+</unavailable>
+<username>
+<customDisplay></customDisplay>
+<name>username</name>
+<number>1</number>
+<picker>0</picker>
+<prettyName>username</prettyName>
+<size>30</size>
+<tooltip></tooltip>
+<unmodifiable>0</unmodifiable>
+<validationMessage></validationMessage>
+<validationRegExp></validationRegExp>
+<classType>com.xpn.xwiki.objects.classes.StringClass</classType>
+</username>
+</class>
+<name>MMCode.MeetingNotification</name>
+<number>0</number>
+<className>MMCode.MeetingParticipantClass</className>
+<guid>502758a7-5d87-4fe8-89f6-f8cebe489cf5</guid>
+</object>
+<object>
+<class>
+<name>XWiki.TagClass</name>
+<customClass></customClass>
+<customMapping></customMapping>
+<defaultViewSheet></defaultViewSheet>
+<defaultEditSheet></defaultEditSheet>
+<defaultWeb></defaultWeb>
+<nameField></nameField>
+<validationScript></validationScript>
+<tags>
+<cache>0</cache>
+<displayType>checkbox</displayType>
+<multiSelect>1</multiSelect>
+<name>tags</name>
+<number>1</number>
+<prettyName>Tags</prettyName>
+<relationalStorage>1</relationalStorage>
+<separator> </separator>
+<separators> ,|</separators>
+<size>30</size>
+<unmodifiable>0</unmodifiable>
+<values></values>
+<classType>com.xpn.xwiki.objects.classes.StaticListClass</classType>
+</tags>
+</class>
+<name>MMCode.MeetingNotification</name>
+<number>0</number>
+<className>XWiki.TagClass</className>
+<guid>0ed1cbf9-dc01-4460-a53c-a0459ebc1ed8</guid>
+<property>
+<tags/>
+</property>
+</object>
+<content>/* Groovy Class #* */
+
+import java.util.*;
+import com.xpn.xwiki.*;
+import com.xpn.xwiki.api.*;
+import com.xpn.xwiki.doc.*;
+import com.xpn.xwiki.notify.*;
+
+/**
+ * Automatic update of meetings.
+ */
+public class MeetingUpdater implements XWikiDocChangeNotificationInterface
+{
+
+    def rule;
+    def xwiki;
+
+    public MeetingUpdater()
+    {
+        this.rule = new DocChangeRule(this);
+    }
+
+    public void init(xwiki, context)
+    {
+        this.xwiki = xwiki;
+        xwiki.getXWiki().getNotificationManager().addGeneralRule(this.rule);
+
+        def sc = context.context.getEngineContext().getServletContext();
+
+        // Initializes in the servlet context the HashSet that will contains all flags 
+        // for socracy documents. See the #notifiy method below.
+        sc.setAttribute("meetings_updated_documents", new HashSet())
+    }
+
+    public void cleanup()
+    {
+        xwiki.getXWiki().getNotificationManager().removeGeneralRule(this.rule);
+    }
+
+    private String getFullName(XWikiDocument doc, XWikiContext context) {
+       return context.getDatabase() + ":" + doc.fullName
+    }
+
+    public void notify(XWikiNotificationRule rule, XWikiDocument newdoc, XWikiDocument olddoc,
+        int event, XWikiContext context)
+    {
+       def newmeeting = null;
+       def oldmeeting = null;
+
+       if (newdoc.getObject("MMCode.MeetingClass") != null) {
+          newmeeting = newdoc.getObject("MMCode.MeetingClass")
+          if (olddoc.getObject("MMCode.MeetingClass") != null) {
+             oldmeeting = olddoc.getObject("MMCode.MeetingClass")
+          }
+       }
+       
+       if(newmeeting != null &amp;&amp; oldmeeting != null) {
+
+         if(newmeeting.getStringValue('privacy') != oldmeeting.getStringValue('privacy')
+        		 || newdoc.getObjectNumbers("MMCode.MeetingParticipantClass") !=
+        			 olddoc.getObjectNumbers("MMCode.MeetingParticipantClass")) {
+
+           def sc = context.getEngineContext().getServletContext();
+
+           // Just in case the HashSet has been removed from the servlet context
+           if (sc.getAttribute("meetings_updated_documents") == null)
+              sc.setAttribute("meetings_updated_documents", new HashSet()) 
+
+           // If the flag is set, last save was an update by this notification, so we remove
+           // the flag, and break.
+           if (sc.getAttribute("meetings_updated_documents").contains(getFullName(newdoc, context))) {
+             sc.getAttribute("meetings_updated_documents").remove(getFullName(newdoc, context))
+             return;
+           }        
+
+           sc.getAttribute("meetings_updated_documents").add(getFullName(newdoc, context)) 
+
+           if (newmeeting.getStringValue('privacy') == "private") {
+              makePrivate(newdoc, context)
+           }
+           else {
+              makePublic(newdoc, context)
+           }
+
+         }
+       }
+       else if (oldmeeting == null) { 
+            if(newdoc.getObjectNumbers("MMCode.MeetingParticipantClass") == 0) {
+              // meeting just created, add automatically the creator as a participant
+              def creator = newdoc.getObject("MMCode.MeetingParticipantClass", true, context);
+              creator.set("username", newdoc.getCreator(), context)
+    
+              xwiki.saveDocument(newdoc, "[Automatic save] added creator as participant", true)
+            }
+       }
+    }
+
+    public void makePublic(XWikiDocument doc, XWikiContext context) {
+      def rights = doc.getObject("XWiki.XWikiRights", true, context)
+      rights.set("users", "", context)
+      rights.set("groups", "XWiki.XWikiAllGroup", context)
+      rights.set("levels", "view,edit", context)
+      rights.set("allow", "1", context)
+
+      xwiki.getXWiki().saveDocument(doc, "[Automatic save] - Updated rights", true, context)
+    }
+
+    public void makePrivate(XWikiDocument doc, XWikiContext context) {
+      def pList = doc.getObjects("MMCode.MeetingParticipantClass").collect({ return it.getStringValue('username') })
+      def rights = doc.getObject("XWiki.XWikiRights", true, context)
+      rights.set("users", pList.join(","), context)
+      rights.set("groups", "", context)
+      rights.set("levels", "view,edit", context)
+      rights.set("allow", "1", context)
+
+      xwiki.getXWiki().saveDocument(doc, "[Automatic save] - Updated rights", true, context)
+    }
+
+}
+
+/* *# */</content>
+</xwikidoc>
