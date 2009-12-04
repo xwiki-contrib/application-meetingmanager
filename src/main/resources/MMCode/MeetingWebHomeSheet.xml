@@ -106,8 +106,10 @@ $msg.get('meetings.dashboard.youcanalso'):
 ##end
         $msg.get('meetings.dashboard.pagename')
         &lt;input type="text" autocomplete="off" class="title" name="title" size="45"/&gt;
-        &lt;div style="align:center;"&gt;
+        &lt;div class="inlinebutton"&gt;
+         &lt;span class="buttonwrapper"&gt;
           &lt;input type="button"  value="$msg.get('meetings.dashboard.createmeeting')" onclick='if (updateName(this.form.title,this.form.name)) { action="../../save/" + this.form.webname.value + "/" + this.form.name.value; this.form.submit(); }' /&gt;
+         &lt;/span&gt;
         &lt;/div&gt;
       &lt;/div&gt;
       &lt;div style="color:grey;padding:5px;margin-top:15px;"&gt;
