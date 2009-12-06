@@ -3,7 +3,7 @@
   <groupId>org.xwiki.contrib</groupId>
   <artifactId>xwiki-application-meetingmanager</artifactId>
   <packaging>xar</packaging>
-  <name>XWiki Platform - Applications - MeetingManager</name>
+  <name>Contrib - Applications - MeetingManager</name>
   <version>1.2-SNAPSHOT</version>
   <description>Application that allows to organize Meetings and create meeting reports</description>
   <scm>
