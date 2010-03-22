@@ -341,9 +341,6 @@ function saveInfos() {
         #warning("$msg.get('meetings.meeting.infos.noparticipantyet')")
       #end
     &lt;/div&gt;
-    &lt;div&gt;
-   {{html wiki="false"}}#template("tagedit.vm"){{/html}}
-    &lt;/div&gt;
     &lt;span class="buttonwrapper"&gt;
       &lt;button id="meetingInfosSave"&gt;$msg.get('meetings.meeting.infos.save')&lt;/button&gt;
     &lt;/span&gt;
@@ -377,16 +374,6 @@ $meeting.display('location', 'view') &lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;$msg.get('meetings.meeting.manager') : &lt;/strong&gt; 
 {{html clean="false"}}$xwiki.getUserName("$meetingDoc.creator"){{/html}}&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;$msg.get('meetings.meeting.typist'): &lt;/strong&gt; $!meeting.display("typist", "view")&lt;/p&gt;
-&lt;p&gt;&lt;strong class="meetingtags"&gt;$msg.get('meetings.meeting.tags') &lt;/strong&gt; 
-$meetingDoc.getObject("XWiki.TagClass").display("tags", "view")&amp;nbsp;&amp;nbsp;
-
-&lt;a href="$doc.getURL('view')?r=$util.generateRandomString(5)#Comments" class="comments"&gt;
- $msg.get('meetings.meeting.infos.comments', [$meetingDoc.comments.size()])
-&lt;/a&gt;
-
-&lt;a href="$doc.getURL('view')?r=$util.generateRandomString(5)#Attachments" class="attachments"'&gt;
- $msg.get('meetings.meeting.infos.attachments', [$meetingDoc.attachmentList.size()])
-&lt;/a&gt;&lt;/p&gt;
 #if("$!request.xpage" == "") &lt;/div&gt; #end
 #end
 {{/html}}
