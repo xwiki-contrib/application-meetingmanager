@@ -158,22 +158,6 @@
 <validationRegExp></validationRegExp>
 <classType>com.xpn.xwiki.objects.classes.DateClass</classType>
 </starttime>
-<tasks>
-<contenttype>FullyRenderedText</contenttype>
-<customDisplay></customDisplay>
-<editor>PureText</editor>
-<name>tasks</name>
-<number>12</number>
-<picker>1</picker>
-<prettyName>tasks</prettyName>
-<rows>15</rows>
-<size>80</size>
-<tooltip></tooltip>
-<unmodifiable>0</unmodifiable>
-<validationMessage></validationMessage>
-<validationRegExp></validationRegExp>
-<classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
-</tasks>
 <title>
 <customDisplay></customDisplay>
 <name>title</name>
@@ -252,9 +236,6 @@
 </property>
 <property>
 <starttime>1970-01-01 00:00:00.0</starttime>
-</property>
-<property>
-<tasks></tasks>
 </property>
 <property>
 <title></title>

@@ -243,45 +243,6 @@ $msg.get('meetings.meeting.minutes')
  &lt;/div&gt;
   #end
 #end
-#if("$!request.type" == "" || "$!request.type" == "tasks")
-  #if("$!request.xpage" == "")
-&lt;h2 class="meetingh2"&gt;
-$msg.get('meetings.meeting.tasks')
-&lt;/h2&gt;
-&lt;div id="meetingtasks"&gt;
-&lt;div id="editmeetingtasks"&gt;$msg.get('meetings.meeting.tasks.edit')&lt;/div&gt;
- &lt;div id="meetingtaskscontent"&gt;
-  &lt;div id="taskscontent"&gt;
-    &lt;div id="tasksedit" class="hidden editableInfos"&gt;
-      &lt;div id="taskseditcontent" class=""&gt;
-          $meeting.display("tasks", "edit")
-          {{html wiki="false"}}
-          #wysiwyg_inputProperty($meetingDoc "MMCode.MeetingClass_0_tasks")
-          #wysiwyg_storeConfig("meetingTasksEditorConfig" $meetingDoc "MMCode.MeetingClass_0_tasks" false)
-          {{/html}}
-      &lt;/div&gt;
-      &lt;span class="buttonwrapper"&gt;
-        &lt;button id="savetasks"&gt;$msg.get('meetings.meeting.savetasks')&lt;/button&gt;
-        &lt;button id="savetasksandclose"&gt;$msg.get('meetings.meeting.savetasksandclose')&lt;/button&gt;
-      &lt;/span&gt;
-    &lt;/div&gt;
-    &lt;div id="tasksview"&gt;
-  #else
-    #set($meetingDoc = $xwiki.getDocument($request.meeting))
-    #set($meeting = $meetingDoc.getObject("MMCode.MeetingClass"))
-  #end
-  #if("$!meeting.getProperty('tasks').value" == "")
-    #warning("$msg.get('meetings.meeting.tasks.empty')")
-  #else
-    $meeting.display('tasks', 'view')
-  #end
-  #if("$!request.xpage" == "")
-    &lt;/div&gt; 
-   &lt;/div&gt;
-  &lt;/div&gt;
- &lt;/div&gt;
-  #end
-#end
 {{/html}}
 {{/velocity}}</content>
 </xwikidoc>
