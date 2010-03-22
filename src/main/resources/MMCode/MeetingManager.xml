@@ -817,99 +817,56 @@ document.observe("dom:loaded", function() {
 <cache>default</cache>
 </property>
 <property>
-<code>#if(!$xwiki.jsfx) ## PRE 1.8M2 -- add missing styles (are not yet in toucan.css)
-.xspacer {
-	clear: both !important;
-	height: 0 !important;
-	width: 0 !important;
-	line-height: 0 !important;
-	padding: 0 !important;
-	margin: 0 !important;
-}
-
-/**
- * Wiki items lists (spaces, pages, comments, attachments)
- */
-
-ul.xlist {
-	margin: 0;
-	padding: 0!important;
-}
-
-ul.xlist li.xunderline {
-	border-bottom: solid 1px #bbb;
-	margin-bottom: .6em;
-	clear: both;
-}
-
-ul.xlist li {
-	display: block;
-	width: auto!important;
-	list-style-type: none;
-}
-
-ul.xlist li.space,ul.xlist li.page,ul.xlist li.comment,ul.xlist li.attachment {
-	background-repeat: no-repeat;
-	background-position: 2px 3px;
-}
-
-#end
-
-
-
-/**
+<code>/**
  * Meeting manager styles
  */
- 
- 
 
+/* XWiki skin overriding */
 
-/*  --------------------------------------------  */
-
+.edit_section {
+  display: none !important;
+}
 
 /* meeting info */
 
-
-/*  --------------------------------------------  */
-
 h1.meetingh1 {
-	margin: 0;
-	font-weight: lighter;
-	position: relative;
+  margin: 0;
+  font-weight: lighter;
+  position: relative;
 }
 
 h2.meetingh2 {
-	margin: 0;
-	padding: 1em 0 0.1em;
-	font-weight: lighter;
-	position: relative;
-	clear: both;
+  margin: 0;
+  padding: 1em 0 0.1em;
+  font-weight: lighter;
+  position: relative;
+  clear: both;
 }
 
 h2.meetingh2 span {
-	font-size: .5em;
+  font-size: .5em;
 }
 
 h1.meetingh1 span {
-	position: absolute;
-	right: 1px;
-	top: 0;
-	margin: 0;
-	font-size: .5em;
-	color: #999;
-	display: none;
+  position: absolute;
+  right: 1px;
+  top: 0;
+  margin: 0;
+  font-size: .5em;
+  color: #999;
+  display: none;
 }
 
 #meetinginfosview .meetingtitle {
-	margin-top: 0;
-	font-size: 1.2em;
-	font-weight: bold;
-	padding-right: 200px;
-	margin-bottom: .5em;
+  margin-top: 0;
+  font-size: 1.2em;
+  font-weight: bold;
+  padding-right: 200px;
+  margin-bottom: .5em;
 }
 
 #meetinginfosview .meetingtitle strong {
-	color: #000;
+  color: #000;
 }
 
 #meetinginfoscontent,
@@ -918,690 +875,707 @@ h1.meetingh1 span {
 #meetingdateview,
 #meetingdatevote,
 #participants {
-	border: 1px solid #B7C6D0;
-	padding: 10px;
-	position: relative;
+  border: 1px solid #B7C6D0;
+  padding: 10px;
+  position: relative;
 }
 
 #meetinginfoscontent {
-	background-color: #e7eff5;
+  background-color: #e7eff5;
 }
-
-
 
 #meetingdatevote {
-	padding: 10px 10px 30px 10px;
+  padding: 10px 10px 30px 10px;
 }
-
-/*
-#meetingdateview {
-	overflow: auto;
-}*/
 
 #meetinginfoscontent p {
-	margin: 0;
+  margin: 0;
 }
+
 #meetinginfosview a.comments,
 #meetinginfosview a.attachments{
-display: block;
-font-weight: bold;
-
+  display: block;
+  font-weight: bold;
 }
+
 #meetinginfosview a.comments{
-margin-top: 1em;
-
+  margin-top: 1em;
 }
-/** block votes */
+
+/* block votes */
 
 table#meetingattempts,table#meetingattempts td {
-	border: none;
+  border: none;
 }
 
 table#meetingattempts td.meetingattempt {
-	background-color: #e7eff5;
-	border: 1px solid #b7c6d0;
-	text-align: center;
+  background-color: #e7eff5;
+  border: 1px solid #b7c6d0;
+  text-align: center;
 }
 
 #meetingattempts div.date {
-	font-weight: bold;
+  font-weight: bold;
 }
 
 table#meetingattempts td.unknown {
-	border: 1px solid lightGrey;
+  border: 1px solid lightGrey;
 }
 
 table#meetingattempts {
-	border-collapse: collapse;
-	margin: 1em auto 1.5em;
+  border-collapse: collapse;
+  margin: 1em auto 1.5em;
 }
 
 table#meetingattempts td.available {
-	background-color: green;
-	border: 1px solid lightGrey;
+  background-color: green;
+  border: 1px solid lightGrey;
 }
 
 table#meetingattempts td.unavailable {
-	background-color: red;
+  background-color: red;
 }
 
 #mydisponibilities td.unknown div.my {
-	text-align: center;
+  text-align: center;
 }
 
 td.username {
-	text-align: right;
+  text-align: right;
 }
 
 table#meetingattempts tr.contextuser td {
-	text-align: right;
-
-
-/*	background-color: #fcf8da;
-*/
+  text-align: right;
 }
 
 div.my {
-	text-align: center;
+  text-align: center;
 }
 
 table#meetingattempts tr.contextuser td.save {
-	text-align: center;
+  text-align: center;
 }
 
 div.adddate span.buttonwrapper {
-	display: block;
-	text-align: center;
+  display: block;
+  text-align: center;
 }
 
 div.adddate span.buttonwrapper div.changestep {
-	padding: 3px 10px;
-	font-weight: normal;
-	float: none;
+  padding: 3px 10px;
+  font-weight: normal;
+  float: none;
 }
 
-/** block participants */
+/* block participants */
 
 #xwikicontent ul#participantsleft {
-	float: left;
-	display: inline;
-	width: 47%;
-	margin: 0;
-	padding-top: .5em!important;
+  float: left;
+  display: inline;
+  width: 47%;
+  margin: 0;
+  padding-top: .5em!important;
 }
+
 #body #xwikicontent ul#participantsright li,
 #body #xwikicontent ul#participantsleft li{
-	list-style-type: none;
-	border:0 !important;
+  list-style-type: none;
+  border:0 !important;
 }
 #participantsright {
-	float: left;
-	display: inline;
-	width: 47%;
-	margin: 0 0 0 5%;
-	padding: 0;
-	border: none;
-	padding-top: .5em!important;
+  float: left;
+  display: inline;
+  width: 47%;
+  margin: 0 0 0 5%;
+  padding: 0;
+  border: none;
+  padding-top: .5em!important;
 }
 
 .participants .clearfloats {
-	margin: 0;
+  margin: 0;
 }
 
 .xitemcontainer .username {
-	text-indent: 0;
-	padding-left: 0;
+  text-indent: 0;
+  padding-left: 0;
 }
 
 .xitemcontainer img {
-	float: left;
-	margin-right: 5px;
-	width: 30px;
+  float: left;
+  margin-right: 5px;
+  width: 30px;
 }
 
 .xitemcontainer img.delete {
-	float: right;
-	width: auto;
+  float: right;
+  width: auto;
 }
 
 ul.participants li.my img.delete {
-	display: none;
+  display: none;
 }
 
 .xitemcontainer span.participation {
-	float: left;
-	display: inline;
-	width: 20px;
-	height: 16px;
-	line-height: 16px;
-	background: transparent url($doc.getAttachmentURL('presence.png')) no-repeat  0 0;
+  float: left;
+  display: inline;
+  width: 20px;
+  height: 16px;
+  line-height: 16px;
+  background: transparent url($doc.getAttachmentURL('presence.png')) no-repeat  0 0;
 }
 
 .participationmessage {
-	display: block;
-	font-size: .9em;
-	color: #333;
-	padding:0 0 14px 57px;
+  display: block;
+  font-size: .9em;
+  color: #333;
+  padding:0 0 14px 57px;
 }
-ul.participants li{
-border-top: 3px solid #eee;
-border-bottom: none;
+
+ul.participants li {
+  border-top: 3px solid #eee;
+  border-bottom: none;
 }
-ul.participants li:first-child{
-border-top: none;
+
+ul.participants li:first-child {
+  border-top: none;
 }
+
 ul.participants li.confirmed span.participation {
-	background-position: 0 -35px;
+  background-position: 0 -35px;
 }
 
 ul.participants li.undecided span.participation {
-	background-position: 0 -1;
+  background-position: 0 -1;
 }
 
 ul.participants li.declined span.participation {
-	background-position: 0 -216px;
+  background-position: 0 -216px;
 }
 
 ul.participants li.added {
-	background-color: lightBlue;
+  background-color: lightBlue;
 }
 
 ul.participants li.xitem span.xitemcontainer {
-	line-height: 1.5em;
-	position: relative;
-	display: block;
-	padding: .5em ;
-	overflow: auto;
-	border: none;
-	background-color: #f5f5f5;
+  line-height: 1.5em;
+  position: relative;
+  display: block;
+  padding: .5em ;
+  overflow: auto;
+  border: none;
+  background-color: #f5f5f5;
 }
 span#modifymyparticipation {
-	position: absolute;
-	bottom: 6px;
-	right: 50%;
-	cursor: pointer;
-	background-color: #002b4b;
-	border-radius: 6px;
-	-webkit-border-radius: 6px;
-	-moz-border-radius: 6px;
-	padding: 0 8px;
-	font-size: 11px;
-	line-height: 1.4em;
-	z-index: 1;
-	color: #e7eff5;
-	font-weight: bold;
-	margin-right: -75px;
+  position: absolute;
+  bottom: 6px;
+  right: 50%;
+  cursor: pointer;
+  background-color: #002b4b;
+  border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  padding: 0 8px;
+  font-size: 11px;
+  line-height: 1.4em;
+  z-index: 1;
+  color: #e7eff5;
+  font-weight: bold;
+  margin-right: -75px;
 }
 
 span.deleteparticipants {
-	position: absolute;
-	right: 0;
-	top: 6px;
+  position: absolute;
+  right: 0;
+  top: 6px;
 }
 
 li.my span#modifymyparticipation {
-	display: none;
+  display: none;
 }
 
 #meetingInfos {
-	position: relative;
+  position: relative;
 }
 
 #meetinginfoscontent H2 span {
-	padding-right: 150px;
+  padding-right: 150px;
 }
 
 #addparticipant, #addnewoption,#editmeetinginfos,#editmeetingdate,#editmeetingminutes, #editmeetingtasks {
-	z-index: 100;
-	cursor: pointer;
-	background-color: #002b4b;
-	color: #e7eff5;
-	border-radius: 8px;
-	-webkit-border-radius: 8px;
-	-moz-border-radius: 8px;
-	padding: 1px 8px;
-	font-size: 11px;
-	line-height: 14px;
-	font-weight: bold;
-	position: absolute;
-	top: -23px;
-	right: 0px;
+  z-index: 100;
+  cursor: pointer;
+  background-color: #002b4b;
+  color: #e7eff5;
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  padding: 1px 8px;
+  font-size: 11px;
+  line-height: 14px;
+  font-weight: bold;
+  position: absolute;
+  top: -23px;
+  right: 0px;
 }
 
 #participantadd,#savemyparticipation,#savemydisponibilities,#xwikicontent div.ismanager form div span.buttonwrapper input,#meetingInfosSave {
-	font-size: 1em;
-	padding: 1px 20px;
-	-webkit-border-radius: 5px;
+  font-size: 1em;
+  padding: 1px 20px;
+  -webkit-border-radius: 5px;
 }
 
 #endmeetingbottom,#endmeeting,#startmeeting,#makecycle {
-	position: absolute;
-	top: 12px;
-	right: 0;
-	cursor: pointer;
-	background-color: #F00;
-	border-radius: 8px;
-	-webkit-border-radius: 8px;
-	-moz-border-radius: 8px;
-	padding: 1px 8px;
-	font-size: 11px;
-	line-height: 14px;
-	font-weight: bold;
-	z-index: 1;
-	color: #fff;
+  position: absolute;
+  top: 12px;
+  right: 0;
+  cursor: pointer;
+  background-color: #F00;
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  padding: 1px 8px;
+  font-size: 11px;
+  line-height: 14px;
+  font-weight: bold;
+  z-index: 1;
+  color: #fff;
 }
-#endmeetingbottom{
-top: auto;
-bottom: 10px;
+
+#endmeetingbottom {
+  top: auto;
+  bottom: 10px;
 }
+
 #startmeeting{
-top: 12px;
-right: 15em;
+  top: 12px;
+  right: 15em;
 }
+
 div.meetingminutesbutton,div.meetingtasksbutton {
-	text-align: center;
-	margin-top: 1em;
+  text-align: center;
+  margin-top: 1em;
 }
 
 #meetingminutescontent #endmeetingbottom {
-	position: relative;
-	float: none;
-	width: 150px;
-	margin: 0px auto;
-	text-align: center;
+  position: relative;
+  float: none;
+  width: 150px;
+  margin: 0px auto;
+  text-align: center;
 }
 
 #finishvote {
-	position: relative;
-	float: none;
-	width: 18%;
-	text-align: center;
-	left: 41%;
-	top: -35px;
-	cursor: pointer;
-	background-color: #f00;
-	border-radius: 8px;
-	-webkit-border-radius: 8px;
-	-moz-border-radius: 8px;
-	padding: 2px 8px;
-	font-size: 14px;
-	line-height: 16px;
-	z-index: 1;
-	color: #fff;
-	font-weight: bold;
+  position: relative;
+  float: none;
+  width: 18%;
+  text-align: center;
+  left: 41%;
+  top: -35px;
+  cursor: pointer;
+  background-color: #f00;
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  padding: 2px 8px;
+  font-size: 14px;
+  line-height: 16px;
+  z-index: 1;
+  color: #fff;
+  font-weight: bold;
 }
 
-
-
 #meetingInfos.loading {
-	border: 1px solid darkGrey;
-	height: 150px;
+  border: 1px solid darkGrey;
+  height: 150px;
 }
 
 #body .buttonwrapper button[disabled] {
-	background-position: 0 76%;
-	color: #999;
+  background-position: 0 76%;
+  color: #999;
 }
 
 .helpmessage {
-	background: #F5F5F5 url($doc.getAttachmentURL('help.gif')) no-repeat scroll 8px 8px;
-	color: #369;
-	border: 1px solid #DDD;
-	margin: 4px 0;
-	padding: 8px 8px 8px 28px;
-	text-align: left;
-	float: none;
+  background: #F5F5F5 url($doc.getAttachmentURL('help.gif')) no-repeat scroll 8px 8px;
+  color: #369;
+  border: 1px solid #DDD;
+  margin: 4px 0;
+  padding: 8px 8px 8px 28px;
+  text-align: left;
+  float: none;
 }
 
 .editableInfos,ul.participants li.my,#editableInfos,.ismanager {
-	background-color: #fce858;
-	padding: 5px 10px;
-	border: 1px solid #c2d1d8;
+  background-color: #fce858;
+  padding: 5px 10px;
+  border: 1px solid #c2d1d8;
 }
 
-
-
 #meetinginfosedit {
-	margin-top: 0;
+  margin-top: 0;
 }
 
 .ismanager {
-	clear: both;
-		text-align: center;
+  clear: both;
+  text-align: center;
 }
 
 #dateselection form {
-	text-align: center;
+  text-align: center;
 }
 
 .ismanager div {
-	font-weight: bold;
+  font-weight: bold;
 }
 
 .ismanager div em {
-	font-size: 0.8em;
-	font-weight: normal;
+  font-size: 0.8em;
+  font-weight: normal;
 }
 
 .ismanager .buttonwrapper {
-	display: block;
+  display: block;
 }
 
 .editableInfos {
-	padding-top: 10px;
-	margin-bottom: 10px;
+  padding-top: 10px;
+  margin-bottom: 10px;
 }
 
 .editableInfos input,.editableInfos textarea {
-	width: 100%;
-	margin-bottom: 1em;
+  width: 100%;
+  margin-bottom: 1em;
 }
 
 .editableInfos strong,.editableInfos span {
-	display: block;
-	font-weight: bold;
+  display: block;
+  font-weight: bold;
 }
+
 .editableInfos span.helptip {
-	display:inline;
-	font-weight: normal;
-	font-size: 0.8em;
-	color: #888;
-	font-style: italic;
+  display:inline;
+  font-weight: normal;
+  font-size: 0.8em;
+  color: #888;
+  font-style: italic;
 }
 
 .editableInfos dl dd,.editableInfos dl dt,.editableInfos strong.typist {
-	display: inline;
-	background-image: none;
+  display: inline;
+  background-image: none;
 }
 
 .editableInfos dl {
-	margin-top: 1em;
+  margin-top: 1em;
 }
 
 .editableInfos span.buttonwrapper {
-	text-align: center;
+  text-align: center;
 }
 
 #myparticipation {
-	border-top: none;
-	display: block;
-	padding: 10px 10px 10px 0;
+  border-top: none;
+  display: block;
+  padding: 10px 10px 10px 0;
 }
 
 #myparticipation select,#myparticipation textarea {
-	display: block;
-	margin-bottom: .5em;
+  display: block;
+  margin-bottom: .5em;
 }
 
 #myparticipation textarea {
-	width: 100%;
+  width: 100%;
 }
 
 #myparticipation span {
-	text-indent: 0;
+  text-indent: 0;
 }
 
 #myparticipation span.buttonwrapper {
-	text-indent: 0;
-	display: block;
-	text-align: center;
+  text-indent: 0;
+  display: block;
+  text-align: center;
 }
 
 .clearfloat,.clearparticipants {
-	clear: both;
+  clear: both;
 }
 
 #dateselection {
-	margin-top: 0;
+  margin-top: 0;
 }
 
 #meetingdate div.date,#meetingdate div.address,#meetingdate div.time {
-	text-align: left;
-	font-weight: normal;
-	color: #333;
+  text-align: left;
+  font-weight: normal;
+  color: #333;
 }
 
 #meetingdate div.date span,#meetingdate div.address span,#meetingdate div.time span {
-	font-weight: bold;
-	color: #000;
+  font-weight: bold;
+  color: #000;
 }
 
 #map_canvas {
-	background-color: #eee;
-	clear: left;
-	margin-top: 2em;
+  background-color: #eee;
+  clear: left;
+  margin-top: 2em;
 }
 
 #body tr.contextuser span.buttonwrapper span {
-	display: none;
+  display: none;
 }
+
 div#meetingtasks{
-margin-bottom: 40px;
+  margin-bottom: 40px;
 }
-/********************************
-HOME
-**********************************/
-.inlinebutton-container{
-text-align: center;
-padding: 10px;
-background-color: #F5F5F5;
+
+/* Home */
+
+.inlinebutton-container {
+  text-align: center;
+  padding: 10px;
+  background-color: #F5F5F5;
 }
+
 .inlinebutton{
-display: inline;
+  display: inline;
 }
+
 .cycleinfos .buttonwrapper,
 #body .inlinebutton .buttonwrapper{
-padding: 0;
+  padding: 0;
 }
+
 #body .cycleinfos .buttonwrapper button#createnextmeeting,
 .inlinebutton-container a,
 #body .inlinebutton .buttonwrapper * {
-    display: inline-block;
-
-    font-size: 12px;
-    line-height: 1.4em !important;
-    margin: 0px !important;
-    min-height: 16px !important;
-    background: #002b4b none repeat-x scroll right top;
-    border: none;
-    color: #FFF;
-    white-space: nowrap;
-    padding: 1px 8px;
-    font-weight: bold;
-    cursor: pointer;
-	background-color: #002b4b;
-	border-radius: 6px;
-	-webkit-border-radius: 6px;
-	-moz-border-radius: 6px;
+  display: inline-block;
+  font-size: 12px;
+  line-height: 1.4em !important;
+  margin: 0px !important;
+  min-height: 16px !important;
+  background: #002b4b none repeat-x scroll right top;
+  border: none;
+  color: #FFF;
+  white-space: nowrap;
+  padding: 1px 8px;
+  font-weight: bold;
+  cursor: pointer;
+  background-color: #002b4b;
+  border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
 }
+
 #body .inlinebutton .buttonwrapper button:hover{
-background: #002b4b none repeat-x scroll right top;
-text-decoration: underline;
-color: #fff;
+  background: #002b4b none repeat-x scroll right top;
+  text-decoration: underline;
+  color: #fff;
 }
 
 .inlinebutton-container a{
-background-color: #698e00;
+  background-color: #698e00;
 }
-h2.meetinggridtitle {
-position: relative;
-border-bottom: 10px solid #ddd;
-margin-top: 1em;
-}
-h2.meetinggridtitle span{
-display: inline;
-position: absolute;
-right: 0px;
-bottom: 1px;
-margin: 0 ;
-padding: 0 10px;
-font-size: 14px;
-line-height: 24px;
-border-bottom: none;
-background-color: #ddd;
-border-top-left-radius: 6px;
--webkit-border-top-left-radius: 6px;
--moz-border-radius-topleft: 6px;
-border-top-right-radius: 6px;
--webkit-border-top-right-radius: 6px;
--moz-border-radius-topright: 6px;
 
+h2.meetinggridtitle {
+  position: relative;
+  border-bottom: 10px solid #ddd;
+  margin-top: 1em;
 }
-h2.meetinggridtitle span span{
-display: block;
-position: static;
+
+h2.meetinggridtitle span{
+  display: inline;
+  position: absolute;
+  right: 0px;
+  bottom: 1px;
+  margin: 0 ;
+  padding: 0 10px;
+  font-size: 14px;
+  line-height: 24px;
+  border-bottom: none;
+  background-color: #ddd;
+  border-top-left-radius: 6px;
+  -webkit-border-top-left-radius: 6px;
+  -moz-border-radius-topleft: 6px;
+  border-top-right-radius: 6px;
+  -webkit-border-top-right-radius: 6px;
+  -moz-border-radius-topright: 6px;
 }
+
+h2.meetinggridtitle span span {
+  display: block;
+  position: static;
+}
+
 h2.meetinggridtitle span a{
-color: #fff;
+  color: #fff;
 }
+
 .meetingcycleslist ul{
-padding: 0;
-margin: 0 0 28px 0;
-overflow: auto;
+  padding: 0;
+  margin: 0 0 28px 0;
+  overflow: auto;
 }
+
 .meetingcycleslist ul li{
-padding: 0;
-margin: 0 1% 5px 0;
-list-style-type: none;
-float: left;
-position: relative;
-width: 48.5%;
-padding:5px 0;
-text-indent: 5px;
-background-color: #F5F5F5;
-border: 1px solid #ddd;
+  padding: 0;
+  margin: 0 1% 5px 0;
+  list-style-type: none;
+  float: left;
+  position: relative;
+  width: 48.5%;
+  padding:5px 0;
+  text-indent: 5px;
+  background-color: #F5F5F5;
+  border: 1px solid #ddd;
 }
-.meetingcycleslist ul li.current{
-background-color: #e7eff5;
-©}
+
+.meetingcycleslist ul li.current {
+  background-color: #e7eff5;
+}
 
 .meetingcycleslist ul li a.edit,
-.meetingcycleslist ul li a.delete{
-position: absolute;
-top: 9px;
-right: 5px;
-font-size: 0.8em;
-font-weight: bold;
-line-height: 1.2em;
-padding: 0 5px;
-text-indent: 0px;
-color: #FFF;
-background-color: red;
-border-radius: 6px;
--webkit-border-radius: 6px;
--moz-border-radius: 6px;
-}
-.meetingcycleslist ul li a.edit{
-right: 75px;
-color: #FFF;
-background-color: #002b4b;
-}
-h1, h2 {
-clear: both;
-}
-.meetingcyclesdisplay strong{
-float: left;
-clear: left;
-display: inline;
-padding-right: 10px;
-margin-bottom: 1em;
+.meetingcycleslist ul li a.delete {
+  position: absolute;
+  top: 9px;
+  right: 5px;
+  font-size: 0.8em;
+  font-weight: bold;
+  line-height: 1.2em;
+  padding: 0 5px;
+  text-indent: 0px;
+  color: #FFF;
+  background-color: red;
+  border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
 }
 
-.meetingcyclesdisplay  table strong{
-float: none;
-padding: 0;
+.meetingcycleslist ul li a.edit {
+  right: 75px;
+  color: #FFF;
+  background-color: #002b4b;
 }
+
+h1, h2 {
+  clear: both;
+}
+
+.meetingcyclesdisplay strong {
+  float: left;
+  clear: left;
+  display: inline;
+  padding-right: 10px;
+  margin-bottom: 1em;
+}
+
+.meetingcyclesdisplay  table strong {
+  float: none;
+  padding: 0;
+}
+
 div.meetingdesccontent {
-padding: 10px;
-margin: 0 -10px 10px;
-border: 1px solid #ddd;
-border-width:1px 0;
-background-color: #e0e9f5;
+  padding: 10px;
+  margin: 0 -10px 10px;
+  border: 1px solid #ddd;
+  border-width:1px 0;
+  background-color: #e0e9f5;
 }
+
 div#meetingInfos.cyclic div#meetinginfoscontent{
-background:#e7eff5 url($doc.getAttachmentURL('bg-infi-2.png')) no-repeat 95% 95%;
+  background:#e7eff5 url($doc.getAttachmentURL('bg-infi-2.png')) no-repeat 95% 95%;
 }
 
 .meetingcyclesdisplay p{
-margin: 0;
+  margin: 0;
 }
+
 .meetingcyclesdisplay{
-	background-color: #e7eff5;
-	border: 1px solid #cdd4da;
-	padding: 10px;
+  background-color: #e7eff5;
+  border: 1px solid #cdd4da;
+  padding: 10px;
 }
+
 .meetingcyclesdisplay .cycleinfos{
-padding: 15px 0 0;
+  padding: 15px 0 0;
 }
+
 .meetingcyclesdisplay h1{
-margin: -11px -11px 0px;
-padding: 10px 0px 0;
-background-color: #fff;
-font-weight: bold;
-color: #cdd4da;
-border-bottom: 1px solid #cdd4da;;
+  margin: -11px -11px 0px;
+  padding: 10px 0px 0;
+  background-color: #fff;
+  font-weight: bold;
+  color: #cdd4da;
+  border-bottom: 1px solid #cdd4da;;
 }
+
 .meetingcyclesdisplay  .xwiki-livetable-tagcloud-container {
-margin-top: 0;
+  margin-top: 0;
 }
 .meetingcyclesdisplay .xwiki-livetable-tagcloud-tip .tippointer,
 .meetingcyclesdisplay .xwiki-livetable-tagcloud-tip .tippointer div{
-border-top-color: #e7eff5;
+  border-top-color: #e7eff5;
 }
+
 .meetingcyclesdisplay .xwiki-livetable-tagcloud-container{
-border-color: #e7eff5;
-border-width: 0 0 5px 0;
+  border-color: #e7eff5;
+  border-width: 0 0 5px 0;
 }
+
 .meetingcyclesdisplay h1 span{
-margin: 0;
-border: none;
-color: #ddd;
+  margin: 0;
+  border: none;
+  color: #ddd;
 }
+
 .meetingcyclesdisplay h1 span em{
-color: #111;
-font-weight: normal;
-font-size: 0.7em;
+  color: #111;
+  font-weight: normal;
+  font-size: 0.7em;
 }
+
 .meetingcyclesdisplay #meetingsgrid-tagcloud, 
 .meetingcyclesdisplay table#meetingsgrid {
-clear: left;
-background-color: #fff;
-padding-top: 0px;
+  clear: left;
+  background-color: #fff;
+  padding-top: 0px;
 }
+
 .cycledesc,
-.cyclefreq{
-
-clear: left;
-position: relative;
+.cyclefreq {
+  clear: left;
+  position: relative;
 }
+
 .cycleinfos .cyclefreq pre{
-display: block;
-position: absolute;
-top: -0.25em;
-left: 100px;
+  display: block;
+  position: absolute;
+  top: -0.25em;
+  left: 100px;
 }
 
-/* debug */
+/* Debug */
 form pre,
 .editableInfos pre {
-display: inline;
+  display: inline;
 }
 
 .commentdelete a{
- position: absolute;
- top: 0px;
- right: 0px;
- width: 16px;
- height: 16px;
- text-indent: -100000px;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  width: 16px;
+  height: 16px;
+  text-indent: -100000px;
 }
 
 div.mailbox {
   background-color:lightGrey;
   padding:10px;
   margin:5px;
-}
-</code></property><property><name></name></property><property><parse>1</parse>
+}</code></property><property><name></name></property><property><parse>1</parse>
 </property>
 <property>
 <use>onDemand</use>
