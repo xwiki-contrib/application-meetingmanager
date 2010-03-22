@@ -7,14 +7,14 @@
 <defaultLanguage>fr</defaultLanguage>
 <translation>0</translation>
 <parent></parent>
-<creator>XWiki.JeromeVelociter</creator>
+<creator>XWiki.Admin</creator>
 <author>XWiki.Admin</author>
 <customClass></customClass>
 <contentAuthor>XWiki.Admin</contentAuthor>
-<creationDate>1238400608000</creationDate>
-<date>1255883402000</date>
-<contentUpdateDate>1255883402000</contentUpdateDate>
-<version>4.1</version>
+<creationDate>1267419600000</creationDate>
+<date>1267419600000</date>
+<contentUpdateDate>1267419600000</contentUpdateDate>
+<version>1.1</version>
 <title>MeetingClassSheet</title>
 <template></template>
 <defaultTemplate></defaultTemplate>
@@ -129,40 +129,6 @@
 <username>XWiki.JeromeVelociter</username>
 </property>
 </object>
-<object>
-<class>
-<name>XWiki.TagClass</name>
-<customClass></customClass>
-<customMapping></customMapping>
-<defaultViewSheet></defaultViewSheet>
-<defaultEditSheet></defaultEditSheet>
-<defaultWeb></defaultWeb>
-<nameField></nameField>
-<validationScript></validationScript>
-<tags>
-<cache>0</cache>
-<displayType>checkbox</displayType>
-<multiSelect>1</multiSelect>
-<name>tags</name>
-<number>1</number>
-<prettyName>Tags</prettyName>
-<relationalStorage>1</relationalStorage>
-<separator> </separator>
-<separators> ,|</separators>
-<size>30</size>
-<unmodifiable>0</unmodifiable>
-<values></values>
-<classType>com.xpn.xwiki.objects.classes.StaticListClass</classType>
-</tags>
-</class>
-<name>MMCode.MeetingClassSheet</name>
-<number>0</number>
-<className>XWiki.TagClass</className>
-<guid>d5f92beb-9502-46b4-8362-bf015d7e1810</guid>
-<property>
-<tags/>
-</property>
-</object>
 <content>{{velocity filter="none"}}
 {{html clean="false" wiki="true"}}
 ## Configuration
@@ -176,8 +142,6 @@
 ## --------------------------------------------------------------------------------------
 #set($ok = $xwiki.jsx.use("MMCode.MeetingManager"))
 #set($ok = $xwiki.ssx.use("MMCode.MeetingManager"))
-##set($ok = $xwiki.jsx.use("MMCode.MeetingEmails"))
-##set($ok = $xwiki.ssx.use("MMCode.MeetingEmails"))
 #set($ok = $xwiki.jsx.use("XWiki.ModalBox"))
 #set($ok = $xwiki.ssx.use("XWiki.ModalBox"))
 #set($ok = $xwiki.jsx.use("XWiki.LiveValidation"))
@@ -196,149 +160,131 @@
 ## --------------------------------------------------------------------------------------
 &lt;h1 class="meetingh1"&gt;
   $msg.get('meetings.meeting.sheettitle')
-  &lt;span&gt;
-   $msg.get('meetings.meeting.status') : 
-  &lt;/span&gt;
 &lt;/h1&gt;
 #set($meeting = $doc.getObject("MMCode.MeetingClass"))
-#if(!$meeting) #warning("$msg.get('meetings.no_meeting')")
+#if(!$meeting) 
+  {{warning}}$msg.get('meetings.no_meeting'){{/warning}}
 #else
- ## --------------------------------------------------------------------------------------
- ## Meeting vars. See macros.
- ## --------------------------------------------------------------------------------------
- #set($isManager = false)
- #if($isRightsEnforced)
-  #set($isManager = $doc.hasAccessLevel("edit"))
- #else
-  #isManager($doc, $isManager)
- #end
- #set($isParticipant = false)
- #isParticipant($doc, $isParticipant)
- #set($isCyclic = false)
- #isCyclic($doc, $isCyclic)
- #set($meetingDoc = $doc) ## Will be used by included documents.
- #set($participants = $meetingDoc.getObjects("MMCode.MeetingParticipantClass"))
- #set($attempts = $meetingDoc.getObjects("MMCode.MeetingDateAttemptClass"))
- ## --------------------------------------------------------------------------------------
- ## Layout vars
- ## --------------------------------------------------------------------------------------
- #set ($showinformation = "no")
- #if(!$isManager) #set ($showhistory = "no") #end
- ##set ($showcomments = "no")
- ## --------------------------------------------------------------------------------------
- ## Display possible transition action button (start, close, make cyclic, etc.)
- ## --------------------------------------------------------------------------------------
- #set($status = "$!meeting.getProperty('status').value")
- #if($status == "prepared" &amp;&amp; ($isManager || $isParticipant))
-  &lt;div id="startmeeting" class="changestep"&gt;$msg.get('meetings.meeting.startmeeting')&lt;/div&gt;
- #end
- #if($status == "started" &amp;&amp; ($isManager || $isParticipant))
-  &lt;div id="endmeeting" class="changestep"&gt;$msg.get('meetings.meeting.endmeeting')&lt;/div&gt;
- #end
- #if($status == "finished" &amp;&amp; !$isCyclic &amp;&amp; ($isManager || $isParticipant))
-  &lt;div id="makecycle" class="changestep"&gt;$msg.get('meetings.meeting.makecycle')&lt;/div&gt;
- #end
- ## --------------------------------------------------------------------------------------
- ## Meeting Section: Infos
- ## --------------------------------------------------------------------------------------
- &lt;div id="meetingInfos"#if($isCyclic) class="cyclic"#end&gt;
-  #if($isManager &amp;&amp; ("$!status" != "finished" &amp;&amp; "$!status" != "started") || !$isWorkflowEnforced)
-   &lt;div id="editmeetinginfos"&gt;$msg.get('meetings.meeting.infos.edit')&lt;/div&gt;
+  ## --------------------------------------------------------------------------------------
+  ## Meeting vars. See macros.
+  ## --------------------------------------------------------------------------------------
+  #set($isManager = false)
+  #if($isRightsEnforced)
+    #set($isManager = $doc.hasAccessLevel("edit"))
+  #else
+    #isManager($doc, $isManager)
   #end
-  &lt;div id="meetinginfoscontent"&gt;{{include document="MMCode.MeetingInfos"/}}&lt;/div&gt;
- &lt;/div&gt;
- ## --------------------------------------------------------------------------------------
- ## Meeting Section: Date / Vote
- ## --------------------------------------------------------------------------------------
- &lt;a name="date"&gt;&lt;/a&gt;
- #if(($status != "started" &amp;&amp; $status != "finished") || !$isWorkflowEnforced) 
+  #set($isParticipant = false)
+  #isParticipant($doc, $isParticipant)
+  #set($isCyclic = false)
+  #isCyclic($doc, $isCyclic)
+  #set($meetingDoc = $doc) ## Will be used by included documents.
+  #set($participants = $meetingDoc.getObjects("MMCode.MeetingParticipantClass"))
+  #set($attempts = $meetingDoc.getObjects("MMCode.MeetingDateAttemptClass"))
+  ## --------------------------------------------------------------------------------------
+  ## Layout vars
+  ## --------------------------------------------------------------------------------------
+  #set ($showinformation = "no")
+  #if(!$isManager)
+    #set($showhistory = "no")
+  #end
+  ## --------------------------------------------------------------------------------------
+  ## Meeting Section: Infos
+  ## --------------------------------------------------------------------------------------
+  &lt;div id="meetingInfos"#if($isCyclic) class="cyclic"#end&gt;
+    &lt;div id="editmeetinginfos"&gt;$msg.get('meetings.meeting.infos.edit')&lt;/div&gt;
+    &lt;div id="meetinginfoscontent"&gt;{{include document="MMCode.MeetingInfos"/}}&lt;/div&gt;
+  &lt;/div&gt;
+  ## --------------------------------------------------------------------------------------
+  ## Meeting Section: Date / Vote
+  ## --------------------------------------------------------------------------------------
+  &lt;a name="date"&gt;&lt;/a&gt;
   #set($isDateDefined = false)
   #isDateDefined($doc, $isDateDefined)
   &lt;div class="clearfloat"&gt;&lt;/div&gt;
-  #if(!$isDateDefined &amp;&amp; ("$status" == "none" || "$status"=="voteopen" ))
-   #if($doc.getObject("MMCode.MeetingDateAttemptClass"))
-    {{include document="MMCode.MeetingDateVote"/}}
-    #if($isManager)
-     &lt;div class="hidden" id="meetingdatefixed"&gt;
-      {{include document="MMCode.MeetingDateSelection"/}}
-      #help("$msg.get('meetings.meeting.vote.finishvotehelp')")
-     &lt;/div&gt;
+  #if(!$isDateDefined)
+    #if($doc.getObject("MMCode.MeetingDateAttemptClass"))
+      {{include document="MMCode.MeetingDateVote"/}}
+      #if($isManager)
+        &lt;div class="hidden" id="meetingdatefixed"&gt;
+          {{include document="MMCode.MeetingDateSelection"/}}
+          #help("$msg.get('meetings.meeting.vote.finishvotehelp')")
+        &lt;/div&gt;
+      #end
+    #else
+      #if($isManager)
+        &lt;div id="meetingdatetype"&gt;
+          &lt;h2 class="meetingh2"&gt;$msg.get('meetings.meeting.date')&lt;/h2&gt;
+          &lt;div class="ismanager"&gt;
+            $msg.get('meetings.meeting.date.choosetype')
+            &lt;div&gt;
+              &lt;input type="radio" id="meetingdatetypefixed" selected="" /&gt; $msg.get("meetings.meeting.date.fixed") 
+            &lt;/div&gt;
+            &lt;div&gt;
+              &lt;input type="radio" id="meetingdatetypevote" selected="" /&gt; $msg.get("meetings.meeting.date.vote")
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="hidden" id="meetingdatevote2"&gt;{{include document="MMCode.MeetingDateVote"/}}&lt;/div&gt;
+        &lt;div class="hidden" id="meetingdatefixed"&gt;{{include document="MMCode.MeetingDateSelection"/}}&lt;/div&gt;
+      #end
     #end
-   #else
-    #if($isManager)
-    &lt;div id="meetingdatetype"&gt;
-      &lt;h2 class="meetingh2"&gt;$msg.get('meetings.meeting.date')&lt;/h2&gt;
-      &lt;div class="ismanager"&gt;
-        $msg.get('meetings.meeting.date.choosetype')
-        &lt;div&gt;
-          &lt;input type="radio" id="meetingdatetypefixed" selected="" /&gt; $msg.get("meetings.meeting.date.fixed") 
-        &lt;/div&gt;
-        &lt;div&gt;
-          &lt;input type="radio" id="meetingdatetypevote" selected="" /&gt; $msg.get("meetings.meeting.date.vote")
-        &lt;/div&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-    &lt;div class="hidden" id="meetingdatevote2"&gt;{{include document="MMCode.MeetingDateVote"/}}&lt;/div&gt;
-    &lt;div class="hidden" id="meetingdatefixed"&gt;{{include document="MMCode.MeetingDateSelection"/}}&lt;/div&gt;
+  #else
+    {{include document="MMCode.MeetingDateSelection"/}}
+    #if(!$isDateDefined) 
+      {{warning}}$msg.get('meetings.meeting.date.noinformation'){{/warning}}
+    #end
+  #end
+  ## --------------------------------------------------------------------------------------
+  ## Meeting Section: Participants
+  ## --------------------------------------------------------------------------------------
+  &lt;a name="participants"&gt;&lt;/a&gt;
+  &lt;h2 class="meetingh2"&gt;$msg.get('meetings.meeting.participants')&lt;/h2&gt;
+  &lt;div id="participants"&gt;
+  #if($isManager)
+   &lt;div id="addparticipant"&gt;$msg.get('meetings.meeting.participants.addparticipant')&lt;/div&gt;
+   &lt;div class="ismanager hidden" id="addparticipantinner"&gt;
+    &lt;strong&gt;$msg.get('meetings.meeting.participants.searchparticipant')&lt;/strong&gt;
+    &lt;input type="text" name="participant-suggest" id="participant-suggest" autocomplete="off" size="50"/&gt;
+    &lt;input type="hidden" name="participant-input" id="participant-input" /&gt;
+    &lt;ul id="participant-items" "pagepicker-list"&gt;
+    &lt;/ul&gt;
+    &lt;input id="participantaddnotif" type="checkbox" checked /&gt;$msg.get('meetings.meeting.participants.sendemail')
+    &lt;span class="buttonwrapper"&gt;
+      &lt;button id="participantadd" disabled="disabled"&gt;$msg.get('meetings.meeting.participants.add')&lt;/button&gt;
+    &lt;/span&gt;
+   &lt;/div&gt;
+  #end   
+  &lt;div id="participantscontent"&gt;
+  #if(!$participants || $participants.size() == 0)
+   &lt;div id="noparticipant"&gt;#warning("$msg.get('meetings.meeting.participants.noparticipant')")&lt;/div&gt;
+  #end
+  &lt;ul class="xlist participants left" id="participantsleft"&gt;
+  #if($participants &amp;&amp; $participants.size() &gt; 0)
+   #foreach($p in $participants)
+    #($p $isManager)
+    #if($velocityCount == $mathtool.round($mathtool.div($participants.size(),2))|| $participants.size() &lt;= 1)
+     &lt;/ul&gt;
+     &lt;ul class="xlist participants right" id="participantsright"&gt;
     #end
    #end
   #else
-   {{include document="MMCode.MeetingDateSelection"/}}
-   #if(!$isDateDefined) #warning("$msg.get('meetings.meeting.date.noinformation')") #end
+  &lt;/ul&gt;
+  &lt;ul class="xlist participants right" id="participantsright"&gt;
   #end
- #end
- ## --------------------------------------------------------------------------------------
- ## Meeting Section: Participants
- ## --------------------------------------------------------------------------------------
- &lt;a name="participants"&gt;&lt;/a&gt;
- &lt;h2 class="meetingh2"&gt;$msg.get('meetings.meeting.participants')&lt;/h2&gt;
- &lt;div id="participants"&gt;
- #if($isManager &amp;&amp; ("$!status" != "finished" || !$isWorkflowEnforced))
-  &lt;div id="addparticipant"&gt;$msg.get('meetings.meeting.participants.addparticipant')&lt;/div&gt;
-  &lt;div class="ismanager hidden" id="addparticipantinner"&gt;
-   &lt;strong&gt;$msg.get('meetings.meeting.participants.searchparticipant')&lt;/strong&gt;
-   &lt;input type="text" name="participant-suggest" id="participant-suggest" autocomplete="off" size="50"/&gt;
-   &lt;input type="hidden" name="participant-input" id="participant-input" /&gt;
-   &lt;ul id="participant-items" "pagepicker-list"&gt;
-   &lt;/ul&gt;
-   &lt;input id="participantaddnotif" type="checkbox" checked /&gt;$msg.get('meetings.meeting.participants.sendemail')
-   &lt;span class="buttonwrapper"&gt;
-    &lt;button id="participantadd" disabled="disabled"&gt;$msg.get('meetings.meeting.participants.add')&lt;/button&gt;
-   &lt;/span&gt;
+  &lt;/ul&gt;
+  &lt;div class="clearfloat"&gt;&lt;/div&gt;
   &lt;/div&gt;
- #end   
- &lt;div id="participantscontent"&gt;
- #if(!$participants || $participants.size() == 0)
-  &lt;div id="noparticipant"&gt;#warning("$msg.get('meetings.meeting.participants.noparticipant')")&lt;/div&gt;
- #end
- &lt;ul class="xlist participants left" id="participantsleft"&gt;
- #if($participants &amp;&amp; $participants.size() &gt; 0)
-  #foreach($p in $participants)
-   #participantitem($p $isManager $status)
-   #if($velocityCount == $mathtool.round($mathtool.div($participants.size(),2))|| $participants.size() &lt;= 1)
-    &lt;/ul&gt;
-    &lt;ul class="xlist participants right" id="participantsright"&gt;
-   #end
-  #end
- #else
- &lt;/ul&gt;
- &lt;ul class="xlist participants right" id="participantsright"&gt;
- #end
- &lt;/ul&gt;
- &lt;div class="clearfloat"&gt;&lt;/div&gt;
- &lt;/div&gt;
- &lt;/div&gt;
- ## --------------------------------------------------------------------------------------
- ## Meeting Section: Minutes
- ## --------------------------------------------------------------------------------------
- #if($status == "started" || $status == "finished" || !$isWorkflowEnforced) 
- {{include document="MMCode.MeetingMinutes"/}}
-  #if(($status == "started") &amp;&amp; ($isManager || $isParticipant))
-   &lt;div class="meetingminutesbutton"&gt;
-    &lt;div id="endmeetingbottom" class="changestep"&gt;$msg.get('meetings.meeting.endmeeting')&lt;/div&gt;
+  &lt;/div&gt;
+  ## --------------------------------------------------------------------------------------
+  ## Meeting Section: Minutes
+  ## --------------------------------------------------------------------------------------
+  {{include document="MMCode.MeetingMinutes"/}}
+  #if($isManager || $isParticipant)
+    &lt;div class="meetingminutesbutton"&gt;
+     &lt;div id="endmeetingbottom" class="changestep"&gt;$msg.get('meetings.meeting.endmeeting')&lt;/div&gt;
    &lt;/div&gt;
   #end
- #end
 #end
 {{/html}}
 {{/velocity}}</content>

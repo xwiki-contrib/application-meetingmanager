@@ -11,10 +11,10 @@
 <author>XWiki.Admin</author>
 <customClass></customClass>
 <contentAuthor>XWiki.Admin</contentAuthor>
-<creationDate>1254007911000</creationDate>
-<date>1255883026000</date>
-<contentUpdateDate>1255883026000</contentUpdateDate>
-<version>2.1</version>
+<creationDate>1267419600000</creationDate>
+<date>1267419600000</date>
+<contentUpdateDate>1267419600000</contentUpdateDate>
+<version>1.1</version>
 <title></title>
 <template></template>
 <defaultTemplate></defaultTemplate>
@@ -23,40 +23,6 @@
 <minorEdit>false</minorEdit>
 <syntaxId>xwiki/1.0</syntaxId>
 <hidden>false</hidden>
-<object>
-<class>
-<name>XWiki.TagClass</name>
-<customClass></customClass>
-<customMapping></customMapping>
-<defaultViewSheet></defaultViewSheet>
-<defaultEditSheet></defaultEditSheet>
-<defaultWeb></defaultWeb>
-<nameField></nameField>
-<validationScript></validationScript>
-<tags>
-<cache>0</cache>
-<displayType>checkbox</displayType>
-<multiSelect>1</multiSelect>
-<name>tags</name>
-<number>1</number>
-<prettyName>Tags</prettyName>
-<relationalStorage>1</relationalStorage>
-<separator> </separator>
-<separators> ,|</separators>
-<size>30</size>
-<unmodifiable>0</unmodifiable>
-<values></values>
-<classType>com.xpn.xwiki.objects.classes.StaticListClass</classType>
-</tags>
-</class>
-<name>MMCode.MeetingWebHomeSheet</name>
-<number>0</number>
-<className>XWiki.TagClass</className>
-<guid>52cea4ef-24f9-46b6-98c6-930c630c9ffa</guid>
-<property>
-<tags/>
-</property>
-</object>
 <content>##
 ## Macro includes.
 ##
@@ -146,13 +112,12 @@ $msg.get('meetings.dashboard.or')
 ## Meeting grid.
 ##
 
-#set($collist = [ "doc.creationDate", "doc.title", "doc.creator", "date", "location", "status" ])
+#set($collist = [ "doc.creationDate", "doc.title", "doc.creator", "date", "location"])
 #set($colprops = {"doc.creationDate" : {"type":"date", "link" : "view"} ,
                   "doc.title" : {"type":"text", "size" : "10", "link" : "view"} ,
                   "doc.creator" : {"type":"text", "size" : "10", "link" : ""} ,
                   "location" : {"type" : "text", "size" : "10", "link": ""},
-                  "date" : {"type" : "text", "size" : "10", "link": "", "filterable":false},
-                  "status" : {"type" : "list", "size" : "1", "link": ""}
+                  "date" : {"type" : "text", "size" : "10", "link": "", "filterable":false}
                  })
 ## id of the div, list of columns, columns properties, default column to sort for, class name
 #if("$request.my"=="1")

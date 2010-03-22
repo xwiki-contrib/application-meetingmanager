@@ -7,14 +7,14 @@
 <defaultLanguage>en</defaultLanguage>
 <translation>0</translation>
 <parent></parent>
-<creator>XWiki.JeromeVelociter</creator>
+<creator>XWiki.Admin</creator>
 <author>XWiki.Admin</author>
 <customClass></customClass>
 <contentAuthor>XWiki.Admin</contentAuthor>
-<creationDate>1238400903000</creationDate>
-<date>1255883026000</date>
-<contentUpdateDate>1255883026000</contentUpdateDate>
-<version>2.1</version>
+<creationDate>1267419600000</creationDate>
+<date>1267419600000</date>
+<contentUpdateDate>1267419600000</contentUpdateDate>
+<version>1.1</version>
 <title>MeetingManagerTranslations</title>
 <template></template>
 <defaultTemplate></defaultTemplate>
@@ -23,51 +23,11 @@
 <minorEdit>false</minorEdit>
 <syntaxId>xwiki/1.0</syntaxId>
 <hidden>false</hidden>
-<object>
-<class>
-<name>XWiki.TagClass</name>
-<customClass></customClass>
-<customMapping></customMapping>
-<defaultViewSheet></defaultViewSheet>
-<defaultEditSheet></defaultEditSheet>
-<defaultWeb></defaultWeb>
-<nameField></nameField>
-<validationScript></validationScript>
-<tags>
-<cache>0</cache>
-<displayType>checkbox</displayType>
-<multiSelect>1</multiSelect>
-<name>tags</name>
-<number>1</number>
-<prettyName>Tags</prettyName>
-<relationalStorage>1</relationalStorage>
-<separator> </separator>
-<separators> ,|</separators>
-<size>30</size>
-<unmodifiable>0</unmodifiable>
-<values></values>
-<classType>com.xpn.xwiki.objects.classes.StaticListClass</classType>
-</tags>
-</class>
-<name>MMCode.MeetingManagerTranslations</name>
-<number>0</number>
-<className>XWiki.TagClass</className>
-<guid>31c92fa7-4a36-46e8-8847-eb76c52db8aa</guid>
-<property>
-<tags/>
-</property>
-</object>
 <content>## Override ApplicationResource_fr.properties to be have consistent use of Tags instead of Balises in the french version
 tags=Tags
 core.tagedit.title=Tags :
 changes.tag.tags=Tags
 
-MMCode.MeetingClass_status_none=Futur meeting
-MMCode.MeetingClass_status_prepared=Prepared
-MMCode.MeetingClass_status_started=Started
-MMCode.MeetingClass_status_finished=Finished
-MMCode.MeetingClass_status_voteopen=Vote in process
-MMCode.MeetingClass_status_voteclosed=Vote finished
 MMCode.MeetingClass_privacy_private=Private
 MMCode.MeetingClass_privacy_public=Public
 
@@ -93,7 +53,6 @@ meetings.dashboard.gotocycles=View Meeting Cycles
 
 meetings.dashboard.grid.date=Date
 meetings.dashboard.grid.location=Location
-meetings.dashboard.grid.status=Status
 meetings.dashboard.grid.emptyvalue=-
 meetings.dashboard.grid.doc.title=Title
 meetings.dashboard.grid.doc.creator=Organizer
@@ -115,7 +74,6 @@ meetings.cycle.nextname=Meeting page Name:
 meetings.cycle.lastmeeting=Reminder - previous meeting in this cycle
 meetings.cycle.lastname=Title:
 meetings.cycle.lastdate=Date:
-meetings.cycle.laststatus=status:
 meetings.cycle.alreadyexists=This page already exists
 meetings.cycle.addingmeetingtocycle=Transformation of Cycle meeting
 meetings.cycles.listofcycles=Meeting Cycles:
@@ -127,7 +85,6 @@ meetings.meeting.manager=Organizer
 meetings.meeting.makecycle=Create a cycle from this meeting
 meetings.meeting.sheettitle=Meeting Information
 meetings.meeting.tags=Tags :
-meetings.meeting.status=Status
 meetings.meeting.startmeeting=Start the meeting
 meetings.meeting.endmeeting=Finished the meeting
 meetings.meeting.startmeeting.help=By clicking on the button, you will start the meeting. You won't be able to edit anymore the meeting information. A new edit zone will be provided for your meeting report.
