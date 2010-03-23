@@ -1260,7 +1260,7 @@ div.meetingminutesbutton,div.meetingtasksbutton {
   font-style: italic;
 }
 
-.editableInfos dl dd,.editableInfos dl dt,.editableInfos strong.typist {
+.editableInfos dl dd,.editableInfos dl dt {
   display: inline;
   background-image: none;
 }

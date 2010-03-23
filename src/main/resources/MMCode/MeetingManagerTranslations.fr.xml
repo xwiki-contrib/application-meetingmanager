@@ -88,8 +88,6 @@ meetings.meeting.startmeeting.help=En cliquant sur le bouton ci-dessous, vous al
 meetings.meeting.endmeeting.help=En cliquant sur le bouton ci-dessous, vous allez terminer la réunion. Vous pourrez toujours éditer le compte rendu, en revanche vous ne pourrez plus ajouter de nouveaux participants.
 meetings.meeting.startmeeting.started=La réunion est maintenant démarée. Vous pouvez saisir le compte rende dans la zone d'édition ci-dessous.
 meetings.meeting.startmeeting.warning=Une fois la réunion démarée vous ne pourrez plus en éditer les caractéristiques.
-meetings.meeting.typist=Rapporteur
-meetings.meeting.choosetypist.noparticipant=Il n'y a pas encore de participant associé à cette réunion. Vous pourrez choisir un rapporteur lorsque la liste des participants sera définie.
 meetings.meeting.dostart=Démarrer
 meetings.meeting.doend=Terminer
 meetings.meeting.domakecycle=Créer le cycle
@@ -97,13 +95,9 @@ meetings.meeting.cycleurlwillbe=Le cycle crée sera consultable à l'adresse:
 meetings.meeting.minutes=Compte rendu
 meetings.meeting.minutes.edit=Editer le compte rendu
 meetings.meeting.minutes.saved=Le compte rendu a été sauvé avec succes.
-meetings.meeting.youarethetypist=Vous êtes le rapporteur de cette réunion. La zone ci-dessous vous permet de prendre les notes. Pensez à sauver régulièrement, ainsi les autres participants pourront voir le compte rendu se mettre à jour progressivement.
 meetings.meeting.meetingnow=La réunion est en cours. Vous pouvez suivre en direct la prise de note dans la section "Compte rendu"
-meetings.meeting.dontforgettoclose=Penser à clore la réunion lorsque celle-ci prend fin
 
-meetings.meeting.startmeeting.info=Vous êtes sur le point de démarrer la réunion
-meetings.meeting.notypistselected=Vous n'avez pas encore choisi de rapporteur. Veuillez le sélectionner dans la liste des participants. Il rédigera le compte rendu.
-meetings.meeting.typistwillbe=*{0}* sera le rapporteur de cette réunion. 
+meetings.meeting.startmeeting.info=Vous êtes sur le point de démarrer la réunion 
 meetings.meeting.minutes.empty=Le compte rendu de la réunion n'a pas encore été commencé. Cliquez sur le bouton "éditer le compte rendu" pour le commencer.
 
 meetings.meeting.privacy=Droits d'accès:

@@ -87,8 +87,6 @@ meetings.meeting.startmeeting.help=By clicking on the button, you will start the
 meetings.meeting.endmeeting.help=By clicking on the button, you will end the meeting. You will still be able to edit the meeting report, but you won't be able to add participants.
 meetings.meeting.startmeeting.started=The meeting is now started. You can fill in the meeting report in the following edit area.
 meetings.meeting.startmeeting.warning=Once the meeting is started, you cannot edit the meeting information anymore.
-meetings.meeting.typist=Typist
-meetings.meeting.choosetypist.noparticipant=There is currently no participant in this meeting. You will be able to choose a typist once you have participants in the meeting.
 meetings.meeting.dostart=Start
 meetings.meeting.doend=End
 meetings.meeting.domakecycle=Create the cycle
@@ -96,13 +94,9 @@ meetings.meeting.cycleurlwillbe=The cycle will be accessible at the following UR
 meetings.meeting.minutes=Meeting Notes
 meetings.meeting.minutes.edit=Edit the report
 meetings.meeting.minutes.saved=The report has been successfully saved.
-meetings.meeting.youarethetypist=You are the meeting typist. The following edit area allows you to type your notes. You should save your notes regularly so that other participants can see the meeting report being filled in progressively.
 meetings.meeting.meetingnow=The meeting has started. You can check the meeting notes.
-meetings.meeting.dontforgettoclose=You should "end" the meeting once the report is written
 
-meetings.meeting.startmeeting.info=You are ready to start the meeting
-meetings.meeting.notypistselected=You have not chosen the meeting typist. Please select him from the participants. 
-meetings.meeting.typistwillbe=*{0}* will be the typist for this meeting. 
+meetings.meeting.startmeeting.info=You are ready to start the meeting  
 meetings.meeting.minutes.empty=The meeting notes have not yet been started. Click on "edit" to start taking notes.
 
 meetings.meeting.privacy=Access Rights:
@@ -116,7 +110,6 @@ meetings.meeting.meetingmanager=Organizer
 meetings.meeting.infos.edit=Edit the Meeting Details
 meetings.meeting.infos.save=Save
 meetings.meeting.infos.saved=Meeting details saved.
-meetings.meeting.infos.noparticipantyet=There are currently no participant in this meeting. You will be able to choose a typist once you have finalized the participant list.
 meetings.meeting.infos.comments={0} Comments(s)
 meetings.meeting.infos.attachments={0} Attached Files
 

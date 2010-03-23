@@ -334,13 +334,6 @@ function saveInfos() {
       $meeting.display("privacy", "edit")
       &lt;span class="helptip"&gt;&amp;nbsp;Une fiche privée n'est visible que de ses participants.&lt;/span&gt;
     &lt;/div&gt;
-    &lt;div class="typist"&gt;
-      &lt;strong class="typist"&gt;$msg.get('meetings.meeting.typist')&lt;/strong&gt; 
-      #if($participants.size()&gt;1) $meeting.display("typist", "edit")
-      #else
-        #warning("$msg.get('meetings.meeting.infos.noparticipantyet')")
-      #end
-    &lt;/div&gt;
     &lt;span class="buttonwrapper"&gt;
       &lt;button id="meetingInfosSave"&gt;$msg.get('meetings.meeting.infos.save')&lt;/button&gt;
     &lt;/span&gt;
@@ -373,7 +366,6 @@ $meeting.display('location', 'view') &lt;/p&gt;
 #end
 &lt;p&gt;&lt;strong&gt;$msg.get('meetings.meeting.manager') : &lt;/strong&gt; 
 {{html clean="false"}}$xwiki.getUserName("$meetingDoc.creator"){{/html}}&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;$msg.get('meetings.meeting.typist'): &lt;/strong&gt; $!meeting.display("typist", "view")&lt;/p&gt;
 #if("$!request.xpage" == "") &lt;/div&gt; #end
 #end
 {{/html}}

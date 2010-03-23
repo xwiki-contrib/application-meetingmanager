@@ -171,30 +171,6 @@
 <validationRegExp></validationRegExp>
 <classType>com.xpn.xwiki.objects.classes.StringClass</classType>
 </title>
-<typist>
-<cache>0</cache>
-<classname></classname>
-<customDisplay></customDisplay>
-<displayType>select</displayType>
-<idField></idField>
-<multiSelect>0</multiSelect>
-<name>typist</name>
-<number>10</number>
-<picker>0</picker>
-<prettyName>typist</prettyName>
-<relationalStorage>0</relationalStorage>
-<separator> </separator>
-<separators></separators>
-<size>1</size>
-<sort>none</sort>
-<sql>select username.value, concat(concat(fname.value, ' '), lname.value) from XWikiDocument as doc, XWikiDocument as userdoc, BaseObject as userobj, StringProperty as fname, StringProperty as lname, BaseObject as obj, StringProperty as username where doc.fullName='${doc.fullName}' and obj.name=doc.fullName and obj.className='XWiki.MeetingParticipantClass' and obj.id=username.id.id and username.id.name='username' and userdoc.fullName=username.value and userdoc.fullName=userobj.name and userobj.className='XWiki.XWikiUsers' and fname.id.id=userobj.id and lname.id.id=userobj.id and fname.id.name='first_name' and lname.id.name='last_name'</sql>
-<tooltip></tooltip>
-<unmodifiable>0</unmodifiable>
-<validationMessage></validationMessage>
-<validationRegExp></validationRegExp>
-<valueField></valueField>
-<classType>com.xpn.xwiki.objects.classes.DBListClass</classType>
-</typist>
 <unused>
 <customDisplay></customDisplay>
 <name>unused</name>
@@ -239,9 +215,6 @@
 </property>
 <property>
 <title></title>
-</property>
-<property>
-<typist></typist>
 </property>
 <property>
 <unused></unused>
