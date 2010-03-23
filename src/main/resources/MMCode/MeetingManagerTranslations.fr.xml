@@ -23,11 +23,7 @@
 <minorEdit>false</minorEdit>
 <syntaxId>xwiki/1.0</syntaxId>
 <hidden>false</hidden>
-<content>## Override ApplicationResource_fr.properties to be have consistent use of Tags instead of Balises in the french version
-tags=Tags
-core.tagedit.title=Tags :
-changes.tag.tags=Tags
-
+<content>
 MMCode.MeetingClass_privacy_private=Privée
 MMCode.MeetingClass_privacy_public=Publique
 
@@ -101,9 +97,6 @@ meetings.meeting.cycleurlwillbe=Le cycle crée sera consultable à l'adresse:
 meetings.meeting.minutes=Compte rendu
 meetings.meeting.minutes.edit=Editer le compte rendu
 meetings.meeting.minutes.saved=Le compte rendu a été sauvé avec succes.
-meetings.meeting.tasks=Tâches
-meetings.meeting.tasks.edit=Editer les tâches
-meetings.meeting.tasks.saved=Les tâches ont été sauvé avec succes.
 meetings.meeting.youarethetypist=Vous êtes le rapporteur de cette réunion. La zone ci-dessous vous permet de prendre les notes. Pensez à sauver régulièrement, ainsi les autres participants pourront voir le compte rendu se mettre à jour progressivement.
 meetings.meeting.meetingnow=La réunion est en cours. Vous pouvez suivre en direct la prise de note dans la section "Compte rendu"
 meetings.meeting.dontforgettoclose=Penser à clore la réunion lorsque celle-ci prend fin
@@ -112,7 +105,6 @@ meetings.meeting.startmeeting.info=Vous êtes sur le point de démarrer la réun
 meetings.meeting.notypistselected=Vous n'avez pas encore choisi de rapporteur. Veuillez le sélectionner dans la liste des participants. Il rédigera le compte rendu.
 meetings.meeting.typistwillbe=*{0}* sera le rapporteur de cette réunion. 
 meetings.meeting.minutes.empty=Le compte rendu de la réunion n'a pas encore été commencé. Cliquez sur le bouton "éditer le compte rendu" pour le commencer.
-meetings.meeting.tasks.empty=Les tâches associées à la réunion n'ont pas encore été éditées. Cliquez sur le bouton "éditer les tâches" pour commencer.
 
 meetings.meeting.privacy=Droits d'accès:
 
@@ -131,9 +123,6 @@ meetings.meeting.infos.attachments={0} pièce(s)-jointe(s)
 
 meetings.meeting.saveminutes=Sauvegarder
 meetings.meeting.saveminutesandclose=Sauvegarder et fermer
-meetings.meeting.savetasks=Sauvegarder
-meetings.meeting.savetasksandclose=Sauvegarder et fermer
-
 
 meetings.meeting.participants=Participants
 meetings.meeting.participants.noparticipant=Il n'y a pour le moment aucun participant associé à cette réunion
