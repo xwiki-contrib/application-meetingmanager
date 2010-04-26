@@ -7,14 +7,14 @@
 <defaultLanguage>en</defaultLanguage>
 <translation>0</translation>
 <parent></parent>
-<creator>XWiki.Admin</creator>
+<creator>XWiki.JeromeVelociter</creator>
 <author>XWiki.Admin</author>
 <customClass></customClass>
 <contentAuthor>XWiki.Admin</contentAuthor>
-<creationDate>1267419600000</creationDate>
-<date>1267419600000</date>
-<contentUpdateDate>1267419600000</contentUpdateDate>
-<version>1.1</version>
+<creationDate>1238400903000</creationDate>
+<date>1255883026000</date>
+<contentUpdateDate>1255883026000</contentUpdateDate>
+<version>2.1</version>
 <title>MeetingManagerTranslations</title>
 <template></template>
 <defaultTemplate></defaultTemplate>
@@ -23,7 +23,51 @@
 <minorEdit>false</minorEdit>
 <syntaxId>xwiki/1.0</syntaxId>
 <hidden>false</hidden>
-<content>
+<object>
+<class>
+<name>XWiki.TagClass</name>
+<customClass></customClass>
+<customMapping></customMapping>
+<defaultViewSheet></defaultViewSheet>
+<defaultEditSheet></defaultEditSheet>
+<defaultWeb></defaultWeb>
+<nameField></nameField>
+<validationScript></validationScript>
+<tags>
+<cache>0</cache>
+<displayType>checkbox</displayType>
+<multiSelect>1</multiSelect>
+<name>tags</name>
+<number>1</number>
+<prettyName>Tags</prettyName>
+<relationalStorage>1</relationalStorage>
+<separator> </separator>
+<separators> ,|</separators>
+<size>30</size>
+<unmodifiable>0</unmodifiable>
+<values></values>
+<classType>com.xpn.xwiki.objects.classes.StaticListClass</classType>
+</tags>
+</class>
+<name>MMCode.MeetingManagerTranslations</name>
+<number>0</number>
+<className>XWiki.TagClass</className>
+<guid>31c92fa7-4a36-46e8-8847-eb76c52db8aa</guid>
+<property>
+<tags/>
+</property>
+</object>
+<content>## Override ApplicationResource_fr.properties to be have consistent use of Tags instead of Balises in the french version
+tags=Tags
+core.tagedit.title=Tags :
+changes.tag.tags=Tags
+
+MMCode.MeetingClass_status_none=Futur meeting
+MMCode.MeetingClass_status_prepared=Prepared
+MMCode.MeetingClass_status_started=Started
+MMCode.MeetingClass_status_finished=Finished
+MMCode.MeetingClass_status_voteopen=Vote in process
+MMCode.MeetingClass_status_voteclosed=Vote finished
 MMCode.MeetingClass_privacy_private=Private
 MMCode.MeetingClass_privacy_public=Public
 
@@ -49,6 +93,7 @@ meetings.dashboard.gotocycles=View Meeting Cycles
 
 meetings.dashboard.grid.date=Date
 meetings.dashboard.grid.location=Location
+meetings.dashboard.grid.status=Status
 meetings.dashboard.grid.emptyvalue=-
 meetings.dashboard.grid.doc.title=Title
 meetings.dashboard.grid.doc.creator=Organizer
@@ -70,6 +115,7 @@ meetings.cycle.nextname=Meeting page Name:
 meetings.cycle.lastmeeting=Reminder - previous meeting in this cycle
 meetings.cycle.lastname=Title:
 meetings.cycle.lastdate=Date:
+meetings.cycle.laststatus=status:
 meetings.cycle.alreadyexists=This page already exists
 meetings.cycle.addingmeetingtocycle=Transformation of Cycle meeting
 meetings.cycles.listofcycles=Meeting Cycles:
@@ -81,12 +127,15 @@ meetings.meeting.manager=Organizer
 meetings.meeting.makecycle=Create a cycle from this meeting
 meetings.meeting.sheettitle=Meeting Information
 meetings.meeting.tags=Tags :
+meetings.meeting.status=Status
 meetings.meeting.startmeeting=Start the meeting
 meetings.meeting.endmeeting=Finished the meeting
 meetings.meeting.startmeeting.help=By clicking on the button, you will start the meeting. You won't be able to edit anymore the meeting information. A new edit zone will be provided for your meeting report.
 meetings.meeting.endmeeting.help=By clicking on the button, you will end the meeting. You will still be able to edit the meeting report, but you won't be able to add participants.
 meetings.meeting.startmeeting.started=The meeting is now started. You can fill in the meeting report in the following edit area.
 meetings.meeting.startmeeting.warning=Once the meeting is started, you cannot edit the meeting information anymore.
+meetings.meeting.typist=Typist
+meetings.meeting.choosetypist.noparticipant=There is currently no participant in this meeting. You will be able to choose a typist once you have participants in the meeting.
 meetings.meeting.dostart=Start
 meetings.meeting.doend=End
 meetings.meeting.domakecycle=Create the cycle
@@ -94,10 +143,18 @@ meetings.meeting.cycleurlwillbe=The cycle will be accessible at the following UR
 meetings.meeting.minutes=Meeting Notes
 meetings.meeting.minutes.edit=Edit the report
 meetings.meeting.minutes.saved=The report has been successfully saved.
+meetings.meeting.tasks=Tasks
+meetings.meeting.tasks.edit=Edit the tasks
+meetings.meeting.tasks.saved=Les tasks have been successfully saved.
+meetings.meeting.youarethetypist=You are the meeting typist. The following edit area allows you to type your notes. You should save your notes regularly so that other participants can see the meeting report being filled in progressively.
 meetings.meeting.meetingnow=The meeting has started. You can check the meeting notes.
+meetings.meeting.dontforgettoclose=You should "end" the meeting once the report is written
 
-meetings.meeting.startmeeting.info=You are ready to start the meeting  
+meetings.meeting.startmeeting.info=You are ready to start the meeting
+meetings.meeting.notypistselected=You have not chosen the meeting typist. Please select him from the participants. 
+meetings.meeting.typistwillbe=*{0}* will be the typist for this meeting. 
 meetings.meeting.minutes.empty=The meeting notes have not yet been started. Click on "edit" to start taking notes.
+meetings.meeting.tasks.empty=The meeting tasks have not yet been started. Click on "edit" to start editing the tasks.
 
 meetings.meeting.privacy=Access Rights:
 
@@ -110,11 +167,15 @@ meetings.meeting.meetingmanager=Organizer
 meetings.meeting.infos.edit=Edit the Meeting Details
 meetings.meeting.infos.save=Save
 meetings.meeting.infos.saved=Meeting details saved.
+meetings.meeting.infos.noparticipantyet=There are currently no participant in this meeting. You will be able to choose a typist once you have finalized the participant list.
 meetings.meeting.infos.comments={0} Comments(s)
 meetings.meeting.infos.attachments={0} Attached Files
 
 meetings.meeting.saveminutes=Save
 meetings.meeting.saveminutesandclose=Save and Close
+meetings.meeting.savetasks=Save
+meetings.meeting.savetasksandclose=Save and Close
+
 
 meetings.meeting.participants=Participants
 meetings.meeting.participants.noparticipant=There is currently no participant in this meeting

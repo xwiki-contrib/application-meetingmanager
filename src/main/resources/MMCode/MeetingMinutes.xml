@@ -7,14 +7,14 @@
 <defaultLanguage>fr</defaultLanguage>
 <translation>0</translation>
 <parent></parent>
-<creator>XWiki.Admin</creator>
+<creator>XWiki.JeromeVelociter</creator>
 <author>XWiki.Admin</author>
 <customClass></customClass>
 <contentAuthor>XWiki.Admin</contentAuthor>
-<creationDate>1267419600000</creationDate>
-<date>1267419600000</date>
-<contentUpdateDate>1267419600000</contentUpdateDate>
-<version>1.1</version>
+<creationDate>1239806819000</creationDate>
+<date>1255883026000</date>
+<contentUpdateDate>1255883026000</contentUpdateDate>
+<version>2.1</version>
 <title>MeetingMinutes</title>
 <template></template>
 <defaultTemplate></defaultTemplate>
@@ -196,6 +196,40 @@ function saveTasks(){
 <use>onDemand</use>
 </property>
 </object>
+<object>
+<class>
+<name>XWiki.TagClass</name>
+<customClass></customClass>
+<customMapping></customMapping>
+<defaultViewSheet></defaultViewSheet>
+<defaultEditSheet></defaultEditSheet>
+<defaultWeb></defaultWeb>
+<nameField></nameField>
+<validationScript></validationScript>
+<tags>
+<cache>0</cache>
+<displayType>checkbox</displayType>
+<multiSelect>1</multiSelect>
+<name>tags</name>
+<number>1</number>
+<prettyName>Tags</prettyName>
+<relationalStorage>1</relationalStorage>
+<separator> </separator>
+<separators> ,|</separators>
+<size>30</size>
+<unmodifiable>0</unmodifiable>
+<values></values>
+<classType>com.xpn.xwiki.objects.classes.StaticListClass</classType>
+</tags>
+</class>
+<name>MMCode.MeetingMinutes</name>
+<number>0</number>
+<className>XWiki.TagClass</className>
+<guid>77b84e81-2229-44b6-8f45-702ec212bbd6</guid>
+<property>
+<tags/>
+</property>
+</object>
 <content>{{velocity filter="none"}}
 {{html clean="false" wiki="true"}}
 #wysiwyg_import(false)
@@ -235,6 +269,45 @@ $msg.get('meetings.meeting.minutes')
     #warning("$msg.get('meetings.meeting.minutes.empty')")
   #else
     $meeting.display('minutes', 'view')
+  #end
+  #if("$!request.xpage" == "")
+    &lt;/div&gt; 
+   &lt;/div&gt;
+  &lt;/div&gt;
+ &lt;/div&gt;
+  #end
+#end
+#if("$!request.type" == "" || "$!request.type" == "tasks")
+  #if("$!request.xpage" == "")
+&lt;h2 class="meetingh2"&gt;
+$msg.get('meetings.meeting.tasks')
+&lt;/h2&gt;
+&lt;div id="meetingtasks"&gt;
+&lt;div id="editmeetingtasks"&gt;$msg.get('meetings.meeting.tasks.edit')&lt;/div&gt;
+ &lt;div id="meetingtaskscontent"&gt;
+  &lt;div id="taskscontent"&gt;
+    &lt;div id="tasksedit" class="hidden editableInfos"&gt;
+      &lt;div id="taskseditcontent" class=""&gt;
+          $meeting.display("tasks", "edit")
+          {{html wiki="false"}}
+          #wysiwyg_inputProperty($meetingDoc "MMCode.MeetingClass_0_tasks")
+          #wysiwyg_storeConfig("meetingTasksEditorConfig" $meetingDoc "MMCode.MeetingClass_0_tasks" false)
+          {{/html}}
+      &lt;/div&gt;
+      &lt;span class="buttonwrapper"&gt;
+        &lt;button id="savetasks"&gt;$msg.get('meetings.meeting.savetasks')&lt;/button&gt;
+        &lt;button id="savetasksandclose"&gt;$msg.get('meetings.meeting.savetasksandclose')&lt;/button&gt;
+      &lt;/span&gt;
+    &lt;/div&gt;
+    &lt;div id="tasksview"&gt;
+  #else
+    #set($meetingDoc = $xwiki.getDocument($request.meeting))
+    #set($meeting = $meetingDoc.getObject("MMCode.MeetingClass"))
+  #end
+  #if("$!meeting.getProperty('tasks').value" == "")
+    #warning("$msg.get('meetings.meeting.tasks.empty')")
+  #else
+    $meeting.display('tasks', 'view')
   #end
   #if("$!request.xpage" == "")
     &lt;/div&gt; 
