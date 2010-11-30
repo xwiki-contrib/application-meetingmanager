@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <xwikidoc>
 <web>MMCode</web>
 <name>MeetingClassTemplate</name>
@@ -7,14 +6,14 @@
 <defaultLanguage>fr</defaultLanguage>
 <translation>0</translation>
 <parent></parent>
-<creator>XWiki.JeromeVelociter</creator>
+<creator>XWiki.Admin</creator>
 <author>XWiki.Admin</author>
 <customClass></customClass>
 <contentAuthor>XWiki.Admin</contentAuthor>
-<creationDate>1238400666000</creationDate>
-<date>1255883158000</date>
-<contentUpdateDate>1255883158000</contentUpdateDate>
-<version>3.1</version>
+<creationDate>1288566000000</creationDate>
+<date>1288566000000</date>
+<contentUpdateDate>1288566000000</contentUpdateDate>
+<version>1.1</version>
 <title></title>
 <template></template>
 <defaultTemplate></defaultTemplate>
@@ -36,6 +35,7 @@
 <date>
 <customDisplay></customDisplay>
 <dateFormat>dd/MM/yyyy</dateFormat>
+<disabled>0</disabled>
 <emptyIsToday>0</emptyIsToday>
 <name>date</name>
 <number>5</number>
@@ -51,6 +51,7 @@
 <description>
 <contenttype>FullyRenderedText</contenttype>
 <customDisplay></customDisplay>
+<disabled>0</disabled>
 <editor>Wysiwyg</editor>
 <name>description</name>
 <number>3</number>
@@ -67,6 +68,7 @@
 <displaymap>
 <customDisplay></customDisplay>
 <defaultValue></defaultValue>
+<disabled>0</disabled>
 <displayFormType>checkbox</displayFormType>
 <displayType></displayType>
 <name>displaymap</name>
@@ -81,6 +83,7 @@
 <endtime>
 <customDisplay></customDisplay>
 <dateFormat>HH:mm</dateFormat>
+<disabled>0</disabled>
 <emptyIsToday>0</emptyIsToday>
 <name>endtime</name>
 <number>8</number>
@@ -95,6 +98,7 @@
 </endtime>
 <location>
 <customDisplay></customDisplay>
+<disabled>0</disabled>
 <name>location</name>
 <number>4</number>
 <picker>0</picker>
@@ -109,6 +113,7 @@
 <minutes>
 <contenttype>FullyRenderedText</contenttype>
 <customDisplay></customDisplay>
+<disabled>0</disabled>
 <editor>Text</editor>
 <name>minutes</name>
 <number>11</number>
@@ -125,6 +130,7 @@
 <privacy>
 <cache>0</cache>
 <customDisplay></customDisplay>
+<disabled>0</disabled>
 <displayType>select</displayType>
 <multiSelect>0</multiSelect>
 <name>privacy</name>
@@ -146,6 +152,7 @@
 <starttime>
 <customDisplay></customDisplay>
 <dateFormat>HH:mm</dateFormat>
+<disabled>0</disabled>
 <emptyIsToday>0</emptyIsToday>
 <name>starttime</name>
 <number>7</number>
@@ -161,6 +168,7 @@
 <status>
 <cache>0</cache>
 <customDisplay></customDisplay>
+<disabled>0</disabled>
 <displayType>select</displayType>
 <multiSelect>0</multiSelect>
 <name>status</name>
@@ -182,6 +190,7 @@
 <tasks>
 <contenttype>FullyRenderedText</contenttype>
 <customDisplay></customDisplay>
+<disabled>0</disabled>
 <editor>PureText</editor>
 <name>tasks</name>
 <number>12</number>
@@ -197,6 +206,7 @@
 </tasks>
 <title>
 <customDisplay></customDisplay>
+<disabled>0</disabled>
 <name>title</name>
 <number>2</number>
 <picker>0</picker>
@@ -212,6 +222,7 @@
 <cache>0</cache>
 <classname></classname>
 <customDisplay></customDisplay>
+<disabled>0</disabled>
 <displayType>select</displayType>
 <idField></idField>
 <multiSelect>0</multiSelect>
@@ -234,6 +245,7 @@
 </typist>
 <unused>
 <customDisplay></customDisplay>
+<disabled>0</disabled>
 <name>unused</name>
 <number>6</number>
 <picker>0</picker>
@@ -292,40 +304,6 @@
 </object>
 <object>
 <class>
-<name>XWiki.TagClass</name>
-<customClass></customClass>
-<customMapping></customMapping>
-<defaultViewSheet></defaultViewSheet>
-<defaultEditSheet></defaultEditSheet>
-<defaultWeb></defaultWeb>
-<nameField></nameField>
-<validationScript></validationScript>
-<tags>
-<cache>0</cache>
-<displayType>checkbox</displayType>
-<multiSelect>1</multiSelect>
-<name>tags</name>
-<number>1</number>
-<prettyName>Tags</prettyName>
-<relationalStorage>1</relationalStorage>
-<separator> </separator>
-<separators> ,|</separators>
-<size>30</size>
-<unmodifiable>0</unmodifiable>
-<values></values>
-<classType>com.xpn.xwiki.objects.classes.StaticListClass</classType>
-</tags>
-</class>
-<name>MMCode.MeetingClassTemplate</name>
-<number>0</number>
-<className>XWiki.TagClass</className>
-<guid>4b3eedbb-0795-486c-a31a-cd2ce5a0db3a</guid>
-<property>
-<tags/>
-</property>
-</object>
-<object>
-<class>
 <name>XWiki.XWikiRights</name>
 <customClass></customClass>
 <customMapping></customMapping>
@@ -335,54 +313,80 @@
 <nameField></nameField>
 <validationScript></validationScript>
 <allow>
+<customDisplay></customDisplay>
 <defaultValue>1</defaultValue>
+<disabled>0</disabled>
 <displayFormType>select</displayFormType>
 <displayType>allow</displayType>
 <name>allow</name>
 <number>4</number>
 <prettyName>Allow/Deny</prettyName>
+<tooltip></tooltip>
 <unmodifiable>0</unmodifiable>
+<validationMessage></validationMessage>
+<validationRegExp></validationRegExp>
 <classType>com.xpn.xwiki.objects.classes.BooleanClass</classType>
 </allow>
 <groups>
 <cache>0</cache>
+<customDisplay></customDisplay>
+<disabled>0</disabled>
 <displayType>select</displayType>
 <multiSelect>1</multiSelect>
 <name>groups</name>
-<number>1</number>
+<number>4</number>
+<picker></picker>
 <prettyName>Groups</prettyName>
 <relationalStorage>0</relationalStorage>
 <separator> </separator>
 <size>5</size>
+<sort>none</sort>
+<tooltip></tooltip>
 <unmodifiable>0</unmodifiable>
 <usesList>1</usesList>
+<validationMessage></validationMessage>
+<validationRegExp></validationRegExp>
 <classType>com.xpn.xwiki.objects.classes.GroupsClass</classType>
 </groups>
 <levels>
 <cache>0</cache>
+<customDisplay></customDisplay>
+<disabled>0</disabled>
 <displayType>select</displayType>
 <multiSelect>1</multiSelect>
 <name>levels</name>
-<number>2</number>
+<number>4</number>
+<picker></picker>
 <prettyName>Levels</prettyName>
 <relationalStorage>0</relationalStorage>
 <separator> </separator>
 <size>3</size>
+<sort>none</sort>
+<tooltip></tooltip>
 <unmodifiable>0</unmodifiable>
+<validationMessage></validationMessage>
+<validationRegExp></validationRegExp>
 <classType>com.xpn.xwiki.objects.classes.LevelsClass</classType>
 </levels>
 <users>
 <cache>0</cache>
+<customDisplay></customDisplay>
+<disabled>0</disabled>
 <displayType>select</displayType>
 <multiSelect>1</multiSelect>
 <name>users</name>
-<number>3</number>
+<number>4</number>
+<picker></picker>
 <prettyName>Users</prettyName>
 <relationalStorage>0</relationalStorage>
 <separator> </separator>
 <size>5</size>
+<sort>none</sort>
+<tooltip></tooltip>
 <unmodifiable>0</unmodifiable>
-<usesList>1</usesList>
+<usesList>0</usesList>
+<validationMessage></validationMessage>
+<validationRegExp></validationRegExp>
 <classType>com.xpn.xwiki.objects.classes.UsersClass</classType>
 </users>
 </class>
@@ -394,7 +398,7 @@
 <allow>1</allow>
 </property>
 <property>
-<groups>XWiki.XWikiAllGroup,</groups>
+<groups>XWiki.XWikiAllGroup,xwiki:XWiki.XWikiAllGroup</groups>
 </property>
 <property>
 <levels>view,edit</levels>
@@ -403,5 +407,4 @@
 <users></users>
 </property>
 </object>
-<content>{{include document="MMCode.MeetingClassSheet"/}}</content>
-</xwikidoc>
+<content>{{include document="MMCode.MeetingClassSheet"/}}</content></xwikidoc>

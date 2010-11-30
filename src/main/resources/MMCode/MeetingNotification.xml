@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <xwikidoc>
 <web>MMCode</web>
 <name>MeetingNotification</name>
@@ -11,10 +10,10 @@
 <author>XWiki.Admin</author>
 <customClass></customClass>
 <contentAuthor>XWiki.Admin</contentAuthor>
-<creationDate>1243942017000</creationDate>
-<date>1255883026000</date>
-<contentUpdateDate>1255883026000</contentUpdateDate>
-<version>2.1</version>
+<creationDate>1288566000000</creationDate>
+<date>1288566000000</date>
+<contentUpdateDate>1288566000000</contentUpdateDate>
+<version>1.1</version>
 <title></title>
 <template></template>
 <defaultTemplate></defaultTemplate>
@@ -34,6 +33,7 @@
 <nameField></nameField>
 <validationScript></validationScript>
 <available>
+<disabled>0</disabled>
 <name>available</name>
 <number>5</number>
 <prettyName>available</prettyName>
@@ -44,6 +44,7 @@
 <message>
 <contenttype>FullyRenderedText</contenttype>
 <customDisplay></customDisplay>
+<disabled>0</disabled>
 <editor>---</editor>
 <name>message</name>
 <number>4</number>
@@ -60,6 +61,7 @@
 <participation>
 <cache>1</cache>
 <customDisplay></customDisplay>
+<disabled>0</disabled>
 <displayType>select</displayType>
 <multiSelect>0</multiSelect>
 <name>participation</name>
@@ -81,6 +83,7 @@
 <presence>
 <cache>0</cache>
 <customDisplay></customDisplay>
+<disabled>0</disabled>
 <displayType>select</displayType>
 <multiSelect>0</multiSelect>
 <name>presence</name>
@@ -100,6 +103,7 @@
 <classType>com.xpn.xwiki.objects.classes.StaticListClass</classType>
 </presence>
 <unavailable>
+<disabled>0</disabled>
 <name>unavailable</name>
 <number>6</number>
 <prettyName>unavailable</prettyName>
@@ -109,6 +113,7 @@
 </unavailable>
 <username>
 <customDisplay></customDisplay>
+<disabled>0</disabled>
 <name>username</name>
 <number>1</number>
 <picker>0</picker>
@@ -125,40 +130,6 @@
 <number>0</number>
 <className>MMCode.MeetingParticipantClass</className>
 <guid>502758a7-5d87-4fe8-89f6-f8cebe489cf5</guid>
-</object>
-<object>
-<class>
-<name>XWiki.TagClass</name>
-<customClass></customClass>
-<customMapping></customMapping>
-<defaultViewSheet></defaultViewSheet>
-<defaultEditSheet></defaultEditSheet>
-<defaultWeb></defaultWeb>
-<nameField></nameField>
-<validationScript></validationScript>
-<tags>
-<cache>0</cache>
-<displayType>checkbox</displayType>
-<multiSelect>1</multiSelect>
-<name>tags</name>
-<number>1</number>
-<prettyName>Tags</prettyName>
-<relationalStorage>1</relationalStorage>
-<separator> </separator>
-<separators> ,|</separators>
-<size>30</size>
-<unmodifiable>0</unmodifiable>
-<values></values>
-<classType>com.xpn.xwiki.objects.classes.StaticListClass</classType>
-</tags>
-</class>
-<name>MMCode.MeetingNotification</name>
-<number>0</number>
-<className>XWiki.TagClass</className>
-<guid>0ed1cbf9-dc01-4460-a53c-a0459ebc1ed8</guid>
-<property>
-<tags/>
-</property>
 </object>
 <content>/* Groovy Class #* */
 
@@ -280,5 +251,4 @@ public class MeetingUpdater implements XWikiDocChangeNotificationInterface
 
 }
 
-/* *# */</content>
-</xwikidoc>
+/* *# */</content></xwikidoc>

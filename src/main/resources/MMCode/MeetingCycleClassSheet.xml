@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <xwikidoc>
 <web>MMCode</web>
 <name>MeetingCycleClassSheet</name>
@@ -11,10 +10,10 @@
 <author>XWiki.Admin</author>
 <customClass></customClass>
 <contentAuthor>XWiki.Admin</contentAuthor>
-<creationDate>1243260834000</creationDate>
-<date>1255883026000</date>
-<contentUpdateDate>1255883026000</contentUpdateDate>
-<version>2.1</version>
+<creationDate>1288566000000</creationDate>
+<date>1288566000000</date>
+<contentUpdateDate>1288566000000</contentUpdateDate>
+<version>1.1</version>
 <title>Meeting Cycle Class Sheet</title>
 <template></template>
 <defaultTemplate></defaultTemplate>
@@ -34,6 +33,7 @@
 <nameField></nameField>
 <validationScript></validationScript>
 <available>
+<disabled>0</disabled>
 <name>available</name>
 <number>5</number>
 <prettyName>available</prettyName>
@@ -44,6 +44,7 @@
 <message>
 <contenttype>FullyRenderedText</contenttype>
 <customDisplay></customDisplay>
+<disabled>0</disabled>
 <editor>---</editor>
 <name>message</name>
 <number>4</number>
@@ -60,6 +61,7 @@
 <participation>
 <cache>1</cache>
 <customDisplay></customDisplay>
+<disabled>0</disabled>
 <displayType>select</displayType>
 <multiSelect>0</multiSelect>
 <name>participation</name>
@@ -81,6 +83,7 @@
 <presence>
 <cache>0</cache>
 <customDisplay></customDisplay>
+<disabled>0</disabled>
 <displayType>select</displayType>
 <multiSelect>0</multiSelect>
 <name>presence</name>
@@ -100,6 +103,7 @@
 <classType>com.xpn.xwiki.objects.classes.StaticListClass</classType>
 </presence>
 <unavailable>
+<disabled>0</disabled>
 <name>unavailable</name>
 <number>6</number>
 <prettyName>unavailable</prettyName>
@@ -109,6 +113,7 @@
 </unavailable>
 <username>
 <customDisplay></customDisplay>
+<disabled>0</disabled>
 <name>username</name>
 <number>1</number>
 <picker>0</picker>
@@ -129,40 +134,6 @@
 <username>XWiki.Admin</username>
 </property>
 </object>
-<object>
-<class>
-<name>XWiki.TagClass</name>
-<customClass></customClass>
-<customMapping></customMapping>
-<defaultViewSheet></defaultViewSheet>
-<defaultEditSheet></defaultEditSheet>
-<defaultWeb></defaultWeb>
-<nameField></nameField>
-<validationScript></validationScript>
-<tags>
-<cache>0</cache>
-<displayType>checkbox</displayType>
-<multiSelect>1</multiSelect>
-<name>tags</name>
-<number>1</number>
-<prettyName>Tags</prettyName>
-<relationalStorage>1</relationalStorage>
-<separator> </separator>
-<separators> ,|</separators>
-<size>30</size>
-<unmodifiable>0</unmodifiable>
-<values></values>
-<classType>com.xpn.xwiki.objects.classes.StaticListClass</classType>
-</tags>
-</class>
-<name>MMCode.MeetingCycleClassSheet</name>
-<number>0</number>
-<className>XWiki.TagClass</className>
-<guid>3371fed0-2180-448c-b48a-8206a3419ac2</guid>
-<property>
-<tags/>
-</property>
-</object>
 <content>{{velocity clean="false"}}
 
 {{html wiki="true" clean="false"}}
@@ -175,14 +146,14 @@
   #warning("This document must be applied to meeting cycles pages.")
 #else
  #set($ok = $xwiki.ssx.use("MMCode.MeetingManager"))
- #set($ok = $xwiki.jsx.use("MMCode.MeetingManager"))
- #set($ok = $xwiki.jsx.use("XWiki.ModalBox"))
+ #set($ok = $xwiki.jsx.use("MMCode.MeetingManager", { 'defer' : false }))
+ #set($ok = $xwiki.jsx.use("XWiki.ModalBox", { 'defer' : false }))
  #set($ok = $xwiki.ssx.use("XWiki.ModalBox"))
  #set($showattachments = "no")
  #set($showcomments = "no")
  #set($showhistory = "no")
  #set($showinformation = "no")
- #set($ok = $xwiki.jsx.use("XWiki.DatePickerExtension"))
+ #set($ok = $xwiki.jsx.use("XWiki.DatePickerExtension", { 'defer' : false }))
  #set($ok = $xwiki.ssx.use("XWiki.DatePickerExtension"))
 
 = Cycle &lt;em&gt;$cycle.get('name')&lt;/em&gt; =
@@ -366,5 +337,4 @@ Event.observe($('createnextmeeting'), "click", function(){
 {{/html}}
 #end
 
-{{/velocity}}</content>
-</xwikidoc>
+{{/velocity}}</content></xwikidoc>

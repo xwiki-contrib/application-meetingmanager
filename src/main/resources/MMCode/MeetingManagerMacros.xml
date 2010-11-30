@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <xwikidoc>
 <web>MMCode</web>
 <name>MeetingManagerMacros</name>
@@ -7,14 +6,14 @@
 <defaultLanguage>en</defaultLanguage>
 <translation>0</translation>
 <parent></parent>
-<creator>XWiki.JeromeVelociter</creator>
+<creator>XWiki.Admin</creator>
 <author>XWiki.Admin</author>
 <customClass></customClass>
 <contentAuthor>XWiki.Admin</contentAuthor>
-<creationDate>1239020869000</creationDate>
-<date>1255883364000</date>
-<contentUpdateDate>1255883364000</contentUpdateDate>
-<version>3.1</version>
+<creationDate>1288566000000</creationDate>
+<date>1288566000000</date>
+<contentUpdateDate>1288566000000</contentUpdateDate>
+<version>1.1</version>
 <title>MeetingManagerMacros</title>
 <template></template>
 <defaultTemplate></defaultTemplate>
@@ -34,6 +33,7 @@
 <nameField></nameField>
 <validationScript></validationScript>
 <available>
+<disabled>0</disabled>
 <name>available</name>
 <number>5</number>
 <prettyName>available</prettyName>
@@ -44,6 +44,7 @@
 <message>
 <contenttype>FullyRenderedText</contenttype>
 <customDisplay></customDisplay>
+<disabled>0</disabled>
 <editor>---</editor>
 <name>message</name>
 <number>4</number>
@@ -60,6 +61,7 @@
 <participation>
 <cache>1</cache>
 <customDisplay></customDisplay>
+<disabled>0</disabled>
 <displayType>select</displayType>
 <multiSelect>0</multiSelect>
 <name>participation</name>
@@ -81,6 +83,7 @@
 <presence>
 <cache>0</cache>
 <customDisplay></customDisplay>
+<disabled>0</disabled>
 <displayType>select</displayType>
 <multiSelect>0</multiSelect>
 <name>presence</name>
@@ -100,6 +103,7 @@
 <classType>com.xpn.xwiki.objects.classes.StaticListClass</classType>
 </presence>
 <unavailable>
+<disabled>0</disabled>
 <name>unavailable</name>
 <number>6</number>
 <prettyName>unavailable</prettyName>
@@ -109,6 +113,7 @@
 </unavailable>
 <username>
 <customDisplay></customDisplay>
+<disabled>0</disabled>
 <name>username</name>
 <number>1</number>
 <picker>0</picker>
@@ -131,7 +136,7 @@
 </object>
 <object>
 <class>
-<name>XWiki.TagClass</name>
+<name>MMCode.MeetingParticipantClass</name>
 <customClass></customClass>
 <customMapping></customMapping>
 <defaultViewSheet></defaultViewSheet>
@@ -139,29 +144,104 @@
 <defaultWeb></defaultWeb>
 <nameField></nameField>
 <validationScript></validationScript>
-<tags>
-<cache>0</cache>
-<displayType>checkbox</displayType>
-<multiSelect>1</multiSelect>
-<name>tags</name>
-<number>1</number>
-<prettyName>Tags</prettyName>
-<relationalStorage>1</relationalStorage>
-<separator> </separator>
-<separators> ,|</separators>
+<available>
+<disabled>0</disabled>
+<name>available</name>
+<number>5</number>
+<prettyName>available</prettyName>
 <size>30</size>
 <unmodifiable>0</unmodifiable>
-<values></values>
+<classType>com.xpn.xwiki.objects.classes.StringClass</classType>
+</available>
+<message>
+<contenttype>FullyRenderedText</contenttype>
+<customDisplay></customDisplay>
+<disabled>0</disabled>
+<editor>---</editor>
+<name>message</name>
+<number>4</number>
+<picker>0</picker>
+<prettyName>message</prettyName>
+<rows>2</rows>
+<size>30</size>
+<tooltip></tooltip>
+<unmodifiable>0</unmodifiable>
+<validationMessage></validationMessage>
+<validationRegExp></validationRegExp>
+<classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
+</message>
+<participation>
+<cache>1</cache>
+<customDisplay></customDisplay>
+<disabled>0</disabled>
+<displayType>select</displayType>
+<multiSelect>0</multiSelect>
+<name>participation</name>
+<number>2</number>
+<picker>0</picker>
+<prettyName>participation</prettyName>
+<relationalStorage>0</relationalStorage>
+<separator> </separator>
+<separators> ,|</separators>
+<size>1</size>
+<sort>none</sort>
+<tooltip></tooltip>
+<unmodifiable>0</unmodifiable>
+<validationMessage></validationMessage>
+<validationRegExp></validationRegExp>
+<values>undecided|confirmed|declined</values>
 <classType>com.xpn.xwiki.objects.classes.StaticListClass</classType>
-</tags>
+</participation>
+<presence>
+<cache>0</cache>
+<customDisplay></customDisplay>
+<disabled>0</disabled>
+<displayType>select</displayType>
+<multiSelect>0</multiSelect>
+<name>presence</name>
+<number>3</number>
+<picker>0</picker>
+<prettyName>presence</prettyName>
+<relationalStorage>0</relationalStorage>
+<separator> </separator>
+<separators> ,|</separators>
+<size>1</size>
+<sort>none</sort>
+<tooltip></tooltip>
+<unmodifiable>0</unmodifiable>
+<validationMessage></validationMessage>
+<validationRegExp></validationRegExp>
+<values>present|absent|late</values>
+<classType>com.xpn.xwiki.objects.classes.StaticListClass</classType>
+</presence>
+<unavailable>
+<disabled>0</disabled>
+<name>unavailable</name>
+<number>6</number>
+<prettyName>unavailable</prettyName>
+<size>30</size>
+<unmodifiable>0</unmodifiable>
+<classType>com.xpn.xwiki.objects.classes.StringClass</classType>
+</unavailable>
+<username>
+<customDisplay></customDisplay>
+<disabled>0</disabled>
+<name>username</name>
+<number>1</number>
+<picker>0</picker>
+<prettyName>username</prettyName>
+<size>30</size>
+<tooltip></tooltip>
+<unmodifiable>0</unmodifiable>
+<validationMessage></validationMessage>
+<validationRegExp></validationRegExp>
+<classType>com.xpn.xwiki.objects.classes.StringClass</classType>
+</username>
 </class>
 <name>MMCode.MeetingManagerMacros</name>
-<number>0</number>
-<className>XWiki.TagClass</className>
-<guid>98636992-aee9-4a8f-bb9f-d73b3976eb71</guid>
-<property>
-<tags/>
-</property>
+<number>1</number>
+<className>MMCode.MeetingParticipantClass</className>
+<guid>1fc64a6a-b16d-444e-8d2d-3620ea512966</guid>
 </object>
 <content>{{velocity output=false}}
 #**
@@ -221,9 +301,9 @@
 #set($message = $p.getProperty("message").value)
  &lt;li class="xitem xunderline #if($participation!='')$participation#else undecided my#end"&gt;
   &lt;span class="xitemcontainer"&gt;
-    &lt;span class="username"&gt;#avatar($username)
+    &lt;span class="username"&gt;## #avatar($username)
       &lt;span class="participation"&gt;&amp;nbsp;&lt;/span&gt;
-      $xwiki.getUserName($username) 
+      {{html clean="false"}}$xwiki.getUserName($username){{/html}}
     &lt;/span&gt;
     &lt;span class="participationmessage"&gt;#if("$!message" != "")$message#end&lt;/span&gt;
     #if($isManager)
@@ -349,5 +429,4 @@
 &lt;/table&gt;
 #end
 #end
-{{/velocity}}</content>
-</xwikidoc>
+{{/velocity}}</content></xwikidoc>

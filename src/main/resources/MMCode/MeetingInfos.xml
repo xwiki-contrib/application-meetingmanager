@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <xwikidoc>
 <web>MMCode</web>
 <name>MeetingInfos</name>
@@ -7,14 +6,14 @@
 <defaultLanguage>fr</defaultLanguage>
 <translation>0</translation>
 <parent></parent>
-<creator>XWiki.JeromeVelociter</creator>
+<creator>XWiki.Admin</creator>
 <author>XWiki.Admin</author>
 <customClass></customClass>
 <contentAuthor>XWiki.Admin</contentAuthor>
-<creationDate>1238402778000</creationDate>
-<date>1255883026000</date>
-<contentUpdateDate>1255883026000</contentUpdateDate>
-<version>2.1</version>
+<creationDate>1288566000000</creationDate>
+<date>1288566000000</date>
+<contentUpdateDate>1288566000000</contentUpdateDate>
+<version>1.1</version>
 <title>MeetingInfos</title>
 <template></template>
 <defaultTemplate></defaultTemplate>
@@ -23,112 +22,6 @@
 <minorEdit>false</minorEdit>
 <syntaxId>xwiki/2.0</syntaxId>
 <hidden>false</hidden>
-<object>
-<class>
-<name>MMCode.MeetingParticipantClass</name>
-<customClass></customClass>
-<customMapping></customMapping>
-<defaultViewSheet></defaultViewSheet>
-<defaultEditSheet></defaultEditSheet>
-<defaultWeb></defaultWeb>
-<nameField></nameField>
-<validationScript></validationScript>
-<available>
-<name>available</name>
-<number>5</number>
-<prettyName>available</prettyName>
-<size>30</size>
-<unmodifiable>0</unmodifiable>
-<classType>com.xpn.xwiki.objects.classes.StringClass</classType>
-</available>
-<message>
-<contenttype>FullyRenderedText</contenttype>
-<customDisplay></customDisplay>
-<editor>---</editor>
-<name>message</name>
-<number>4</number>
-<picker>0</picker>
-<prettyName>message</prettyName>
-<rows>2</rows>
-<size>30</size>
-<tooltip></tooltip>
-<unmodifiable>0</unmodifiable>
-<validationMessage></validationMessage>
-<validationRegExp></validationRegExp>
-<classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
-</message>
-<participation>
-<cache>1</cache>
-<customDisplay></customDisplay>
-<displayType>select</displayType>
-<multiSelect>0</multiSelect>
-<name>participation</name>
-<number>2</number>
-<picker>0</picker>
-<prettyName>participation</prettyName>
-<relationalStorage>0</relationalStorage>
-<separator> </separator>
-<separators> ,|</separators>
-<size>1</size>
-<sort>none</sort>
-<tooltip></tooltip>
-<unmodifiable>0</unmodifiable>
-<validationMessage></validationMessage>
-<validationRegExp></validationRegExp>
-<values>undecided|confirmed|declined</values>
-<classType>com.xpn.xwiki.objects.classes.StaticListClass</classType>
-</participation>
-<presence>
-<cache>0</cache>
-<customDisplay></customDisplay>
-<displayType>select</displayType>
-<multiSelect>0</multiSelect>
-<name>presence</name>
-<number>3</number>
-<picker>0</picker>
-<prettyName>presence</prettyName>
-<relationalStorage>0</relationalStorage>
-<separator> </separator>
-<separators> ,|</separators>
-<size>1</size>
-<sort>none</sort>
-<tooltip></tooltip>
-<unmodifiable>0</unmodifiable>
-<validationMessage></validationMessage>
-<validationRegExp></validationRegExp>
-<values>present|absent|late</values>
-<classType>com.xpn.xwiki.objects.classes.StaticListClass</classType>
-</presence>
-<unavailable>
-<name>unavailable</name>
-<number>6</number>
-<prettyName>unavailable</prettyName>
-<size>30</size>
-<unmodifiable>0</unmodifiable>
-<classType>com.xpn.xwiki.objects.classes.StringClass</classType>
-</unavailable>
-<username>
-<customDisplay></customDisplay>
-<name>username</name>
-<number>1</number>
-<picker>0</picker>
-<prettyName>username</prettyName>
-<size>30</size>
-<tooltip></tooltip>
-<unmodifiable>0</unmodifiable>
-<validationMessage></validationMessage>
-<validationRegExp></validationRegExp>
-<classType>com.xpn.xwiki.objects.classes.StringClass</classType>
-</username>
-</class>
-<name>MMCode.MeetingInfos</name>
-<number>0</number>
-<className>MMCode.MeetingParticipantClass</className>
-<guid>1629cd33-fea1-4fb1-b80d-6984d822b0ae</guid>
-<property>
-<username>XWiki.JeromeVelociter</username>
-</property>
-</object>
 <object>
 <class>
 <name>XWiki.JavaScriptExtension</name>
@@ -141,6 +34,7 @@
 <validationScript></validationScript>
 <cache>
 <cache>0</cache>
+<disabled>0</disabled>
 <displayType>select</displayType>
 <multiSelect>0</multiSelect>
 <name>cache</name>
@@ -155,6 +49,7 @@
 <classType>com.xpn.xwiki.objects.classes.StaticListClass</classType>
 </cache>
 <code>
+<disabled>0</disabled>
 <name>code</name>
 <number>2</number>
 <prettyName>Code</prettyName>
@@ -164,6 +59,7 @@
 <classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
 </code>
 <name>
+<disabled>0</disabled>
 <name>name</name>
 <number>1</number>
 <prettyName>Name</prettyName>
@@ -172,6 +68,7 @@
 <classType>com.xpn.xwiki.objects.classes.StringClass</classType>
 </name>
 <parse>
+<disabled>0</disabled>
 <displayFormType>select</displayFormType>
 <displayType>yesno</displayType>
 <name>parse</name>
@@ -182,6 +79,7 @@
 </parse>
 <use>
 <cache>0</cache>
+<disabled>0</disabled>
 <displayType>select</displayType>
 <multiSelect>0</multiSelect>
 <name>use</name>
@@ -280,7 +178,7 @@ function saveInfos() {
 </object>
 <object>
 <class>
-<name>XWiki.TagClass</name>
+<name>MMCode.MeetingParticipantClass</name>
 <customClass></customClass>
 <customMapping></customMapping>
 <defaultViewSheet></defaultViewSheet>
@@ -288,36 +186,115 @@ function saveInfos() {
 <defaultWeb></defaultWeb>
 <nameField></nameField>
 <validationScript></validationScript>
-<tags>
-<cache>0</cache>
-<displayType>checkbox</displayType>
-<multiSelect>1</multiSelect>
-<name>tags</name>
-<number>1</number>
-<prettyName>Tags</prettyName>
-<relationalStorage>1</relationalStorage>
-<separator> </separator>
-<separators> ,|</separators>
+<available>
+<disabled>0</disabled>
+<name>available</name>
+<number>5</number>
+<prettyName>available</prettyName>
 <size>30</size>
 <unmodifiable>0</unmodifiable>
-<values></values>
+<classType>com.xpn.xwiki.objects.classes.StringClass</classType>
+</available>
+<message>
+<contenttype>FullyRenderedText</contenttype>
+<customDisplay></customDisplay>
+<disabled>0</disabled>
+<editor>---</editor>
+<name>message</name>
+<number>4</number>
+<picker>0</picker>
+<prettyName>message</prettyName>
+<rows>2</rows>
+<size>30</size>
+<tooltip></tooltip>
+<unmodifiable>0</unmodifiable>
+<validationMessage></validationMessage>
+<validationRegExp></validationRegExp>
+<classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
+</message>
+<participation>
+<cache>1</cache>
+<customDisplay></customDisplay>
+<disabled>0</disabled>
+<displayType>select</displayType>
+<multiSelect>0</multiSelect>
+<name>participation</name>
+<number>2</number>
+<picker>0</picker>
+<prettyName>participation</prettyName>
+<relationalStorage>0</relationalStorage>
+<separator> </separator>
+<separators> ,|</separators>
+<size>1</size>
+<sort>none</sort>
+<tooltip></tooltip>
+<unmodifiable>0</unmodifiable>
+<validationMessage></validationMessage>
+<validationRegExp></validationRegExp>
+<values>undecided|confirmed|declined</values>
 <classType>com.xpn.xwiki.objects.classes.StaticListClass</classType>
-</tags>
+</participation>
+<presence>
+<cache>0</cache>
+<customDisplay></customDisplay>
+<disabled>0</disabled>
+<displayType>select</displayType>
+<multiSelect>0</multiSelect>
+<name>presence</name>
+<number>3</number>
+<picker>0</picker>
+<prettyName>presence</prettyName>
+<relationalStorage>0</relationalStorage>
+<separator> </separator>
+<separators> ,|</separators>
+<size>1</size>
+<sort>none</sort>
+<tooltip></tooltip>
+<unmodifiable>0</unmodifiable>
+<validationMessage></validationMessage>
+<validationRegExp></validationRegExp>
+<values>present|absent|late</values>
+<classType>com.xpn.xwiki.objects.classes.StaticListClass</classType>
+</presence>
+<unavailable>
+<disabled>0</disabled>
+<name>unavailable</name>
+<number>6</number>
+<prettyName>unavailable</prettyName>
+<size>30</size>
+<unmodifiable>0</unmodifiable>
+<classType>com.xpn.xwiki.objects.classes.StringClass</classType>
+</unavailable>
+<username>
+<customDisplay></customDisplay>
+<disabled>0</disabled>
+<name>username</name>
+<number>1</number>
+<picker>0</picker>
+<prettyName>username</prettyName>
+<size>30</size>
+<tooltip></tooltip>
+<unmodifiable>0</unmodifiable>
+<validationMessage></validationMessage>
+<validationRegExp></validationRegExp>
+<classType>com.xpn.xwiki.objects.classes.StringClass</classType>
+</username>
 </class>
 <name>MMCode.MeetingInfos</name>
 <number>0</number>
-<className>XWiki.TagClass</className>
-<guid>0196e913-59b2-4652-ab0a-57c9be04f055</guid>
+<className>MMCode.MeetingParticipantClass</className>
+<guid>1629cd33-fea1-4fb1-b80d-6984d822b0ae</guid>
 <property>
-<tags/>
+<username>XWiki.JeromeVelociter</username>
 </property>
 </object>
-<content>{{velocity filter="none"}}
+<content>{{include document="MMCode.MeetingManagerMacros" /}}
+{{velocity filter="none"}}
 {{html clean="false" wiki="false"}} ## We need wiki=false other wise the wysiwyg imports will be transformed (CDATA, etc.)
 ## ---------------------------------------------------------------------------------
 ## SX.
 ## ---------------------------------------------------------------------------------
-#set($ok = $xwiki.jsx.use("MMCode.MeetingInfos"))
+#set($ok = $xwiki.jsx.use("MMCode.MeetingInfos", {'defer': false}))
 ## ---------------------------------------------------------------------------------
 ## This page can be either included from a meeting sheet, or hit via AJAX with a target meeting name passed
 ## as a request parameter. In the first case, the $meetingDoc var will be already set by the including doc, 
@@ -337,8 +314,18 @@ function saveInfos() {
  ## If we are not hit by AJAX, we setup needs for displaying a GWT-WYSYWIG editor for the meeting description.
  ## The actual editor will be fired from javascript when the user clicks "edit meeting infos". See SX attached.
  #wysiwyg_import(false)
- #wysiwyg_inputProperty($meetingDoc "MMCode.MeetingClass_0_description")
- #wysiwyg_storeConfig("meetingDescriptionEditorConfig" $meetingDoc "MMCode.MeetingClass_0_description" false)
+ ##wysiwyg_inputProperty($meetingDoc "MMCode.MeetingClass_0_description")
+ ##wysiwyg_storeConfig("meetingDescriptionEditorConfig" $meetingDoc "MMCode.MeetingClass_0_description" false)
+## Define the map of parameters to be used to configure the WYSIWYG editor.
+#set($parameters = $util.hashMap)
+## Store the default WYSIWYG editor configuration parameters in the $parameters map.
+#wysiwyg_storeConfig($parameters $meetingDoc "MMCode.MeetingClass_0_description" false)
+## The following line adds the inputURL parameter to $parameters map.
+#wysiwyg_inputProperty($meetingDoc "MMCode.MeetingClass_0_description", $parameters)
+## At this point you can customize the default WYSIWYG editor configuration parameters.
+##set($ok = $parameters.put('parameterName', 'parameterValue'))
+## Write the $parameters map to a JavaScript variable.
+#wysiwyg_writeConfig("meetingDescriptionEditorConfig" $parameters)
 #end
 {{/html}}
 {{html clean="false" wiki="true"}}
@@ -428,5 +415,4 @@ $meetingDoc.getObject("XWiki.TagClass").display("tags", "view")&amp;nbsp;&amp;nb
 #if("$!request.xpage" == "") &lt;/div&gt; #end
 #end
 {{/html}}
-{{/velocity}}</content>
-</xwikidoc>
+{{/velocity}}</content></xwikidoc>
