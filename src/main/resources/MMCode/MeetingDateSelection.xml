@@ -45,6 +45,7 @@
     #end
       &lt;form action="$doc.getURL('saveandcontinue')"&gt;
        &lt;div&gt;
+         &lt;input type="hidden" name="form_token" value="$!{services.csrf.getToken()}" /&gt;
          ## force empty date to be today
          #if(!$meeting.get("date"))
           #set($ok = $meeting.set("date", $util.date))

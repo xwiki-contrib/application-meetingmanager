@@ -90,7 +90,7 @@
 <separators> ,|</separators>
 <size>1</size>
 <unmodifiable>0</unmodifiable>
-<values>onDemand=On demand|always=Always</values>
+<values>currentPage=Always on this page|onDemand=On demand|always=Always on this wiki</values>
 <classType>com.xpn.xwiki.objects.classes.StaticListClass</classType>
 </use>
 </class>
@@ -122,9 +122,14 @@ document.observe("dom:loaded", function(){
      });
    }
 });
+
 function saveMinutes(){
+ saveMinutes2("$!{services.csrf.token}");
+}
+
+function saveMinutes2(formToken){
     var url = XWiki.getActionURL(XWiki.currentSpace, XWiki.currentDocument, "save", 0);
-    var args = {"ajax":"1"};
+    var args = {"ajax":"1", "form_token" : formToken };
     editorMinutes.getSourceText(function(text){
       args["MMCode.MeetingClass_0_minutes"] = text;
       $('minutesview').innerHTML = "&lt;br /&gt;";
@@ -133,16 +138,21 @@ function saveMinutes(){
         method:"post",
         parameters: args,
         onComplete:function(transport) {
-          var savedMsg = new Element("div",{'class':'infomessage'}).update("$msg.get('meetings.meeting.minutes.saved')");
-          $('minutesview').insert({before: savedMsg});
-          setTimeout(function() { savedMsg.remove();}, 3000);
-          var viewURL = "$xwiki.getURL('MMCode.MeetingMinutes','view','xpage=plain&amp;type=minutes')&amp;meeting=" + XWiki.currentSpace + "." + XWiki.currentDocument;
-          var ajx2 = new Ajax.Request(viewURL, {
+          if (transport.responseText=="") {
+           var savedMsg = new Element("div",{'class':'infomessage'}).update("$msg.get('meetings.meeting.minutes.saved')");
+           $('minutesview').insert({before: savedMsg});
+           setTimeout(function() { savedMsg.remove();}, 3000);
+           var viewURL = "$xwiki.getURL('MMCode.MeetingMinutes','view','xpage=plain&amp;type=minutes')&amp;meeting=" + XWiki.currentSpace + "." + XWiki.currentDocument;
+           var ajx2 = new Ajax.Request(viewURL, {
              onComplete: function(transport) {
                 $('minutesview').removeClassName("loading");
                 $('minutesview').innerHTML = transport.responseText;
              }
-          });
+           });
+          } else {
+             alert("Failed (probably CSRF)");
+             // some work needed here to resubmit with the right token
+          }
         }
       });
     });
@@ -164,15 +174,20 @@ document.observe("dom:loaded", function(){
    }
 });
 function saveTasks(){
+ saveTasks2("$!{services.csrf.token}");
+}
+
+function saveTasks2(formToken){
     var url = XWiki.getActionURL(XWiki.currentSpace, XWiki.currentDocument, "save", 0);
     $('tasksview').innerHTML = "&lt;br /&gt;";
     $('tasksview').addClassName("loading");
     editorTasks.getSourceText(function(text) {
-      var args = {"ajax":"1", "MMCode.MeetingClass_0_tasks": text};
+      var args = {"ajax":"1", "form_token" : formToken, "MMCode.MeetingClass_0_tasks": text};
       var ajx = new Ajax.Request(url, {
         method:"post",
         parameters: args,
         onComplete:function(transport) {
+         if (transport.responseText=="") {
           var savedMsg = new Element("div",{'class':'infomessage'}).update("$msg.get('meetings.meeting.tasks.saved')");
           $('tasksview').insert({before: savedMsg});
           setTimeout(function() { savedMsg.remove();}, 3000);
@@ -183,6 +198,10 @@ function saveTasks(){
                 $('tasksview').innerHTML = transport.responseText;
              }
           });
+         } else {
+             alert("Failed (probably CSRF)");
+             // some work needed here to resubmit with the right token
+         }
         }
       });
    });
@@ -223,10 +242,11 @@ $msg.get('meetings.meeting.minutes')
           {{html wiki="false"}}
 ## Define the map of parameters to be used to configure the WYSIWYG editor.
 #set($parameters = $util.hashMap)
+##set($ok = $parameters.put("hookId", "MMCode.MeetingClass_0_minutes"))
 ## Store the default WYSIWYG editor configuration parameters in the $parameters map.
 #wysiwyg_storeConfig($parameters $meetingDoc "MMCode.MeetingClass_0_minutes" false)
 ## The following line adds the inputURL parameter to $parameters map.
-#wysiwyg_inputProperty($meetingDoc "MMCode.MeetingClass_0_minutes", $parameters)
+##wysiwyg_editPropertyCustom($meetingDoc, $parameters)
 ## At this point you can customize the default WYSIWYG editor configuration parameters.
 ##set($ok = $parameters.put('parameterName', 'parameterValue'))
 ## Write the $parameters map to a JavaScript variable.
@@ -273,7 +293,7 @@ $msg.get('meetings.meeting.tasks')
 ## Store the default WYSIWYG editor configuration parameters in the $parameters map.
 #wysiwyg_storeConfig($parameters $meetingDoc "MMCode.MeetingClass_0_tasks" false)
 ## The following line adds the inputURL parameter to $parameters map.
-#wysiwyg_inputProperty($meetingDoc "MMCode.MeetingClass_0_tasks", $parameters)
+##wysiwyg_inputProperty($meetingDoc "MMCode.MeetingClass_0_tasks", $parameters)
 ## At this point you can customize the default WYSIWYG editor configuration parameters.
 ##set($ok = $parameters.put('parameterName', 'parameterValue'))
 ## Write the $parameters map to a JavaScript variable.
