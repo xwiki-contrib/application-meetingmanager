@@ -90,7 +90,7 @@
 <separators> ,|</separators>
 <size>1</size>
 <unmodifiable>0</unmodifiable>
-<values>onDemand=On demand|always=Always</values>
+<values>currentPage=Always on this page|onDemand=On demand|always=Always on this wiki</values>
 <classType>com.xpn.xwiki.objects.classes.StaticListClass</classType>
 </use>
 </class>
@@ -251,7 +251,7 @@ window.NotificationMailBox = Class.create(Lightbox, {
 <separators> ,|</separators>
 <size>1</size>
 <unmodifiable>0</unmodifiable>
-<values>onDemand=On demand|always=Always</values>
+<values>currentPage=Always on this page|onDemand=On demand|always=Always on this wiki</values>
 <classType>com.xpn.xwiki.objects.classes.StaticListClass</classType>
 </use>
 </class>

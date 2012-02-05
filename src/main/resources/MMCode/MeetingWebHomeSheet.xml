@@ -54,6 +54,7 @@ $msg.get('meetings.dashboard.youcanalso'):
 &lt;div id="newmeetingform" class="hidden"&gt;
 &lt;form action="" id="newdoc" method="post"&gt;
   &lt;div&gt;
+    &lt;input type="hidden" name="form_token" value="$!{services.csrf.getToken()}" /&gt;
     &lt;input type="hidden" name="parent" value="${meetingSpace}.WebHome" /&gt;
     &lt;input type="hidden" name="template" value="MMCode.MeetingClassTemplate" /&gt;
     &lt;input type="hidden" name="sheet" value="1" /&gt;

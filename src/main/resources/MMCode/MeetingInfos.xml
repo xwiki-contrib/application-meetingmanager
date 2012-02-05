@@ -24,160 +24,6 @@
 <hidden>false</hidden>
 <object>
 <class>
-<name>XWiki.JavaScriptExtension</name>
-<customClass></customClass>
-<customMapping></customMapping>
-<defaultViewSheet></defaultViewSheet>
-<defaultEditSheet></defaultEditSheet>
-<defaultWeb></defaultWeb>
-<nameField></nameField>
-<validationScript></validationScript>
-<cache>
-<cache>0</cache>
-<disabled>0</disabled>
-<displayType>select</displayType>
-<multiSelect>0</multiSelect>
-<name>cache</name>
-<number>5</number>
-<prettyName>Caching policy</prettyName>
-<relationalStorage>0</relationalStorage>
-<separator> </separator>
-<separators> ,|</separators>
-<size>1</size>
-<unmodifiable>0</unmodifiable>
-<values>long|short|default|forbid</values>
-<classType>com.xpn.xwiki.objects.classes.StaticListClass</classType>
-</cache>
-<code>
-<disabled>0</disabled>
-<name>code</name>
-<number>2</number>
-<prettyName>Code</prettyName>
-<rows>20</rows>
-<size>50</size>
-<unmodifiable>0</unmodifiable>
-<classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
-</code>
-<name>
-<disabled>0</disabled>
-<name>name</name>
-<number>1</number>
-<prettyName>Name</prettyName>
-<size>30</size>
-<unmodifiable>0</unmodifiable>
-<classType>com.xpn.xwiki.objects.classes.StringClass</classType>
-</name>
-<parse>
-<disabled>0</disabled>
-<displayFormType>select</displayFormType>
-<displayType>yesno</displayType>
-<name>parse</name>
-<number>4</number>
-<prettyName>Parse content</prettyName>
-<unmodifiable>0</unmodifiable>
-<classType>com.xpn.xwiki.objects.classes.BooleanClass</classType>
-</parse>
-<use>
-<cache>0</cache>
-<disabled>0</disabled>
-<displayType>select</displayType>
-<multiSelect>0</multiSelect>
-<name>use</name>
-<number>3</number>
-<prettyName>Use this extension</prettyName>
-<relationalStorage>0</relationalStorage>
-<separator> </separator>
-<separators> ,|</separators>
-<size>1</size>
-<unmodifiable>0</unmodifiable>
-<values>onDemand=On demand|always=Always</values>
-<classType>com.xpn.xwiki.objects.classes.StaticListClass</classType>
-</use>
-</class>
-<name>MMCode.MeetingInfos</name>
-<number>0</number>
-<className>XWiki.JavaScriptExtension</className>
-<guid>c3f8ba62-5fcc-430c-97fa-58dbecb8d160</guid>
-<property>
-<cache>default</cache>
-</property>
-<property>
-<code>(function(){
-
-var serviceURL = "$doc.getURL('view')";
-
-var successMsg = "$msg.get('meetings.meeting.infos.saved')";
-
-var editor;
-
-document.observe("dom:loaded", function() {
-
-  if ($('editmeetinginfos')) {
-    Event.observe($('editmeetinginfos'), "click", function() {
-      $('meetinginfosedit').toggleClassName("hidden");
-      if (!$('meetinginfosedit').hasClassName("hidden") &amp;&amp; typeof editor == "undefined") {
-          editor = new WysiwygEditor(meetingDescriptionEditorConfig);
-      }
-    });
-  }
-
-  if ($('meetingInfosSave')) {
-    Event.observe($('meetingInfosSave'), "click", saveInfos);
-  }
-
-});
-
-function saveInfos() {
-  editor.getSourceText(function(text){
-    var args = {};
-    var fields = $('meetingInfos').select("input", "select");
-    
-    for (var i=0;i&lt;fields.length;i++) {
-      args[fields[i].id] = fields[i].value;
-    }
-    args.ajax = "1";
-    args["MMCode.MeetingClass_0_description"] = text;
-    var url = XWiki.getActionURL(XWiki.currentSpace, XWiki.currentDocument, "save", 0);
-    $('meetinginfosedit').addClassName("hidden");
-    $('meetinginfosview').innerHTML = "";
-    $('meetinginfosview').addClassName("loading");
-
-    var ajx = new Ajax.Request(url, {
-      method:"post",
-      parameters: args,
-      onSuccess:function(transport) {
-         var url = serviceURL + "?xpage=plain&amp;mode=view&amp;m=" + XWiki.currentSpace + "." + XWiki.currentDocument;
-         var ajx2 = new Ajax.Request(url , {
-            onSuccess: function(t2) {
-               $('meetinginfosview').removeClassName("loading");
-               $('meetinginfosview').innerHTML = t2.responseText;
-               var successMessage = new Element("div", {'class': 'infomessage'}).update(successMsg);
-               Element.insert($('meetingInfos'), {'after': successMessage});
-               setTimeout(function() {
-                  successMessage.remove();
-               }, 3000);
-            }
-         });
-       } 
-    });
-  });
-}
-
-
-})();</code>
-</property>
-<property>
-<name>meetinginfos</name>
-</property>
-<property>
-<parse>1</parse>
-</property>
-<property>
-<use>onDemand</use>
-</property>
-</object>
-<object>
-<class>
 <name>MMCode.MeetingParticipantClass</name>
 <customClass></customClass>
 <customMapping></customMapping>
@@ -288,9 +134,163 @@ function saveInfos() {
 <username>XWiki.JeromeVelociter</username>
 </property>
 </object>
-<content>{{include document="MMCode.MeetingManagerMacros" /}}
-{{velocity filter="none"}}
-{{html clean="false" wiki="false"}} ## We need wiki=false other wise the wysiwyg imports will be transformed (CDATA, etc.)
+<object>
+<class>
+<name>XWiki.JavaScriptExtension</name>
+<customClass></customClass>
+<customMapping></customMapping>
+<defaultViewSheet></defaultViewSheet>
+<defaultEditSheet></defaultEditSheet>
+<defaultWeb></defaultWeb>
+<nameField></nameField>
+<validationScript></validationScript>
+<cache>
+<cache>0</cache>
+<disabled>0</disabled>
+<displayType>select</displayType>
+<multiSelect>0</multiSelect>
+<name>cache</name>
+<number>5</number>
+<prettyName>Caching policy</prettyName>
+<relationalStorage>0</relationalStorage>
+<separator> </separator>
+<separators> ,|</separators>
+<size>1</size>
+<unmodifiable>0</unmodifiable>
+<values>long|short|default|forbid</values>
+<classType>com.xpn.xwiki.objects.classes.StaticListClass</classType>
+</cache>
+<code>
+<disabled>0</disabled>
+<name>code</name>
+<number>2</number>
+<prettyName>Code</prettyName>
+<rows>20</rows>
+<size>50</size>
+<unmodifiable>0</unmodifiable>
+<classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
+</code>
+<name>
+<disabled>0</disabled>
+<name>name</name>
+<number>1</number>
+<prettyName>Name</prettyName>
+<size>30</size>
+<unmodifiable>0</unmodifiable>
+<classType>com.xpn.xwiki.objects.classes.StringClass</classType>
+</name>
+<parse>
+<disabled>0</disabled>
+<displayFormType>select</displayFormType>
+<displayType>yesno</displayType>
+<name>parse</name>
+<number>4</number>
+<prettyName>Parse content</prettyName>
+<unmodifiable>0</unmodifiable>
+<classType>com.xpn.xwiki.objects.classes.BooleanClass</classType>
+</parse>
+<use>
+<cache>0</cache>
+<disabled>0</disabled>
+<displayType>select</displayType>
+<multiSelect>0</multiSelect>
+<name>use</name>
+<number>3</number>
+<prettyName>Use this extension</prettyName>
+<relationalStorage>0</relationalStorage>
+<separator> </separator>
+<separators> ,|</separators>
+<size>1</size>
+<unmodifiable>0</unmodifiable>
+<values>currentPage=Always on this page|onDemand=On demand|always=Always on this wiki</values>
+<classType>com.xpn.xwiki.objects.classes.StaticListClass</classType>
+</use>
+</class>
+<name>MMCode.MeetingInfos</name>
+<number>0</number>
+<className>XWiki.JavaScriptExtension</className>
+<guid>c3f8ba62-5fcc-430c-97fa-58dbecb8d160</guid>
+<property>
+<cache>default</cache>
+</property>
+<property>
+<code>(function(){
+
+var serviceURL = "$doc.getURL('view')";
+
+var successMsg = "$msg.get('meetings.meeting.infos.saved')";
+
+var editor;
+
+document.observe("dom:loaded", function() {
+
+  if ($('editmeetinginfos')) {
+    Event.observe($('editmeetinginfos'), "click", function() {
+      $('meetinginfosedit').toggleClassName("hidden");
+      if (!$('meetinginfosedit').hasClassName("hidden") &amp;&amp; typeof editor == "undefined") {
+          editor = new WysiwygEditor(meetingDescriptionEditorConfig);
+      }
+    });
+  }
+
+  if ($('meetingInfosSave')) {
+    Event.observe($('meetingInfosSave'), "click", saveInfos);
+  }
+
+});
+
+function saveInfos() {
+  editor.getSourceText(function(text){
+    var args = {};
+    var fields = $('meetingInfos').select("input", "select");
+    
+    for (var i=0;i&lt;fields.length;i++) {
+      args[fields[i].id] = fields[i].value;
+    }
+    args.ajax = "1";
+    args["MMCode.MeetingClass_0_description"] = text;
+    var url = XWiki.getActionURL(XWiki.currentSpace, XWiki.currentDocument, "save", 0);
+    $('meetinginfosedit').addClassName("hidden");
+    $('meetinginfosview').innerHTML = "";
+    $('meetinginfosview').addClassName("loading");
+
+    var ajx = new Ajax.Request(url, {
+      method:"post",
+      parameters: args,
+      onSuccess:function(transport) {
+         var url = serviceURL + "?xpage=plain&amp;mode=view&amp;m=" + XWiki.currentSpace + "." + XWiki.currentDocument;
+         var ajx2 = new Ajax.Request(url , {
+            onSuccess: function(t2) {
+               $('meetinginfosview').removeClassName("loading");
+               $('meetinginfosview').innerHTML = t2.responseText;
+               var successMessage = new Element("div", {'class': 'infomessage'}).update(successMsg);
+               Element.insert($('meetingInfos'), {'after': successMessage});
+               setTimeout(function() {
+                  successMessage.remove();
+               }, 3000);
+            }
+         });
+       } 
+    });
+  });
+}
+
+
+})();</code>
+</property>
+<property>
+<name>meetinginfos</name>
+</property>
+<property>
+<parse>1</parse>
+</property>
+<property>
+<use>onDemand</use>
+</property>
+</object>
+<content>{{include document="MMCode.MeetingManagerMacros"/}}
+
+{{velocity}}{{html}} ## We need wiki=false (default value) otherwise the wysiwyg imports will be transformed (CDATA, etc.)
 ## ---------------------------------------------------------------------------------
 ## SX.
 ## ---------------------------------------------------------------------------------
@@ -310,24 +310,21 @@ function saveInfos() {
     #set($isManager = false)
   #end
 #else
- ## 
- ## If we are not hit by AJAX, we setup needs for displaying a GWT-WYSYWIG editor for the meeting description.
- ## The actual editor will be fired from javascript when the user clicks "edit meeting infos". See SX attached.
- #wysiwyg_import(false)
- ##wysiwyg_inputProperty($meetingDoc "MMCode.MeetingClass_0_description")
- ##wysiwyg_storeConfig("meetingDescriptionEditorConfig" $meetingDoc "MMCode.MeetingClass_0_description" false)
-## Define the map of parameters to be used to configure the WYSIWYG editor.
-#set($parameters = $util.hashMap)
-## Store the default WYSIWYG editor configuration parameters in the $parameters map.
-#wysiwyg_storeConfig($parameters $meetingDoc "MMCode.MeetingClass_0_description" false)
-## The following line adds the inputURL parameter to $parameters map.
-#wysiwyg_inputProperty($meetingDoc "MMCode.MeetingClass_0_description", $parameters)
-## At this point you can customize the default WYSIWYG editor configuration parameters.
-##set($ok = $parameters.put('parameterName', 'parameterValue'))
-## Write the $parameters map to a JavaScript variable.
-#wysiwyg_writeConfig("meetingDescriptionEditorConfig" $parameters)
+  ## 
+  ## If we are not hit by AJAX, we setup needs for displaying a GWT-WYSYWIG editor for the meeting description.
+  ## The actual editor will be fired from javascript when the user clicks "edit meeting infos". See SX attached.
+  #wysiwyg_import(false)##
+  ## Define the map of parameters to be used to configure the WYSIWYG editor.
+  #set($parameters = $util.hashMap)##
+  ## Store the default WYSIWYG editor configuration parameters in the $parameters map.
+  #wysiwyg_storeConfig($parameters $meetingDoc "MMCode.MeetingClass_0_description" false)##
+  ## At this point you can customize the default WYSIWYG editor configuration parameters.
+  ##set($ok = $parameters.put('parameterName', 'parameterValue'))
+  ## Write the $parameters map to a JavaScript variable.
+  #wysiwyg_writeConfig("meetingDescriptionEditorConfig" $parameters)##
 #end
 {{/html}}
+
 {{html clean="false" wiki="true"}}
 #set($meeting = $meetingDoc.getObject("MMCode.MeetingClass"))
 #if(!$meeting) #warning("$msg.get('meetings.no_meeting')")
@@ -414,5 +411,4 @@ $meetingDoc.getObject("XWiki.TagClass").display("tags", "view")&amp;nbsp;&amp;nb
 &lt;/a&gt;&lt;/p&gt;
 #if("$!request.xpage" == "") &lt;/div&gt; #end
 #end
-{{/html}}
-{{/velocity}}</content></xwikidoc>
+{{/html}}{{/velocity}}</content></xwikidoc>
