@@ -147,6 +147,7 @@
   #set($actionURL = $meetingDoc.getURL('save',"xredirect=$doc.getURL('view','started=1')"))
   &lt;form action="$actionURL"&gt;
   &lt;div&gt;
+  &lt;input type="hidden" name="form_token" value="$!{services.csrf.getToken()}" /&gt;
   &lt;input type="hidden" name="MMCode.MeetingClass_0_status" value="started" /&gt;
   &lt;div style="margin-top:15px;" align="center"&gt;
     &lt;span class="buttonwrapper"&gt;
@@ -162,6 +163,7 @@
   #set($actionURL = $meetingDoc.getURL('save',"xredirect=$doc.getURL('view','closed=1')"))
   &lt;form action="$actionURL"&gt;
   &lt;div&gt;
+  &lt;input type="hidden" name="form_token" value="$!{services.csrf.getToken()}" /&gt;
   &lt;input type="hidden" name="MMCode.MeetingClass_0_status" value="finished" /&gt;
   &lt;div style="margin-top:15px;" align="center"&gt;
     &lt;span class="buttonwrapper"&gt;
