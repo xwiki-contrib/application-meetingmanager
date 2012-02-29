@@ -11,8 +11,8 @@
 <customClass></customClass>
 <contentAuthor>XWiki.Admin</contentAuthor>
 <creationDate>1288566000000</creationDate>
-<date>1288566000000</date>
-<contentUpdateDate>1288566000000</contentUpdateDate>
+<date>1330520563000</date>
+<contentUpdateDate>1330520563000</contentUpdateDate>
 <version>1.1</version>
 <title>MeetingManagerTranslations</title>
 <template></template>
@@ -209,4 +209,5 @@ meetings.spacehome.title=Meeting Notes Space
 meetings.spacehome.mynextmeetings=My next meetings
 meetings.spacehome.seeallmeetings=All meeting
 meetings.spacehome.allmeetings=View all meetings
-meetings.spacehome.seemynextmeetings=View only my next meetings</content></xwikidoc>
+meetings.spacehome.seemynextmeetings=View only my next meetings
+meetings.spacehome.meetingsTitle=Meeting Notes</content></xwikidoc>
