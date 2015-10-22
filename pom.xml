@@ -28,7 +28,7 @@
   </parent>
   <groupId>org.xwiki.contrib</groupId>
   <artifactId>xwiki-application-meetingmanager</artifactId>
-  <version>1.2-SNAPSHOT</version>
+  <version>1.2</version>
   <packaging>xar</packaging>
   <name>XWiki Application - MeetingManager</name>
   <description>Meeting Manager Application</description>
@@ -36,7 +36,7 @@
     <connection>scm:git:git://github.com/xwiki-contrib/application-meetingmanager.git</connection>
     <developerConnection>scm:git:git@github.com:xwiki-contrib/application-meetingmanager.git</developerConnection>
     <url>https://github.com/xwiki-contrib/application-meetingmanager</url>
-    <tag>HEAD</tag>
+    <tag>xwiki-application-meetingmanager-1.2</tag>
   </scm>
   <distributionManagement>
     <repository>
