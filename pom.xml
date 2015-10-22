@@ -32,4 +32,17 @@
   <packaging>xar</packaging>
   <name>XWiki Application - MeetingManager</name>
   <description>Meeting Manager Application</description>
+  <scm>
+    <connection>scm:git:git://github.com/xwiki-contrib/application-meetingmanager.git</connection>
+    <developerConnection>scm:git:git@github.com:xwiki-contrib/application-meetingmanager.git</developerConnection>
+    <url>https://github.com/xwiki-contrib/application-meetingmanager</url>
+    <tag>HEAD</tag>
+  </scm>
+  <distributionManagement>
+    <repository>
+      <id>xwiki-staging</id>
+      <name>XWiki Staging Repository</name>
+      <url>http://nexus.xwiki.org/nexus/service/local/staging/deploy/maven2/</url>
+    </repository>
+  </distributionManagement>
 </project>
