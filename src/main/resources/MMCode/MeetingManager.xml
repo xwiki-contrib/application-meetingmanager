@@ -1,33 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <xwikidoc>
-<web>MMCode</web>
-<name>MeetingManager</name>
-<language></language>
-<defaultLanguage>fr</defaultLanguage>
-<translation>0</translation>
-<parent></parent>
-<creator>XWiki.Admin</creator>
-<author>XWiki.Admin</author>
-<customClass></customClass>
-<contentAuthor>XWiki.Admin</contentAuthor>
-<creationDate>1288566000000</creationDate>
-<date>1288566000000</date>
-<contentUpdateDate>1288566000000</contentUpdateDate>
-<version>1.1</version>
-<title></title>
-<template></template>
-<defaultTemplate></defaultTemplate>
-<validationScript></validationScript>
-<comment></comment>
-<minorEdit>false</minorEdit>
-<syntaxId>xwiki/1.0</syntaxId>
-<hidden>false</hidden><attachment>
-<filename>declined.png</filename>
-<filesize>4568</filesize>
-<author>XWiki.JeromeVelociter</author>
-<date>1254008183000</date>
-<version>1.3</version>
-<comment></comment><content>iVBORw0KGgoAAAANSUhEUgAAABkAAAAcCAYAAACUJBTQAAAOEWlDQ1BJQ0MgUHJvZmlsZQAAeAGt
+  <web>MMCode</web>
+  <name>MeetingManager</name>
+  <language/>
+  <defaultLanguage/>
+  <translation>0</translation>
+  <parent/>
+  <creator>xwiki:XWiki.Admin</creator>
+  <author>xwiki:XWiki.Admin</author>
+  <customClass/>
+  <contentAuthor>xwiki:XWiki.Admin</contentAuthor>
+  <creationDate>1288566000000</creationDate>
+  <date>1288566000000</date>
+  <contentUpdateDate>1288566000000</contentUpdateDate>
+  <version>1.1</version>
+  <title/>
+  <template/>
+  <defaultTemplate/>
+  <validationScript/>
+  <comment/>
+  <minorEdit>false</minorEdit>
+  <syntaxId>xwiki/1.0</syntaxId>
+  <hidden>false</hidden>
+  <attachment>
+    <filename>declined.png</filename>
+    <filesize>4568</filesize>
+    <author>XWiki.JeromeVelociter</author>
+    <date>1254008183000</date>
+    <version>1.3</version>
+    <comment/>
+    <content>iVBORw0KGgoAAAANSUhEUgAAABkAAAAcCAYAAACUJBTQAAAOEWlDQ1BJQ0MgUHJvZmlsZQAAeAGt
 l2VYlFvXx/ckQw8hKTCghHRJd0pKKqHUkALDMISAgCgISKs0CAiIhB6kBINQSroUQRGUUBAlBWme
 Gz3vdd4v53q+POu67nv/9pq11x3/PbNmAUAr4EgkesEBAN4Ef5KZrgbOytoGRzYOYAABqAEfwDri
 /YjqJiaGUMi/2OYoFA3ZiMhRrn8J+jc3DQm6IAAwYSiA0e0Pqx2x0x+2OOLL/kR/KMb9iPHujs4Q
@@ -108,13 +111,16 @@ MQfI1/eQaStqjl6Fx9wDOkT7m80C0HyaOEGGB8UQefCtC6436D8uKpu24p90ekJGPKZJyuNCgZv4
 x0TbQRVgx3uxcoG8Uchs4gQJ6EJQo5614hPU1SlsnyFP/5aQTh1RnhI6QEwhicloVHQfEUBcjwEy
 h6teB0vVy2zifluJx3TayRDZNjiGxviQ/jkmF6YQzSWjUkVpE3cQm9LfDn8B2Zn5thHLIQIAAAAA
 SUVORK5CYII=
-</content></attachment><attachment>
-<filename>accept.gif</filename>
-<filesize>1024</filesize>
-<author>XWiki.JeromeVelociter</author>
-<date>1254008183000</date>
-<version>1.3</version>
-<comment></comment><content>R0lGODlhEAAQAPefAK7cpZ3YkpDOf3LIaIPOd/z9+7fhr7XhrnrMbW7EYkKhM0mwJz+NO0ShM2y2
+</content>
+  </attachment>
+  <attachment>
+    <filename>accept.gif</filename>
+    <filesize>1024</filesize>
+    <author>XWiki.JeromeVelociter</author>
+    <date>1254008183000</date>
+    <version>1.3</version>
+    <comment/>
+    <content>R0lGODlhEAAQAPefAK7cpZ3YkpDOf3LIaIPOd/z9+7fhr7XhrnrMbW7EYkKhM0mwJz+NO0ShM2y2
 VprHh5jLhrbRtZbLhrTapn28Zq3fm3+4aZrKh1zAO3DHZZC8jq/cpuf14eb046PXlpG5j6vTm53O
 i7bQtYfCcqHXlVG3LnnJa9ns1D+LO3/KcPT68ny6ZODr4DuhJ3nBZJrUjXG5W3e8YH7Hb5bNiL7j
 trrbtf3+/SaEI6HWlZvXkSZ/I3C/V2nISm/GZGq5ULTdqpjMh7/juIfJeeTy4YXFdYDKc3O6XHTD
@@ -132,13 +138,16 @@ AAjdAD8JHEiwYMEljNRgsOPnDQeDn+Tw2OMBAAAcPixpKsjGiwADAQgQCHDATAtIAwuhEXAAwaAB
 SaSYMARHASWBFXYYQDAgA58Ei2jI6IIojUAuJHKU6dGnShQonjroCUFGYIk2cbaIAVQniKcCmDI9
 uiFwwYYURTh5OvN1Bgwkd3QIbCToxREhKjzZkHBlU6IHKAROYfLDRSUiJ8Y4yOJowhwNAoc0GOEk
 hpE/VrTgcWPhC5iBNQIdUgKEwgoIWMJIilCQypNJF0DkuURHkQiInSIxILSmyQcWEIMXDAgAOw==
-</content></attachment><attachment>
-<filename>cross.gif</filename>
-<filesize>594</filesize>
-<author>XWiki.JeromeVelociter</author>
-<date>1254008183000</date>
-<version>1.3</version>
-<comment></comment><content>R0lGODlhEAAQAOZ1APjFxv3j4/7k5P/u7v74+P7k5fddYP/7+//6+vhfYuovMf93eu1BQ/5+gfps
+</content>
+  </attachment>
+  <attachment>
+    <filename>cross.gif</filename>
+    <filesize>594</filesize>
+    <author>XWiki.JeromeVelociter</author>
+    <date>1254008183000</date>
+    <version>1.3</version>
+    <comment/>
+    <content>R0lGODlhEAAQAOZ1APjFxv3j4/7k5P/u7v74+P7k5fddYP/7+//6+vhfYuovMf93eu1BQ/5+gfps
 bvZZW+9ER/tpbP93efy4uPZYWv9sbvrOzvRNUP9wcfttcP56ffdfYfxtcP3i4/vb2+w+QPdcXv9Y
 W+9HSv9ucP74+fpjZvpiZf98fvZbXvzT0/ze3vloavBGSPhhZP90dvpqbf9naPllaOs0Nv9xdPZY
 W/3j5PZaXP9UV/ZKTPBIS/95e+QlJ/9wcv96ff5ydek0N/VOUP9+gfttb/dbXf52ef92efVWWP95
@@ -149,13 +158,16 @@ BAEAAHUALAAAAAAQABAAAAevgHWCg4SCYYV1A16IBRNyhAMLRGCEAi0rZB2CkUENZWuCAglCJwlI
 ZnUHPhpwVBEFAmcOPRs5B4NVHElic1AGLzoGInSFCDEZVnFaEiBvxIgIKEdjIS4Qz4g1Q0VLNzws
 Koh1ATZPWF0jFVNZX4UBDyUzFG4fFzBAMh6DATQmGFtK6ND5oYZNFCZSBKUw0oQLg2cknKTBoQDA
 oDZX0GCrQ2BHxUIWNgoiYFGcyUGBAAA7
-</content></attachment><attachment>
-<filename>bg-infi.png</filename>
-<filesize>3221</filesize>
-<author>XWiki.LaurentLunati</author>
-<date>1254008183000</date>
-<version>1.2</version>
-<comment></comment><content>iVBORw0KGgoAAAANSUhEUgAAAZAAAADqBAMAAAB+Xw7sAAAAA3NCSVQICAjb4U/gAAAAD1BMVEXb
+</content>
+  </attachment>
+  <attachment>
+    <filename>bg-infi.png</filename>
+    <filesize>3221</filesize>
+    <author>XWiki.LaurentLunati</author>
+    <date>1254008183000</date>
+    <version>1.2</version>
+    <comment/>
+    <content>iVBORw0KGgoAAAANSUhEUgAAAZAAAADqBAMAAAB+Xw7sAAAAA3NCSVQICAjb4U/gAAAAD1BMVEXb
 4ujl7fPd5Orn7/Xf5+2QfBCUAAAABXRSTlP///8A/0WQHKwAAAAJcEhZcwAACvAAAArwAUKsNJgA
 AAAfdEVYdFNvZnR3YXJlAE1hY3JvbWVkaWEgRmlyZXdvcmtzIDi1aNJ4AAAL4UlEQVR4nO2dbZLi
 OAyGwzYHmIz7ABS1B1iGOUCY5v5n2g4QR7IlW1+hqanWr91psPz4lWzH2M5w/kts+OoKRNk3yKvZ
@@ -212,13 +224,16 @@ Lkg4tV+Qrtid5idp9/Ldmx4a4eW7tkFL0vHWv7KC28nkPzI8BXIIQBiUzivVRSSKjO+qL7tE5DRe
 D6hYesOQ2uSvhuz6k9+GMo6PPTWXIIrZhCSCTYlx17rYjN2DB02SjV8NwvclirCa7ctBuqIIO8cX
 AGmiXJKwjJcA+ewV6RmEGONVQM7zlqyCZX9RTYBeBuQ86/I+787697OLH9Vd/CuBuOwb5NXsG+TV
 7Bvk1eyvAfkfLi7OZgETCBwAAAAASUVORK5CYII=
-</content></attachment><attachment>
-<filename>help.gif</filename>
-<filesize>1024</filesize>
-<author>XWiki.JeromeVelociter</author>
-<date>1254008183000</date>
-<version>1.3</version>
-<comment></comment><content>R0lGODlhEAAQAPefAGaQv1+Jt9rl8/X4+9bk9dHg7Ozx9/X4/HGZx5Swz93p9qa92ae+2dbi8GuY
+</content>
+  </attachment>
+  <attachment>
+    <filename>help.gif</filename>
+    <filesize>1024</filesize>
+    <author>XWiki.JeromeVelociter</author>
+    <date>1254008183000</date>
+    <version>1.3</version>
+    <comment/>
+    <content>R0lGODlhEAAQAPefAGaQv1+Jt9rl8/X4+9bk9dHg7Ozx9/X4/HGZx5Swz93p9qa92ae+2dbi8GuY
 xGyYx2yax6O719nl89rl8urw9tzo+GOJtcLU6p274UNyq9Lg7oWmyYany2eTwcTV58LU6Xql0eHq
 83un0m2VwFN+sneg0HGdzLnM5G2Vwr/T52uYxZy7356738PZ9cPa9pW12WeOuH6o1Zy73cDQ42uU
 wPD0+rrN49zn9ZOz2mWKtuHt/OPs+Hukz/b4+7DK6tnm80h2r2OKucnY6szc6svZ6q7I5Jq73Oju
@@ -236,13 +251,16 @@ AAjdAD8JHEiwYEFFOjoJutSighuDn5q4+ENGgIAbBObsKAjFkSEubOQ0kqHlR502AyPdUfDmiRFM
 XYqIoORnRQ2BBBAliVFiwIEDAyDxeHThg0AfEljAIYTGSYoeTByU0bBJIIYJmkxAUCEmyxFGVsw0
 QCAQByAQVfrkGRQChRQ+IxKBETjJ04sHVzoAABAmSBQOQ5YIpHNCCYK9BigECGCh0AIGAg1UEmKD
 RqAECQKssXTIy5eBRM54kLQBRo5FafAAmVFQT6YIYwoUQLJHTRyIWLZMsZOBBCcqEIMXDAgAOw==
-</content></attachment><attachment>
-<filename>delete.gif</filename>
-<filesize>1006</filesize>
-<author>XWiki.JeromeVelociter</author>
-<date>1254008183000</date>
-<version>1.3</version>
-<comment></comment><content>R0lGODlhEAAQAPeHAPaEbPbPz/vr6+fEufqdi+6Sj/fo5ffo5vzHuuN/fPmSfvC1te/Kxu6MgfqT
+</content>
+  </attachment>
+  <attachment>
+    <filename>delete.gif</filename>
+    <filesize>1006</filesize>
+    <author>XWiki.JeromeVelociter</author>
+    <date>1254008183000</date>
+    <version>1.3</version>
+    <comment/>
+    <content>R0lGODlhEAAQAPeHAPaEbPbPz/vr6+fEufqdi+6Sj/fo5ffo5vzHuuN/fPmSfvC1te/Kxu6MgfqT
 f+pcUO/Jxe5qXveRfvWjn9xraN5rau6EffXn4uljW/iGcOpmXMdrVPGOeviUf+NrYfWmofnTzNxu
 acRkTOR4ceuzr+J7dfSOgcxmVdtpZeJ5efqah+qDffWsofqjkdymlvjDvslrVvqrnel7cPiMdu+G
 fvBkVuqwrOFvcPCMd+lbT/NzXdZuZOGroMBVPfCDe8RQNOGpnvi2qO6Kdc1oWON4ee7Jw955dL5W
@@ -260,13 +278,16 @@ AAjLAA8JHEiwYEEBafJUoGCEhByDhwKkiPICxJgygnYwKBjgBho2Z1oQmIJAxpwiAwUQaVNFRR0O
 HRTMCKJmyAGBC1Y8IaBECICfAMxs6cNDYAIuMXAQWsp0iQkxMASGaOLgj6GrWAtFANRDIIokGbpg
 zaoBzBGBdxpI0FGordscPkqIEGgjkJsag9wWWvNlwg8XAu1Y8cCC0INCUOJ4YcIny4WBEPTs+UAD
 AxkLdPxgGVAQzgkqUgoUGHHlDWeDBoBsCKPFCRI8EGMXDAgAOw==
-</content></attachment><attachment>
-<filename>date.png</filename>
-<filesize>16805</filesize>
-<author>XWiki.JeromeVelociter</author>
-<date>1254008183000</date>
-<version>1.4</version>
-<comment></comment><content>iVBORw0KGgoAAAANSUhEUgAAAJoAAABzCAYAAABgtBtdAAAOEWlDQ1BJQ0MgUHJvZmlsZQAAeAGt
+</content>
+  </attachment>
+  <attachment>
+    <filename>date.png</filename>
+    <filesize>16805</filesize>
+    <author>XWiki.JeromeVelociter</author>
+    <date>1254008183000</date>
+    <version>1.4</version>
+    <comment/>
+    <content>iVBORw0KGgoAAAANSUhEUgAAAJoAAABzCAYAAABgtBtdAAAOEWlDQ1BJQ0MgUHJvZmlsZQAAeAGt
 l2VYlFvXx/ckQw8hKTCghHRJd0pKKqHUkALDMISAgCgISKs0CAiIhB6kBINQSroUQRGUUBAlBWme
 Gz3vdd4v53q+POu67nv/9pq11x3/PbNmAUAr4EgkesEBAN4Ef5KZrgbOytoGRzYOYAABqAEfwDri
 /YjqJiaGUMi/2OYoFA3ZiMhRrn8J+jc3DQm6IAAwYSiA0e0Pqx2x0x+2OOLL/kR/KMb9iPHujs4Q
@@ -561,13 +582,16 @@ MwAY11yAiYGDazTSeZi7uXd3UqD5oMaBR3qA44DBzcUo190eZpl9iH/+aoGWWWde+VQwhubJgREH
 FW6/iIcboGFc29mN/jhNt2kSMdx7Prjdzxz64yNWvz8Z7BGgJajF7sAQT0ZTl8ScjABKwjdxjh0L
 J005Em9EAllIYARoWQhrJGr/JTACtP7LbiRlFhKwdwayiD8SdUQC/ZLAiEbrl9hGEmUrgRGgZSux
 kfj9ksAI0PoltpFE2UpgBGjZSmwkfr8k8P8B9EXwX5yPOK8AAAAASUVORK5CYII=
-</content></attachment><attachment>
-<filename>date.gif</filename>
-<filesize>623</filesize>
-<author>XWiki.JeromeVelociter</author>
-<date>1254008183000</date>
-<version>1.3</version>
-<comment></comment><content>R0lGODlhEAAQAOZjAMcAAMvLy/f398fHx66urvr6+sLCwvn5+fj4+Ly8vPPz8/39/ebm5pWVlcjI
+</content>
+  </attachment>
+  <attachment>
+    <filename>date.gif</filename>
+    <filesize>623</filesize>
+    <author>XWiki.JeromeVelociter</author>
+    <date>1254008183000</date>
+    <version>1.3</version>
+    <comment/>
+    <content>R0lGODlhEAAQAOZjAMcAAMvLy/f398fHx66urvr6+sLCwvn5+fj4+Ly8vPPz8/39/ebm5pWVlcjI
 yK6enuPj4/b29tbExO0CAtvb2+jo6MbGxt3d3dIHB9wXF6ioqNoLC9sUFOMoKNADA66fn822tr+/
 v5gcHMu1teYBAfMTE8XFxc64uNjY2OsPD5IICNcSErwfH98bG+ESEr0oKN8eHt/f38rKyuEODuXl
 5d4WFuctLbq6utXExN0bG8/Pz7Gxsbi4uNcAAK6hoezs7OgzM6CgoPX19cwJCfDw8M8AAM8BAd0e
@@ -578,13 +602,16 @@ BAEAAGMALAAAAAAQABAAAAfMgGOCFhoGYIJgOjsWgoJfACMMTgBfjycMIJSOGBIQOB4TE0ZQEBJF
 X44bPlsfWS4zQw9bDz2oY18pLyIsRy01K0sqVyS2XyVPQDYdTTA5GRxMVLZdYdXWYWACAmJhXYLU
 1UIBUzIDPGJI3d/WAVhgBxWGBQgO62DVBPMJNBEKSvVjqIEZmK/CjS0xLlAYYI/ggSRbLoRZsCXA
 t4EYESiwQmFBFDFVBCUgcq/agQg/UGwRI4DhmAYhuMicKVOKCQMNBAXxwrOnT55axgQCADs=
-</content></attachment><attachment>
-<filename>unconfirmed.png</filename>
-<filesize>4362</filesize>
-<author>XWiki.JeromeVelociter</author>
-<date>1254008183000</date>
-<version>1.3</version>
-<comment></comment><content>iVBORw0KGgoAAAANSUhEUgAAABoAAAAeCAYAAAAy2w7YAAAOEWlDQ1BJQ0MgUHJvZmlsZQAAeAGt
+</content>
+  </attachment>
+  <attachment>
+    <filename>unconfirmed.png</filename>
+    <filesize>4362</filesize>
+    <author>XWiki.JeromeVelociter</author>
+    <date>1254008183000</date>
+    <version>1.3</version>
+    <comment/>
+    <content>iVBORw0KGgoAAAANSUhEUgAAABoAAAAeCAYAAAAy2w7YAAAOEWlDQ1BJQ0MgUHJvZmlsZQAAeAGt
 l2VYlFvXx/ckQw8hKTCghHRJd0pKKqHUkALDMISAgCgISKs0CAiIhB6kBINQSroUQRGUUBAlBWme
 Gz3vdd4v53q+POu67nv/9pq11x3/PbNmAUAr4EgkesEBAN4Ef5KZrgbOytoGRzYOYAABqAEfwDri
 /YjqJiaGUMi/2OYoFA3ZiMhRrn8J+jc3DQm6IAAwYSiA0e0Pqx2x0x+2OOLL/kR/KMb9iPHujs4Q
@@ -661,13 +688,16 @@ mPr8KsEFzQAsH5Knt6fPR4SCyqXL1L2j7o1hoaCAH4EbAnENoaCuNYqrEcsvFGQc8tN0lWrg8UPB
 Bal0NDeNJowjDyM6BuK2dsvEZMo/0/m1TvDQoXLy+YuKZCqNpCIhkbjE+X4A36c7AmRIigxRFDEd
 Def3CeusA43luPPigrY2a7D7Qzyp1aiIShCpkJLevPnBlGbtYTigxxlh6PYRTF04dD3y/REV14dc
 kPD/SsyNSwzjH6703iDSaZBJAAAAAElFTkSuQmCC
-</content></attachment><attachment>
-<filename>confirmed.png</filename>
-<filesize>4556</filesize>
-<author>XWiki.JeromeVelociter</author>
-<date>1254008183000</date>
-<version>1.4</version>
-<comment></comment><content>iVBORw0KGgoAAAANSUhEUgAAABsAAAAcCAYAAACQ0cTtAAAOEWlDQ1BJQ0MgUHJvZmlsZQAAeAGt
+</content>
+  </attachment>
+  <attachment>
+    <filename>confirmed.png</filename>
+    <filesize>4556</filesize>
+    <author>XWiki.JeromeVelociter</author>
+    <date>1254008183000</date>
+    <version>1.4</version>
+    <comment/>
+    <content>iVBORw0KGgoAAAANSUhEUgAAABsAAAAcCAYAAACQ0cTtAAAOEWlDQ1BJQ0MgUHJvZmlsZQAAeAGt
 l2VYlFvXx/ckQw8hKTCghHRJd0pKKqHUkALDMISAgCgISKs0CAiIhB6kBINQSroUQRGUUBAlBWme
 Gz3vdd4v53q+POu67nv/9pq11x3/PbNmAUAr4EgkesEBAN4Ef5KZrgbOytoGRzYOYAABqAEfwDri
 /YjqJiaGUMi/2OYoFA3ZiMhRrn8J+jc3DQm6IAAwYSiA0e0Pqx2x0x+2OOLL/kR/KMb9iPHujs4Q
@@ -747,13 +777,16 @@ oqlDM+zmCPPSE0w1DdHvIkQ/G5tEi9NW6f9r2LPfdewgxbRSHx2jl18cZzkajZyLKdciyttYPhsx
 HaXcalcBK3BxzrNBRhf9M04YncwRFka8CTwaQ8CdnMJeSsDL4r7/eUhaWfEA9LIFP3dzAUQ418Ic
 O/1ouIKjaH4YHWF+/KijJzZwRh3QXk6pIVAFeBKgNwwj6klF2U6MxUPoLwZoyoJFLNHXckbU0Svt
 5vrrKsqSpqNnsiigMCec6TxhvpucV1PcdnOF2Scv9vovCqP6BbuOnMMAAAAASUVORK5CYII=
-</content></attachment><attachment>
-<filename>puce-inf.png</filename>
-<filesize>27944</filesize>
-<author>XWiki.LaurentLunati</author>
-<date>1254008183000</date>
-<version>1.2</version>
-<comment></comment><content>iVBORw0KGgoAAAANSUhEUgAAABIAAAAMCAYAAABvEu28AAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
+</content>
+  </attachment>
+  <attachment>
+    <filename>puce-inf.png</filename>
+    <filesize>27944</filesize>
+    <author>XWiki.LaurentLunati</author>
+    <date>1254008183000</date>
+    <version>1.2</version>
+    <comment/>
+    <content>iVBORw0KGgoAAAANSUhEUgAAABIAAAAMCAYAAABvEu28AAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAAK8AAACvABQqw0mAAAAB90RVh0U29mdHdhcmUATWFjcm9tZWRpYSBGaXJld29ya3MgOLVo0ngA
 AACFcHJWV3ic7dPbDcIwDAXQ2BN3nS7DAKi7sAGhNAQqBnB/zomUKF/XzuP+vD3a0pbe+7Zt67o2
 AAAAAAAAgHrxt9aG5y5+a7XMEZyxj/oCIj41xHdXKseced4WGg3HLKC+/yNxXkCU99/m83vPWR9/
@@ -1244,13 +1277,16 @@ fI6qqjSbTVwAt9uNbDb7MUiSRKvVwuv18nw+MQyDfD7vyOunMfAGuVwuR7CRSIRqtQrA5XJhMpnw
 C13XKZfL1Go1ut0umqYBEAwGyWQyHA4HdF2n3W4TDoffIIDVasVkMuF4PBIOhykUClQqFQRBwDRN
 FEVhsVjwer0ACIVCNBoN0un0d6Lfe5umic/ncwQLcL/f0TSNQCCAJEl4PN97doD+VX8AxtfI6Xvi
 5XgAAAAASUVORK5CYII=
-</content></attachment><attachment>
-<filename>presence.png</filename>
-<filesize>2031</filesize>
-<author>XWiki.LaurentLunati</author>
-<date>1254008183000</date>
-<version>1.3</version>
-<comment></comment><content>iVBORw0KGgoAAAANSUhEUgAAABAAAAH0CAMAAAADj11zAAAAA3NCSVQICAjb4U/gAAACu1BMVEUA
+</content>
+  </attachment>
+  <attachment>
+    <filename>presence.png</filename>
+    <filesize>2031</filesize>
+    <author>XWiki.LaurentLunati</author>
+    <date>1254008183000</date>
+    <version>1.3</version>
+    <comment/>
+    <content>iVBORw0KGgoAAAANSUhEUgAAABAAAAH0CAMAAAADj11zAAAAA3NCSVQICAjb4U/gAAACu1BMVEUA
 AADF4vPMMwAAXrrMzMwwwTQWl3LZegm9vb0DZX7fUSWKp5mqLwNWvlb/AAAAkMAzMzP/fDT1uajN
 XTNfQYDyBgqiyKL/MwB7mipdvTQxkNYAf7zMpg365N7aQBBrahbz/POo0+4ZGRk/Pz/d3d3eMwAB
 XLDznANz3HNitztcrjP/f3/I6roZgdH/VAD50cUagktjfLGaOVzPHSbpdVL29vZd1jQvVKaVo0ry
@@ -1286,13 +1322,16 @@ uLFkFDLmc5z/Ps7YidNeevDCE6+f+eS8RThjo7f8U//QGVe4fnvGjDNm3/et/F15ty+XsdGT9bD+
 +zKasZIvTnXVn/xdlbF9X33zRsmUjP314SlaxjTQQAMNNNDgv4NIA8PoOAoRryEctno5Ag0GHZRV
 R4BBa10DMx28Mx+xeUHUTdOXenU678dkrMXqbUAtDBYMFqtVbhq2GjCg/bjQKSbNMeEcNHgtAPdY
 daS8TwEYDBQMYQBGXdb0v2m3P14xbRjlAAAAAElFTkSuQmCC
-</content></attachment><attachment>
-<filename>calendar.gif</filename>
-<filesize>1037</filesize>
-<author>XWiki.JeromeVelociter</author>
-<date>1254008183000</date>
-<version>1.3</version>
-<comment></comment><content>R0lGODlhEAAQAPeRAHq1ddvk8f+kZXm1dLfO6qrG6fD0+u/z+f+jZPH0+vDz+f+hYZq86/99O7DJ
+</content>
+  </attachment>
+  <attachment>
+    <filename>calendar.gif</filename>
+    <filesize>1037</filesize>
+    <author>XWiki.JeromeVelociter</author>
+    <date>1254008183000</date>
+    <version>1.3</version>
+    <comment/>
+    <content>R0lGODlhEAAQAPeRAHq1ddvk8f+kZXm1dLfO6qrG6fD0+u/z+f+jZPH0+vDz+f+hYZq86/99O7DJ
 6bXN6r/T68jW6lmKyFuKyWiW0Z6/7L7S65a66XOxb63H6azG6Yyy5NLh97rQ6+/y+Z/A7WqX0e7z
 +VWGxtvl8Yeu4f+UUv+zaF+Mxv9/PVaHx/+iYqnE6HWzcMzZ63GwbF+NyP+eXVyKxpO03/+7df+4
 bf+dXIyx43Wh17PM6oSs4P+nVO3y+Obt9pS356bD6f+kZHqk2f+EQqzI8ZvUlH2l3LLL6pC15v+w
@@ -1311,13 +1350,16 @@ fmaMoWHiSCEdDR6BEMgHJAIVC+rU8AKmT4lHeQT2eOQD0gpIBSBVgQQFUiI3AsXAKaBhSQZFDlwM
 mmImigSBNhDNgZQE0hlIGBa9gTRChEASBorgADAgDQEWgJio0XJHIJIDBCABGDIAUhcncgTpeSGQ
 zYEOTwBo/vLAQIsACWIIBBLCAiQIkLJAOsQlgAIPJwTe2EGFB54wAexEKJNAAaM4AmWsodBEyYQU
 jpIrN2SwOcGAADs=
-</content></attachment><attachment>
-<filename>bg-infi-2.png</filename>
-<filesize>1684</filesize>
-<author>XWiki.LaurentLunati</author>
-<date>1254008183000</date>
-<version>1.2</version>
-<comment></comment><content>iVBORw0KGgoAAAANSUhEUgAAAMgAAAB1BAMAAAD5IrMGAAAAA3NCSVQICAjb4U/gAAAAMFBMVEXn
+</content>
+  </attachment>
+  <attachment>
+    <filename>bg-infi-2.png</filename>
+    <filesize>1684</filesize>
+    <author>XWiki.LaurentLunati</author>
+    <date>1254008183000</date>
+    <version>1.2</version>
+    <comment/>
+    <content>iVBORw0KGgoAAAANSUhEUgAAAMgAAAB1BAMAAAD5IrMGAAAAA3NCSVQICAjb4U/gAAAAMFBMVEXn
 7/Xn7vTl7vTm7vTm7fPl7fPl7PLk7PLj6/Hk6/Hj6vDi6vDh6e/i6e/h6O7g6O7X5ifFAAAAEHRS
 TlMA////////////////////wFCLQwAAAAlwSFlzAAAbvAAAG7wBureguwAAAB90RVh0U29mdHdh
 cmUATWFjcm9tZWRpYSBGaXJld29ya3MgOLVo0ngAAAW0SURBVGiB7Vq9btxGECZAX+zEdJE+VZ7A
@@ -1347,13 +1389,16 @@ D1fLpuQsW6r88GRP869Kg6WrGqoOc8uyJ/vS15vKSNj3jFlyEr9nm6U0RudZ5SN0ZX540NcK5vlZ
 8cLybBC7zd6qAN03uPSw9Yb+PsKvN/Xk7xaAhfgNhl7UYn5Q1Huz9/YPuXLWs92HH+NNwHG8/5Ue
 jO0WtsNR67fx1vjriUdgqhRdhTS3MztSKW/rMor8ncbFttpmUZTdtVxu7c5dqtAKf3p8NzzNq1Nd
 Dd79LZP4s/0P7D8Yubp5tpGtFwAAAABJRU5ErkJggg==
-</content></attachment><attachment>
-<filename>email.gif</filename>
-<filesize>1014</filesize>
-<author>XWiki.JeromeVelociter</author>
-<date>1254008183000</date>
-<version>1.3</version>
-<comment></comment><content>R0lGODlhEAAQAPeTAPn8//r8//n7/fX5/GB9qu3z+FCMyOrz/vf6/MDb/Ja14+fx/vn7/+Dq+ePs
+</content>
+  </attachment>
+  <attachment>
+    <filename>email.gif</filename>
+    <filesize>1014</filesize>
+    <author>XWiki.JeromeVelociter</author>
+    <date>1254008183000</date>
+    <version>1.3</version>
+    <comment/>
+    <content>R0lGODlhEAAQAPeTAPn8//r8//n7/fX5/GB9qu3z+FCMyOrz/vf6/MDb/Ja14+fx/vn7/+Dq+ePs
 +eHt/eTv/tTm/U6JxPP2+1GLx97o9zxzvN3q/kWAw9jp/Zy/7VCMyfz9/16Kt+Ts9Ze24+zy+KnF
 6k+DxafF7FGFxcLa+KK/6fj6/VyIuvj7/T5ttdbn/fX5/6C/6dDh+Iqu4vH3++z0+IWq4kqExObu
 +T1wvt7s/VGMyLzQ7Pv8/9vq/drp/dnk8VyMydbk+c3g+Nvr/tLj+aC33FeJx2WQzO30/lGIwOzx
@@ -1371,88 +1416,89 @@ AAjTACcJHEiwoMGDBP/AEUTkS5g+PcYMkUNChCEUBIScaAOgI4AAIHMc4jDhTQckiQghYrPDj40H
 EBbMaSCDx40kAiApyNII5oIDfBy8eBTDwB4BVqIoaMDiQBEGVMCIWVLAACABXiLYyeOAQQAaZjQk
 SFC1jIAMjBSNUIOmwoctIUo4KYBFT4ogSlys4NLCxKAIkRxJAbGhxgAcPp7QmQJk0QUdTX7EwUPh
 TBcPa2BckTRgABQtCBAcCVSFgAoLhchgqDODiRsJEu4YSUMAoe3buG8HBAA7
-</content></attachment>
-<object>
-<class>
-<name>XWiki.JavaScriptExtension</name>
-<customClass></customClass>
-<customMapping></customMapping>
-<defaultViewSheet></defaultViewSheet>
-<defaultEditSheet></defaultEditSheet>
-<defaultWeb></defaultWeb>
-<nameField></nameField>
-<validationScript></validationScript>
-<cache>
-<cache>0</cache>
-<disabled>0</disabled>
-<displayType>select</displayType>
-<multiSelect>0</multiSelect>
-<name>cache</name>
-<number>5</number>
-<prettyName>Caching policy</prettyName>
-<relationalStorage>0</relationalStorage>
-<separator> </separator>
-<separators> ,|</separators>
-<size>1</size>
-<unmodifiable>0</unmodifiable>
-<values>long|short|default|forbid</values>
-<classType>com.xpn.xwiki.objects.classes.StaticListClass</classType>
-</cache>
-<code>
-<disabled>0</disabled>
-<name>code</name>
-<number>2</number>
-<prettyName>Code</prettyName>
-<rows>20</rows>
-<size>50</size>
-<unmodifiable>0</unmodifiable>
-<classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
-</code>
-<name>
-<disabled>0</disabled>
-<name>name</name>
-<number>1</number>
-<prettyName>Name</prettyName>
-<size>30</size>
-<unmodifiable>0</unmodifiable>
-<classType>com.xpn.xwiki.objects.classes.StringClass</classType>
-</name>
-<parse>
-<disabled>0</disabled>
-<displayFormType>select</displayFormType>
-<displayType>yesno</displayType>
-<name>parse</name>
-<number>4</number>
-<prettyName>Parse content</prettyName>
-<unmodifiable>0</unmodifiable>
-<classType>com.xpn.xwiki.objects.classes.BooleanClass</classType>
-</parse>
-<use>
-<cache>0</cache>
-<disabled>0</disabled>
-<displayType>select</displayType>
-<multiSelect>0</multiSelect>
-<name>use</name>
-<number>3</number>
-<prettyName>Use this extension</prettyName>
-<relationalStorage>0</relationalStorage>
-<separator> </separator>
-<separators> ,|</separators>
-<size>1</size>
-<unmodifiable>0</unmodifiable>
-<values>currentPage=Always on this page|onDemand=On demand|always=Always on this wiki</values>
-<classType>com.xpn.xwiki.objects.classes.StaticListClass</classType>
-</use>
-</class>
-<name>MMCode.MeetingManager</name>
-<number>0</number>
-<className>XWiki.JavaScriptExtension</className>
-<guid>057a802e-30a8-48fa-800f-631108a941da</guid>
-<property>
-<cache>default</cache>
-</property>
-<property>
-<code>PageCreator = Class.create({
+</content>
+  </attachment>
+  <object>
+    <class>
+      <name>XWiki.JavaScriptExtension</name>
+      <customClass/>
+      <customMapping/>
+      <defaultViewSheet/>
+      <defaultEditSheet/>
+      <defaultWeb/>
+      <nameField/>
+      <validationScript/>
+      <cache>
+        <cache>0</cache>
+        <disabled>0</disabled>
+        <displayType>select</displayType>
+        <multiSelect>0</multiSelect>
+        <name>cache</name>
+        <number>5</number>
+        <prettyName>Caching policy</prettyName>
+        <relationalStorage>0</relationalStorage>
+        <separator> </separator>
+        <separators> ,|</separators>
+        <size>1</size>
+        <unmodifiable>0</unmodifiable>
+        <values>long|short|default|forbid</values>
+        <classType>com.xpn.xwiki.objects.classes.StaticListClass</classType>
+      </cache>
+      <code>
+        <disabled>0</disabled>
+        <name>code</name>
+        <number>2</number>
+        <prettyName>Code</prettyName>
+        <rows>20</rows>
+        <size>50</size>
+        <unmodifiable>0</unmodifiable>
+        <classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
+      </code>
+      <name>
+        <disabled>0</disabled>
+        <name>name</name>
+        <number>1</number>
+        <prettyName>Name</prettyName>
+        <size>30</size>
+        <unmodifiable>0</unmodifiable>
+        <classType>com.xpn.xwiki.objects.classes.StringClass</classType>
+      </name>
+      <parse>
+        <disabled>0</disabled>
+        <displayFormType>select</displayFormType>
+        <displayType>yesno</displayType>
+        <name>parse</name>
+        <number>4</number>
+        <prettyName>Parse content</prettyName>
+        <unmodifiable>0</unmodifiable>
+        <classType>com.xpn.xwiki.objects.classes.BooleanClass</classType>
+      </parse>
+      <use>
+        <cache>0</cache>
+        <disabled>0</disabled>
+        <displayType>select</displayType>
+        <multiSelect>0</multiSelect>
+        <name>use</name>
+        <number>3</number>
+        <prettyName>Use this extension</prettyName>
+        <relationalStorage>0</relationalStorage>
+        <separator> </separator>
+        <separators> ,|</separators>
+        <size>1</size>
+        <unmodifiable>0</unmodifiable>
+        <values>currentPage=Always on this page|onDemand=On demand|always=Always on this wiki</values>
+        <classType>com.xpn.xwiki.objects.classes.StaticListClass</classType>
+      </use>
+    </class>
+    <name>MMCode.MeetingManager</name>
+    <number>0</number>
+    <className>XWiki.JavaScriptExtension</className>
+    <guid>057a802e-30a8-48fa-800f-631108a941da</guid>
+    <property>
+      <cache>default</cache>
+    </property>
+    <property>
+      <code>PageCreator = Class.create({
    initialize: function(element, baseURL) {
       this.form = $(element);
       this.baseURL = baseURL;
@@ -1956,96 +2002,99 @@ document.observe("dom:loaded", function() {
   }
 });
 })();
-</code></property><property><name>meetingmanager</name>
-</property>
-<property>
-<parse>1</parse>
-</property>
-<property>
-<use>onDemand</use>
-</property>
-</object>
-<object>
-<class>
-<name>XWiki.StyleSheetExtension</name>
-<customClass></customClass>
-<customMapping></customMapping>
-<defaultViewSheet></defaultViewSheet>
-<defaultEditSheet></defaultEditSheet>
-<defaultWeb></defaultWeb>
-<nameField></nameField>
-<validationScript></validationScript>
-<cache>
-<cache>0</cache>
-<disabled>0</disabled>
-<displayType>select</displayType>
-<multiSelect>0</multiSelect>
-<name>cache</name>
-<number>5</number>
-<prettyName>Caching policy</prettyName>
-<relationalStorage>0</relationalStorage>
-<separator> </separator>
-<separators> ,|</separators>
-<size>1</size>
-<unmodifiable>0</unmodifiable>
-<values>long|short|default|forbid</values>
-<classType>com.xpn.xwiki.objects.classes.StaticListClass</classType>
-</cache>
-<code>
-<disabled>0</disabled>
-<name>code</name>
-<number>2</number>
-<prettyName>Code</prettyName>
-<rows>20</rows>
-<size>50</size>
-<unmodifiable>0</unmodifiable>
-<classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
 </code>
-<name>
-<disabled>0</disabled>
-<name>name</name>
-<number>1</number>
-<prettyName>Name</prettyName>
-<size>30</size>
-<unmodifiable>0</unmodifiable>
-<classType>com.xpn.xwiki.objects.classes.StringClass</classType>
-</name>
-<parse>
-<disabled>0</disabled>
-<displayFormType>select</displayFormType>
-<displayType>yesno</displayType>
-<name>parse</name>
-<number>4</number>
-<prettyName>Parse content</prettyName>
-<unmodifiable>0</unmodifiable>
-<classType>com.xpn.xwiki.objects.classes.BooleanClass</classType>
-</parse>
-<use>
-<cache>0</cache>
-<disabled>0</disabled>
-<displayType>select</displayType>
-<multiSelect>0</multiSelect>
-<name>use</name>
-<number>3</number>
-<prettyName>Use this extension</prettyName>
-<relationalStorage>0</relationalStorage>
-<separator> </separator>
-<separators> ,|</separators>
-<size>1</size>
-<unmodifiable>0</unmodifiable>
-<values>currentPage=Always on this page|onDemand=On demand|always=Always on this wiki</values>
-<classType>com.xpn.xwiki.objects.classes.StaticListClass</classType>
-</use>
-</class>
-<name>MMCode.MeetingManager</name>
-<number>0</number>
-<className>XWiki.StyleSheetExtension</className>
-<guid>a0d988d0-b317-4a05-81da-491a25be8e85</guid>
-<property>
-<cache>default</cache>
-</property>
-<property>
-<code>#if(!$xwiki.jsfx) ## PRE 1.8M2 -- add missing styles (are not yet in toucan.css)
+    </property>
+    <property>
+      <name>meetingmanager</name>
+    </property>
+    <property>
+      <parse>1</parse>
+    </property>
+    <property>
+      <use>onDemand</use>
+    </property>
+  </object>
+  <object>
+    <class>
+      <name>XWiki.StyleSheetExtension</name>
+      <customClass/>
+      <customMapping/>
+      <defaultViewSheet/>
+      <defaultEditSheet/>
+      <defaultWeb/>
+      <nameField/>
+      <validationScript/>
+      <cache>
+        <cache>0</cache>
+        <disabled>0</disabled>
+        <displayType>select</displayType>
+        <multiSelect>0</multiSelect>
+        <name>cache</name>
+        <number>5</number>
+        <prettyName>Caching policy</prettyName>
+        <relationalStorage>0</relationalStorage>
+        <separator> </separator>
+        <separators> ,|</separators>
+        <size>1</size>
+        <unmodifiable>0</unmodifiable>
+        <values>long|short|default|forbid</values>
+        <classType>com.xpn.xwiki.objects.classes.StaticListClass</classType>
+      </cache>
+      <code>
+        <disabled>0</disabled>
+        <name>code</name>
+        <number>2</number>
+        <prettyName>Code</prettyName>
+        <rows>20</rows>
+        <size>50</size>
+        <unmodifiable>0</unmodifiable>
+        <classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
+      </code>
+      <name>
+        <disabled>0</disabled>
+        <name>name</name>
+        <number>1</number>
+        <prettyName>Name</prettyName>
+        <size>30</size>
+        <unmodifiable>0</unmodifiable>
+        <classType>com.xpn.xwiki.objects.classes.StringClass</classType>
+      </name>
+      <parse>
+        <disabled>0</disabled>
+        <displayFormType>select</displayFormType>
+        <displayType>yesno</displayType>
+        <name>parse</name>
+        <number>4</number>
+        <prettyName>Parse content</prettyName>
+        <unmodifiable>0</unmodifiable>
+        <classType>com.xpn.xwiki.objects.classes.BooleanClass</classType>
+      </parse>
+      <use>
+        <cache>0</cache>
+        <disabled>0</disabled>
+        <displayType>select</displayType>
+        <multiSelect>0</multiSelect>
+        <name>use</name>
+        <number>3</number>
+        <prettyName>Use this extension</prettyName>
+        <relationalStorage>0</relationalStorage>
+        <separator> </separator>
+        <separators> ,|</separators>
+        <size>1</size>
+        <unmodifiable>0</unmodifiable>
+        <values>currentPage=Always on this page|onDemand=On demand|always=Always on this wiki</values>
+        <classType>com.xpn.xwiki.objects.classes.StaticListClass</classType>
+      </use>
+    </class>
+    <name>MMCode.MeetingManager</name>
+    <number>0</number>
+    <className>XWiki.StyleSheetExtension</className>
+    <guid>a0d988d0-b317-4a05-81da-491a25be8e85</guid>
+    <property>
+      <cache>default</cache>
+    </property>
+    <property>
+      <code>#if(!$xwiki.jsfx) ## PRE 1.8M2 -- add missing styles (are not yet in toucan.css)
 .xspacer {
 	clear: both !important;
 	height: 0 !important;
@@ -2828,10 +2877,17 @@ div.mailbox {
   padding:10px;
   margin:5px;
 }
-</code></property><property><name></name></property><property><parse>1</parse>
-</property>
-<property>
-<use>onDemand</use>
-</property>
-</object>
-<content>#includeForm("XWiki.SkinEditor")</content></xwikidoc>
+</code>
+    </property>
+    <property>
+      <name/>
+    </property>
+    <property>
+      <parse>1</parse>
+    </property>
+    <property>
+      <use>onDemand</use>
+    </property>
+  </object>
+  <content>#includeForm("XWiki.SkinEditor")</content>
+</xwikidoc>

@@ -1,108 +1,109 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <xwikidoc>
-<web>Meetings</web>
-<name>WebHome</name>
-<language></language>
-<defaultLanguage>en</defaultLanguage>
-<translation>0</translation>
-<parent>Main.WebHome</parent>
-<creator>XWiki.Admin</creator>
-<author>XWiki.Admin</author>
-<customClass></customClass>
-<contentAuthor>XWiki.Admin</contentAuthor>
-<creationDate>1288566000000</creationDate>
-<date>1330524312000</date>
-<contentUpdateDate>1330524312000</contentUpdateDate>
-<version>1.1</version>
-<title>$msg.get('meetings.spacehome.meetingsTitle')</title>
-<template></template>
-<defaultTemplate></defaultTemplate>
-<validationScript></validationScript>
-<comment></comment>
-<minorEdit>false</minorEdit>
-<syntaxId>xwiki/1.0</syntaxId>
-<hidden>false</hidden>
-<object>
-<class>
-<name>XWiki.JavaScriptExtension</name>
-<customClass></customClass>
-<customMapping></customMapping>
-<defaultViewSheet></defaultViewSheet>
-<defaultEditSheet></defaultEditSheet>
-<defaultWeb></defaultWeb>
-<nameField></nameField>
-<validationScript></validationScript>
-<cache>
-<cache>0</cache>
-<disabled>0</disabled>
-<displayType>select</displayType>
-<multiSelect>0</multiSelect>
-<name>cache</name>
-<number>5</number>
-<prettyName>Caching policy</prettyName>
-<relationalStorage>0</relationalStorage>
-<separator> </separator>
-<separators> ,|</separators>
-<size>1</size>
-<unmodifiable>0</unmodifiable>
-<values>long|short|default|forbid</values>
-<classType>com.xpn.xwiki.objects.classes.StaticListClass</classType>
-</cache>
-<code>
-<disabled>0</disabled>
-<name>code</name>
-<number>2</number>
-<prettyName>Code</prettyName>
-<rows>20</rows>
-<size>50</size>
-<unmodifiable>0</unmodifiable>
-<classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
-</code>
-<name>
-<disabled>0</disabled>
-<name>name</name>
-<number>1</number>
-<prettyName>Name</prettyName>
-<size>30</size>
-<unmodifiable>0</unmodifiable>
-<classType>com.xpn.xwiki.objects.classes.StringClass</classType>
-</name>
-<parse>
-<disabled>0</disabled>
-<displayFormType>select</displayFormType>
-<displayType>yesno</displayType>
-<name>parse</name>
-<number>4</number>
-<prettyName>Parse content</prettyName>
-<unmodifiable>0</unmodifiable>
-<classType>com.xpn.xwiki.objects.classes.BooleanClass</classType>
-</parse>
-<use>
-<cache>0</cache>
-<disabled>0</disabled>
-<displayType>select</displayType>
-<multiSelect>0</multiSelect>
-<name>use</name>
-<number>3</number>
-<prettyName>Use this extension</prettyName>
-<relationalStorage>0</relationalStorage>
-<separator> </separator>
-<separators> ,|</separators>
-<size>1</size>
-<unmodifiable>0</unmodifiable>
-<values>currentPage=Always on this page|onDemand=On demand|always=Always on this wiki</values>
-<classType>com.xpn.xwiki.objects.classes.StaticListClass</classType>
-</use>
-</class>
-<name>Meetings.WebHome</name>
-<number>0</number>
-<className>XWiki.JavaScriptExtension</className>
-<guid>140423ad-87cb-45ce-b6d2-aba21e2c9bd8</guid>
-<property>
-<cache>default</cache>
-</property>
-<property>
-<code>document.observe("dom:loaded", function() {
+  <web>Meetings</web>
+  <name>WebHome</name>
+  <language/>
+  <defaultLanguage/>
+  <translation>0</translation>
+  <parent>Main.WebHome</parent>
+  <creator>xwiki:XWiki.Admin</creator>
+  <author>xwiki:XWiki.Admin</author>
+  <customClass/>
+  <contentAuthor>xwiki:XWiki.Admin</contentAuthor>
+  <creationDate>1288566000000</creationDate>
+  <date>1330524312000</date>
+  <contentUpdateDate>1330524312000</contentUpdateDate>
+  <version>1.1</version>
+  <title>$msg.get('meetings.spacehome.meetingsTitle')</title>
+  <template/>
+  <defaultTemplate/>
+  <validationScript/>
+  <comment/>
+  <minorEdit>false</minorEdit>
+  <syntaxId>xwiki/1.0</syntaxId>
+  <hidden>false</hidden>
+  <object>
+    <class>
+      <name>XWiki.JavaScriptExtension</name>
+      <customClass/>
+      <customMapping/>
+      <defaultViewSheet/>
+      <defaultEditSheet/>
+      <defaultWeb/>
+      <nameField/>
+      <validationScript/>
+      <cache>
+        <cache>0</cache>
+        <disabled>0</disabled>
+        <displayType>select</displayType>
+        <multiSelect>0</multiSelect>
+        <name>cache</name>
+        <number>5</number>
+        <prettyName>Caching policy</prettyName>
+        <relationalStorage>0</relationalStorage>
+        <separator> </separator>
+        <separators> ,|</separators>
+        <size>1</size>
+        <unmodifiable>0</unmodifiable>
+        <values>long|short|default|forbid</values>
+        <classType>com.xpn.xwiki.objects.classes.StaticListClass</classType>
+      </cache>
+      <code>
+        <disabled>0</disabled>
+        <name>code</name>
+        <number>2</number>
+        <prettyName>Code</prettyName>
+        <rows>20</rows>
+        <size>50</size>
+        <unmodifiable>0</unmodifiable>
+        <classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
+      </code>
+      <name>
+        <disabled>0</disabled>
+        <name>name</name>
+        <number>1</number>
+        <prettyName>Name</prettyName>
+        <size>30</size>
+        <unmodifiable>0</unmodifiable>
+        <classType>com.xpn.xwiki.objects.classes.StringClass</classType>
+      </name>
+      <parse>
+        <disabled>0</disabled>
+        <displayFormType>select</displayFormType>
+        <displayType>yesno</displayType>
+        <name>parse</name>
+        <number>4</number>
+        <prettyName>Parse content</prettyName>
+        <unmodifiable>0</unmodifiable>
+        <classType>com.xpn.xwiki.objects.classes.BooleanClass</classType>
+      </parse>
+      <use>
+        <cache>0</cache>
+        <disabled>0</disabled>
+        <displayType>select</displayType>
+        <multiSelect>0</multiSelect>
+        <name>use</name>
+        <number>3</number>
+        <prettyName>Use this extension</prettyName>
+        <relationalStorage>0</relationalStorage>
+        <separator> </separator>
+        <separators> ,|</separators>
+        <size>1</size>
+        <unmodifiable>0</unmodifiable>
+        <values>currentPage=Always on this page|onDemand=On demand|always=Always on this wiki</values>
+        <classType>com.xpn.xwiki.objects.classes.StaticListClass</classType>
+      </use>
+    </class>
+    <name>Meetings.WebHome</name>
+    <number>0</number>
+    <className>XWiki.JavaScriptExtension</className>
+    <guid>140423ad-87cb-45ce-b6d2-aba21e2c9bd8</guid>
+    <property>
+      <cache>default</cache>
+    </property>
+    <property>
+      <code>document.observe("dom:loaded", function() {
     // Remove shortcuts
     for (shortc in window.shortcut.all_shortcuts) {
         window.shortcut.remove(shortc);
@@ -142,154 +143,155 @@ PageCreator = Class.create({
       }
    }
 });</code>
-</property>
-<property>
-<name>Page Creation</name>
-</property>
-<property>
-<parse>1</parse>
-</property>
-<property>
-<use>onDemand</use>
-</property>
-</object>
-<object>
-<class>
-<name>MMCode.MeetingParticipantClass</name>
-<customClass></customClass>
-<customMapping></customMapping>
-<defaultViewSheet></defaultViewSheet>
-<defaultEditSheet></defaultEditSheet>
-<defaultWeb></defaultWeb>
-<nameField></nameField>
-<validationScript></validationScript>
-<available>
-<disabled>0</disabled>
-<name>available</name>
-<number>5</number>
-<prettyName>available</prettyName>
-<size>30</size>
-<unmodifiable>0</unmodifiable>
-<classType>com.xpn.xwiki.objects.classes.StringClass</classType>
-</available>
-<message>
-<contenttype>FullyRenderedText</contenttype>
-<customDisplay></customDisplay>
-<disabled>0</disabled>
-<editor>---</editor>
-<name>message</name>
-<number>4</number>
-<picker>0</picker>
-<prettyName>message</prettyName>
-<rows>2</rows>
-<size>30</size>
-<tooltip></tooltip>
-<unmodifiable>0</unmodifiable>
-<validationMessage></validationMessage>
-<validationRegExp></validationRegExp>
-<classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
-</message>
-<participation>
-<cache>1</cache>
-<customDisplay></customDisplay>
-<disabled>0</disabled>
-<displayType>select</displayType>
-<multiSelect>0</multiSelect>
-<name>participation</name>
-<number>2</number>
-<picker>0</picker>
-<prettyName>participation</prettyName>
-<relationalStorage>0</relationalStorage>
-<separator> </separator>
-<separators> ,|</separators>
-<size>1</size>
-<sort>none</sort>
-<tooltip></tooltip>
-<unmodifiable>0</unmodifiable>
-<validationMessage></validationMessage>
-<validationRegExp></validationRegExp>
-<values>undecided|confirmed|declined</values>
-<classType>com.xpn.xwiki.objects.classes.StaticListClass</classType>
-</participation>
-<presence>
-<cache>0</cache>
-<customDisplay></customDisplay>
-<disabled>0</disabled>
-<displayType>select</displayType>
-<multiSelect>0</multiSelect>
-<name>presence</name>
-<number>3</number>
-<picker>0</picker>
-<prettyName>presence</prettyName>
-<relationalStorage>0</relationalStorage>
-<separator> </separator>
-<separators> ,|</separators>
-<size>1</size>
-<sort>none</sort>
-<tooltip></tooltip>
-<unmodifiable>0</unmodifiable>
-<validationMessage></validationMessage>
-<validationRegExp></validationRegExp>
-<values>present|absent|late</values>
-<classType>com.xpn.xwiki.objects.classes.StaticListClass</classType>
-</presence>
-<unavailable>
-<disabled>0</disabled>
-<name>unavailable</name>
-<number>6</number>
-<prettyName>unavailable</prettyName>
-<size>30</size>
-<unmodifiable>0</unmodifiable>
-<classType>com.xpn.xwiki.objects.classes.StringClass</classType>
-</unavailable>
-<username>
-<customDisplay></customDisplay>
-<disabled>0</disabled>
-<name>username</name>
-<number>1</number>
-<picker>0</picker>
-<prettyName>username</prettyName>
-<size>30</size>
-<tooltip></tooltip>
-<unmodifiable>0</unmodifiable>
-<validationMessage></validationMessage>
-<validationRegExp></validationRegExp>
-<classType>com.xpn.xwiki.objects.classes.StringClass</classType>
-</username>
-</class>
-<name>Meetings.WebHome</name>
-<number>0</number>
-<className>MMCode.MeetingParticipantClass</className>
-<guid>408217ec-2146-4a99-9b84-cf2e2b1e32aa</guid>
-<property>
-<available></available>
-</property>
-<property>
-<message></message>
-</property>
-<property>
-<participation>undecided</participation>
-</property>
-<property>
-<presence>present</presence>
-</property>
-<property>
-<unavailable></unavailable>
-</property>
-<property>
-<username>XWiki.JeromeVelociter</username>
-</property>
-</object>
-<object>
-<name>Meetings.WebHome</name>
-<number>0</number>
-<className>XWiki.SpaceClass</className>
-<guid>cef8acfe-364c-42f1-b3c4-184889649e4c</guid>
-<property>
-<type>application</type>
-</property>
-</object>
-<content>Welcome on the Meeting Notes space. 
+    </property>
+    <property>
+      <name>Page Creation</name>
+    </property>
+    <property>
+      <parse>1</parse>
+    </property>
+    <property>
+      <use>onDemand</use>
+    </property>
+  </object>
+  <object>
+    <class>
+      <name>MMCode.MeetingParticipantClass</name>
+      <customClass/>
+      <customMapping/>
+      <defaultViewSheet/>
+      <defaultEditSheet/>
+      <defaultWeb/>
+      <nameField/>
+      <validationScript/>
+      <available>
+        <disabled>0</disabled>
+        <name>available</name>
+        <number>5</number>
+        <prettyName>available</prettyName>
+        <size>30</size>
+        <unmodifiable>0</unmodifiable>
+        <classType>com.xpn.xwiki.objects.classes.StringClass</classType>
+      </available>
+      <message>
+        <contenttype>FullyRenderedText</contenttype>
+        <customDisplay/>
+        <disabled>0</disabled>
+        <editor>---</editor>
+        <name>message</name>
+        <number>4</number>
+        <picker>0</picker>
+        <prettyName>message</prettyName>
+        <rows>2</rows>
+        <size>30</size>
+        <tooltip/>
+        <unmodifiable>0</unmodifiable>
+        <validationMessage/>
+        <validationRegExp/>
+        <classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
+      </message>
+      <participation>
+        <cache>1</cache>
+        <customDisplay/>
+        <disabled>0</disabled>
+        <displayType>select</displayType>
+        <multiSelect>0</multiSelect>
+        <name>participation</name>
+        <number>2</number>
+        <picker>0</picker>
+        <prettyName>participation</prettyName>
+        <relationalStorage>0</relationalStorage>
+        <separator> </separator>
+        <separators> ,|</separators>
+        <size>1</size>
+        <sort>none</sort>
+        <tooltip/>
+        <unmodifiable>0</unmodifiable>
+        <validationMessage/>
+        <validationRegExp/>
+        <values>undecided|confirmed|declined</values>
+        <classType>com.xpn.xwiki.objects.classes.StaticListClass</classType>
+      </participation>
+      <presence>
+        <cache>0</cache>
+        <customDisplay/>
+        <disabled>0</disabled>
+        <displayType>select</displayType>
+        <multiSelect>0</multiSelect>
+        <name>presence</name>
+        <number>3</number>
+        <picker>0</picker>
+        <prettyName>presence</prettyName>
+        <relationalStorage>0</relationalStorage>
+        <separator> </separator>
+        <separators> ,|</separators>
+        <size>1</size>
+        <sort>none</sort>
+        <tooltip/>
+        <unmodifiable>0</unmodifiable>
+        <validationMessage/>
+        <validationRegExp/>
+        <values>present|absent|late</values>
+        <classType>com.xpn.xwiki.objects.classes.StaticListClass</classType>
+      </presence>
+      <unavailable>
+        <disabled>0</disabled>
+        <name>unavailable</name>
+        <number>6</number>
+        <prettyName>unavailable</prettyName>
+        <size>30</size>
+        <unmodifiable>0</unmodifiable>
+        <classType>com.xpn.xwiki.objects.classes.StringClass</classType>
+      </unavailable>
+      <username>
+        <customDisplay/>
+        <disabled>0</disabled>
+        <name>username</name>
+        <number>1</number>
+        <picker>0</picker>
+        <prettyName>username</prettyName>
+        <size>30</size>
+        <tooltip/>
+        <unmodifiable>0</unmodifiable>
+        <validationMessage/>
+        <validationRegExp/>
+        <classType>com.xpn.xwiki.objects.classes.StringClass</classType>
+      </username>
+    </class>
+    <name>Meetings.WebHome</name>
+    <number>0</number>
+    <className>MMCode.MeetingParticipantClass</className>
+    <guid>408217ec-2146-4a99-9b84-cf2e2b1e32aa</guid>
+    <property>
+      <available/>
+    </property>
+    <property>
+      <message/>
+    </property>
+    <property>
+      <participation>undecided</participation>
+    </property>
+    <property>
+      <presence>present</presence>
+    </property>
+    <property>
+      <unavailable/>
+    </property>
+    <property>
+      <username>XWiki.JeromeVelociter</username>
+    </property>
+  </object>
+  <object>
+    <name>Meetings.WebHome</name>
+    <number>0</number>
+    <className>XWiki.SpaceClass</className>
+    <guid>cef8acfe-364c-42f1-b3c4-184889649e4c</guid>
+    <property>
+      <type>application</type>
+    </property>
+  </object>
+  <content>Welcome on the Meeting Notes space. 
 
 #set($showallspaces = 1)
-#includeForm("MMCode.MeetingWebHomeSheet")</content></xwikidoc>
+#includeForm("MMCode.MeetingWebHomeSheet")</content>
+</xwikidoc>

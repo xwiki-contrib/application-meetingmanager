@@ -1,113 +1,113 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <xwikidoc>
-<web>XWiki</web>
-<name>ModalBox</name>
-<language></language>
-<defaultLanguage></defaultLanguage>
-<translation>0</translation>
-<parent></parent>
-<creator>XWiki.Admin</creator>
-<author>XWiki.Admin</author>
-<customClass></customClass>
-<contentAuthor>XWiki.Admin</contentAuthor>
-<creationDate>1240413372000</creationDate>
-<date>1255883026000</date>
-<contentUpdateDate>1255883026000</contentUpdateDate>
-<version>2.1</version>
-<title></title>
-<template></template>
-<defaultTemplate></defaultTemplate>
-<validationScript></validationScript>
-<comment></comment>
-<minorEdit>false</minorEdit>
-<syntaxId>xwiki/1.0</syntaxId>
-<hidden>false</hidden>
-<attachment>
-<filename>spinner.gif</filename>
-<filesize>7823</filesize>
-<author>XWiki.JeromeVelociter</author>
-<date>1240414586000</date>
-<version>1.1</version>
-<comment></comment>
-<content>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</content>
-</attachment>
-<object>
-<class>
-<name>XWiki.JavaScriptExtension</name>
-<customClass></customClass>
-<customMapping></customMapping>
-<defaultViewSheet></defaultViewSheet>
-<defaultEditSheet></defaultEditSheet>
-<defaultWeb></defaultWeb>
-<nameField></nameField>
-<validationScript></validationScript>
-<cache>
-<cache>0</cache>
-<displayType>select</displayType>
-<multiSelect>0</multiSelect>
-<name>cache</name>
-<number>5</number>
-<prettyName>Caching policy</prettyName>
-<relationalStorage>0</relationalStorage>
-<separator> </separator>
-<separators> ,|</separators>
-<size>1</size>
-<unmodifiable>0</unmodifiable>
-<values>long|short|default|forbid</values>
-<classType>com.xpn.xwiki.objects.classes.StaticListClass</classType>
-</cache>
-<code>
-<name>code</name>
-<number>2</number>
-<prettyName>Code</prettyName>
-<rows>20</rows>
-<size>50</size>
-<unmodifiable>0</unmodifiable>
-<classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
-</code>
-<name>
-<name>name</name>
-<number>1</number>
-<prettyName>Name</prettyName>
-<size>30</size>
-<unmodifiable>0</unmodifiable>
-<classType>com.xpn.xwiki.objects.classes.StringClass</classType>
-</name>
-<parse>
-<displayFormType>select</displayFormType>
-<displayType>yesno</displayType>
-<name>parse</name>
-<number>4</number>
-<prettyName>Parse content</prettyName>
-<unmodifiable>0</unmodifiable>
-<classType>com.xpn.xwiki.objects.classes.BooleanClass</classType>
-</parse>
-<use>
-<cache>0</cache>
-<displayType>select</displayType>
-<multiSelect>0</multiSelect>
-<name>use</name>
-<number>3</number>
-<prettyName>Use this extension</prettyName>
-<relationalStorage>0</relationalStorage>
-<separator> </separator>
-<separators> ,|</separators>
-<size>1</size>
-<unmodifiable>0</unmodifiable>
-<values>onDemand=On demand|always=Always</values>
-<classType>com.xpn.xwiki.objects.classes.StaticListClass</classType>
-</use>
-</class>
-<name>XWiki.ModalBox</name>
-<number>0</number>
-<className>XWiki.JavaScriptExtension</className>
-<guid>d0e2486f-6fa3-44fc-a685-461f0a5b2982</guid>
-<property>
-<cache>default</cache>
-</property>
-<property>
-<code>/*
+  <web>XWiki</web>
+  <name>ModalBox</name>
+  <language/>
+  <defaultLanguage/>
+  <translation>0</translation>
+  <parent/>
+  <creator>xwiki:XWiki.Admin</creator>
+  <author>xwiki:XWiki.Admin</author>
+  <customClass/>
+  <contentAuthor>xwiki:XWiki.Admin</contentAuthor>
+  <creationDate>1240413372000</creationDate>
+  <date>1255883026000</date>
+  <contentUpdateDate>1255883026000</contentUpdateDate>
+  <version>1.1</version>
+  <title/>
+  <template/>
+  <defaultTemplate/>
+  <validationScript/>
+  <comment/>
+  <minorEdit>false</minorEdit>
+  <syntaxId>xwiki/1.0</syntaxId>
+  <hidden>false</hidden>
+  <attachment>
+    <filename>spinner.gif</filename>
+    <filesize>7823</filesize>
+    <author>XWiki.JeromeVelociter</author>
+    <date>1240414586000</date>
+    <version>1.1</version>
+    <comment/>
+    <content>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</content>
+  </attachment>
+  <object>
+    <class>
+      <name>XWiki.JavaScriptExtension</name>
+      <customClass/>
+      <customMapping/>
+      <defaultViewSheet/>
+      <defaultEditSheet/>
+      <defaultWeb/>
+      <nameField/>
+      <validationScript/>
+      <cache>
+        <cache>0</cache>
+        <displayType>select</displayType>
+        <multiSelect>0</multiSelect>
+        <name>cache</name>
+        <number>5</number>
+        <prettyName>Caching policy</prettyName>
+        <relationalStorage>0</relationalStorage>
+        <separator> </separator>
+        <separators> ,|</separators>
+        <size>1</size>
+        <unmodifiable>0</unmodifiable>
+        <values>long|short|default|forbid</values>
+        <classType>com.xpn.xwiki.objects.classes.StaticListClass</classType>
+      </cache>
+      <code>
+        <name>code</name>
+        <number>2</number>
+        <prettyName>Code</prettyName>
+        <rows>20</rows>
+        <size>50</size>
+        <unmodifiable>0</unmodifiable>
+        <classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
+      </code>
+      <name>
+        <name>name</name>
+        <number>1</number>
+        <prettyName>Name</prettyName>
+        <size>30</size>
+        <unmodifiable>0</unmodifiable>
+        <classType>com.xpn.xwiki.objects.classes.StringClass</classType>
+      </name>
+      <parse>
+        <displayFormType>select</displayFormType>
+        <displayType>yesno</displayType>
+        <name>parse</name>
+        <number>4</number>
+        <prettyName>Parse content</prettyName>
+        <unmodifiable>0</unmodifiable>
+        <classType>com.xpn.xwiki.objects.classes.BooleanClass</classType>
+      </parse>
+      <use>
+        <cache>0</cache>
+        <displayType>select</displayType>
+        <multiSelect>0</multiSelect>
+        <name>use</name>
+        <number>3</number>
+        <prettyName>Use this extension</prettyName>
+        <relationalStorage>0</relationalStorage>
+        <separator> </separator>
+        <separators> ,|</separators>
+        <size>1</size>
+        <unmodifiable>0</unmodifiable>
+        <values>onDemand=On demand|always=Always</values>
+        <classType>com.xpn.xwiki.objects.classes.StaticListClass</classType>
+      </use>
+    </class>
+    <name>XWiki.ModalBox</name>
+    <number>0</number>
+    <className>XWiki.JavaScriptExtension</className>
+    <guid>d0e2486f-6fa3-44fc-a685-461f0a5b2982</guid>
+    <property>
+      <cache>default</cache>
+    </property>
+    <property>
+      <code>/*
 ModalBox - The pop-up window thingie with AJAX, based on prototype and script.aculo.us.
 
 Copyright Andrey Okonetchnikov (andrej.okonetschnikow@gmail.com), 2006-2007
@@ -684,93 +684,93 @@ Object.extend(Object.extend(Effect.ScaleBy.prototype, Effect.Base.prototype), {
 });
 
 });</code>
-</property>
-<property>
-<name>modalbox</name>
-</property>
-<property>
-<parse>0</parse>
-</property>
-<property>
-<use>onDemand</use>
-</property>
-</object>
-<object>
-<class>
-<name>XWiki.StyleSheetExtension</name>
-<customClass></customClass>
-<customMapping></customMapping>
-<defaultViewSheet></defaultViewSheet>
-<defaultEditSheet></defaultEditSheet>
-<defaultWeb></defaultWeb>
-<nameField></nameField>
-<validationScript></validationScript>
-<cache>
-<cache>0</cache>
-<displayType>select</displayType>
-<multiSelect>0</multiSelect>
-<name>cache</name>
-<number>5</number>
-<prettyName>Caching policy</prettyName>
-<relationalStorage>0</relationalStorage>
-<separator> </separator>
-<separators> ,|</separators>
-<size>1</size>
-<unmodifiable>0</unmodifiable>
-<values>long|short|default|forbid</values>
-<classType>com.xpn.xwiki.objects.classes.StaticListClass</classType>
-</cache>
-<code>
-<name>code</name>
-<number>2</number>
-<prettyName>Code</prettyName>
-<rows>20</rows>
-<size>50</size>
-<unmodifiable>0</unmodifiable>
-<classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
-</code>
-<name>
-<name>name</name>
-<number>1</number>
-<prettyName>Name</prettyName>
-<size>30</size>
-<unmodifiable>0</unmodifiable>
-<classType>com.xpn.xwiki.objects.classes.StringClass</classType>
-</name>
-<parse>
-<displayFormType>select</displayFormType>
-<displayType>yesno</displayType>
-<name>parse</name>
-<number>4</number>
-<prettyName>Parse content</prettyName>
-<unmodifiable>0</unmodifiable>
-<classType>com.xpn.xwiki.objects.classes.BooleanClass</classType>
-</parse>
-<use>
-<cache>0</cache>
-<displayType>select</displayType>
-<multiSelect>0</multiSelect>
-<name>use</name>
-<number>3</number>
-<prettyName>Use this extension</prettyName>
-<relationalStorage>0</relationalStorage>
-<separator> </separator>
-<separators> ,|</separators>
-<size>1</size>
-<unmodifiable>0</unmodifiable>
-<values>onDemand=On demand|always=Always</values>
-<classType>com.xpn.xwiki.objects.classes.StaticListClass</classType>
-</use>
-</class>
-<name>XWiki.ModalBox</name>
-<number>0</number>
-<className>XWiki.StyleSheetExtension</className>
-<guid>ed5018f9-e362-4fd3-8d57-c5b76753147c</guid>
-<property>
-<cache>default</cache>
-</property>
-<property>
-<code>#MB_overlay {
+    </property>
+    <property>
+      <name>modalbox</name>
+    </property>
+    <property>
+      <parse>0</parse>
+    </property>
+    <property>
+      <use>onDemand</use>
+    </property>
+  </object>
+  <object>
+    <class>
+      <name>XWiki.StyleSheetExtension</name>
+      <customClass/>
+      <customMapping/>
+      <defaultViewSheet/>
+      <defaultEditSheet/>
+      <defaultWeb/>
+      <nameField/>
+      <validationScript/>
+      <cache>
+        <cache>0</cache>
+        <displayType>select</displayType>
+        <multiSelect>0</multiSelect>
+        <name>cache</name>
+        <number>5</number>
+        <prettyName>Caching policy</prettyName>
+        <relationalStorage>0</relationalStorage>
+        <separator> </separator>
+        <separators> ,|</separators>
+        <size>1</size>
+        <unmodifiable>0</unmodifiable>
+        <values>long|short|default|forbid</values>
+        <classType>com.xpn.xwiki.objects.classes.StaticListClass</classType>
+      </cache>
+      <code>
+        <name>code</name>
+        <number>2</number>
+        <prettyName>Code</prettyName>
+        <rows>20</rows>
+        <size>50</size>
+        <unmodifiable>0</unmodifiable>
+        <classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
+      </code>
+      <name>
+        <name>name</name>
+        <number>1</number>
+        <prettyName>Name</prettyName>
+        <size>30</size>
+        <unmodifiable>0</unmodifiable>
+        <classType>com.xpn.xwiki.objects.classes.StringClass</classType>
+      </name>
+      <parse>
+        <displayFormType>select</displayFormType>
+        <displayType>yesno</displayType>
+        <name>parse</name>
+        <number>4</number>
+        <prettyName>Parse content</prettyName>
+        <unmodifiable>0</unmodifiable>
+        <classType>com.xpn.xwiki.objects.classes.BooleanClass</classType>
+      </parse>
+      <use>
+        <cache>0</cache>
+        <displayType>select</displayType>
+        <multiSelect>0</multiSelect>
+        <name>use</name>
+        <number>3</number>
+        <prettyName>Use this extension</prettyName>
+        <relationalStorage>0</relationalStorage>
+        <separator> </separator>
+        <separators> ,|</separators>
+        <size>1</size>
+        <unmodifiable>0</unmodifiable>
+        <values>onDemand=On demand|always=Always</values>
+        <classType>com.xpn.xwiki.objects.classes.StaticListClass</classType>
+      </use>
+    </class>
+    <name>XWiki.ModalBox</name>
+    <number>0</number>
+    <className>XWiki.StyleSheetExtension</className>
+    <guid>ed5018f9-e362-4fd3-8d57-c5b76753147c</guid>
+    <property>
+      <cache>default</cache>
+    </property>
+    <property>
+      <code>#MB_overlay {
 	position: absolute;
 	margin: auto;
 	top: 0;	left: 0;
@@ -865,52 +865,52 @@ Object.extend(Object.extend(Effect.ScaleBy.prototype, Effect.Base.prototype), {
 	margin: 10px 0;
 	text-align: center;
 }</code>
-</property>
-<property>
-<name>modalbox</name>
-</property>
-<property>
-<parse>1</parse>
-</property>
-<property>
-<use>onDemand</use>
-</property>
-</object>
-<object>
-<class>
-<name>XWiki.TagClass</name>
-<customClass></customClass>
-<customMapping></customMapping>
-<defaultViewSheet></defaultViewSheet>
-<defaultEditSheet></defaultEditSheet>
-<defaultWeb></defaultWeb>
-<nameField></nameField>
-<validationScript></validationScript>
-<tags>
-<cache>0</cache>
-<displayType>checkbox</displayType>
-<multiSelect>1</multiSelect>
-<name>tags</name>
-<number>1</number>
-<prettyName>Tags</prettyName>
-<relationalStorage>1</relationalStorage>
-<separator> </separator>
-<separators> ,|</separators>
-<size>30</size>
-<unmodifiable>0</unmodifiable>
-<values></values>
-<classType>com.xpn.xwiki.objects.classes.StaticListClass</classType>
-</tags>
-</class>
-<name>XWiki.ModalBox</name>
-<number>0</number>
-<className>XWiki.TagClass</className>
-<guid>31adec84-df5a-4078-83ea-73f49c644970</guid>
-<property>
-<tags/>
-</property>
-</object>
-<content>#if($request.page)
+    </property>
+    <property>
+      <name>modalbox</name>
+    </property>
+    <property>
+      <parse>1</parse>
+    </property>
+    <property>
+      <use>onDemand</use>
+    </property>
+  </object>
+  <object>
+    <class>
+      <name>XWiki.TagClass</name>
+      <customClass/>
+      <customMapping/>
+      <defaultViewSheet/>
+      <defaultEditSheet/>
+      <defaultWeb/>
+      <nameField/>
+      <validationScript/>
+      <tags>
+        <cache>0</cache>
+        <displayType>checkbox</displayType>
+        <multiSelect>1</multiSelect>
+        <name>tags</name>
+        <number>1</number>
+        <prettyName>Tags</prettyName>
+        <relationalStorage>1</relationalStorage>
+        <separator> </separator>
+        <separators> ,|</separators>
+        <size>30</size>
+        <unmodifiable>0</unmodifiable>
+        <values/>
+        <classType>com.xpn.xwiki.objects.classes.StaticListClass</classType>
+      </tags>
+    </class>
+    <name>XWiki.ModalBox</name>
+    <number>0</number>
+    <className>XWiki.TagClass</className>
+    <guid>31adec84-df5a-4078-83ea-73f49c644970</guid>
+    <property>
+      <tags/>
+    </property>
+  </object>
+  <content>#if($request.page)
 $response.sendRedirect($xwiki.getURL($request.page, "view", "xpage=popup"))
 #else
 #set($ok = $xwiki.jsfx.use("js/scriptaculous/scriptaculous.js"))

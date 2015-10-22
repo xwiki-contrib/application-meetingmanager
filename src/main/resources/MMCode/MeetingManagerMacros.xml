@@ -1,28 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <xwikidoc>
-<web>MMCode</web>
-<name>MeetingManagerMacros</name>
-<language></language>
-<defaultLanguage>en</defaultLanguage>
-<translation>0</translation>
-<parent></parent>
-<creator>XWiki.Admin</creator>
-<author>XWiki.Admin</author>
-<customClass></customClass>
-<contentAuthor>XWiki.Admin</contentAuthor>
-<creationDate>1288566000000</creationDate>
-<date>1288566000000</date>
-<contentUpdateDate>1288566000000</contentUpdateDate>
-<version>1.1</version>
-<title>MeetingManagerMacros</title>
-<template></template>
-<defaultTemplate></defaultTemplate>
-<validationScript></validationScript>
-<comment></comment>
-<minorEdit>false</minorEdit>
-<syntaxId>xwiki/2.0</syntaxId>
-<hidden>false</hidden>
-<content>{{velocity output=false}}
+  <web>MMCode</web>
+  <name>MeetingManagerMacros</name>
+  <language/>
+  <defaultLanguage/>
+  <translation>0</translation>
+  <parent/>
+  <creator>xwiki:XWiki.Admin</creator>
+  <author>xwiki:XWiki.Admin</author>
+  <customClass/>
+  <contentAuthor>xwiki:XWiki.Admin</contentAuthor>
+  <creationDate>1288566000000</creationDate>
+  <date>1288566000000</date>
+  <contentUpdateDate>1288566000000</contentUpdateDate>
+  <version>1.1</version>
+  <title>MeetingManagerMacros</title>
+  <template/>
+  <defaultTemplate/>
+  <validationScript/>
+  <comment/>
+  <minorEdit>false</minorEdit>
+  <syntaxId>xwiki/2.0</syntaxId>
+  <hidden>false</hidden>
+  <content>{{velocity output=false}}
 #**
  * Display a help message (similar to info, warning, error, etc.)
  *#
@@ -208,4 +209,5 @@
 &lt;/table&gt;
 #end
 #end
-{{/velocity}}</content></xwikidoc>
+{{/velocity}}</content>
+</xwikidoc>
